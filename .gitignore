@@ -1,0 +1,6 @@
+syntax: glob
+
+# VisualStudio
+.vs/
+[Bb]in/
+[Oo]bj/
