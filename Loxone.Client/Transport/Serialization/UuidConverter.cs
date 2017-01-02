@@ -15,11 +15,22 @@ namespace Loxone.Client.Transport.Serialization
 
     internal sealed class UuidConverter : JsonConverter
     {
-        public override bool CanConvert(Type objectType) => objectType == typeof(Uuid);
+        public override bool CanConvert(Type objectType) => objectType == typeof(Uuid) || objectType == typeof(Uuid?);
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            return Uuid.Parse(reader.Value as string);
+            bool nullable = objectType == typeof(Uuid?);
+
+            if (reader.TokenType == JsonToken.Null && nullable)
+            {
+                return null;
+            }
+            else if (reader.TokenType == JsonToken.String)
+            {
+                return Uuid.Parse(reader.Value as string);
+            }
+
+            throw new JsonSerializationException(Strings.UuidConverter_UnexpectedValue);
         }
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)

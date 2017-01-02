@@ -19,5 +19,6 @@ namespace Loxone.Client
         public const string MiniserverConnection_MustBeSetBeforeOpenFmt = "Property '{0}' must be set before opening the connection.";
         public const string MiniserverTransportException_Message = "Message received from Miniserver has invalid format.";
         public const string Uuid_ArgMustBeUuid = "Argument must be of type Uuid";
+        public const string UuidConverter_UnexpectedValue = "Unexpected value when converting UUID.";
     }
 }
