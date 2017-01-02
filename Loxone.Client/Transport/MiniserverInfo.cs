@@ -60,6 +60,21 @@ namespace Loxone.Client.Transport
         [JsonProperty("miniserverType")]
         public int MiniserverType;
 
+        [JsonProperty("localUrl")]
+        public string LocalUrl;
+
+        [JsonProperty("remoteUrl")]
+        public string RemoteUrl;
+
+        [JsonProperty("languageCode")]
+        public string LanguageCode;
+
+        [JsonProperty("currency")]
+        public string Currency;
+
+        [JsonProperty("tempUnit")]
+        public int TemperatureUnit;
+
         [JsonExtensionData]
         public IDictionary<string, JToken> ExtensionData;
 

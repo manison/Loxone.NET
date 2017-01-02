@@ -30,6 +30,18 @@ namespace Loxone.Client
             }
         }
 
+        private MiniserverInfo _miniserverInfo;
+
+        public MiniserverInfo MiniserverInfo => _miniserverInfo;
+
+        private ProjectInfo _project;
+
+        public ProjectInfo Project => _project;
+
+        private LocalizationInfo _localization;
+
+        public LocalizationInfo Localization => _localization;
+
         private RoomCollection _rooms;
 
         public RoomCollection Rooms
@@ -64,6 +76,9 @@ namespace Loxone.Client
         {
             Contract.Requires(innerFile != null);
             this._innerFile = innerFile;
+            this._miniserverInfo = new MiniserverInfo(_innerFile.MiniserverInfo);
+            this._project = new ProjectInfo(_innerFile.MiniserverInfo);
+            this._localization = new LocalizationInfo(_innerFile.MiniserverInfo);
         }
 
         public static StructureFile Parse(string s)
