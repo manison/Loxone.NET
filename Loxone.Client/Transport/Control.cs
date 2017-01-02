@@ -1,5 +1,5 @@
 ﻿// ----------------------------------------------------------------------
-// <copyright file="StructureFile.cs">
+// <copyright file="Control.cs">
 //     Copyright (c) The Loxone.NET Authors.  All rights reserved.
 // </copyright>
 // <license>
@@ -10,32 +10,40 @@
 
 namespace Loxone.Client.Transport
 {
-    using System;
     using System.Collections.Generic;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
 
-    internal sealed class StructureFile
+    internal sealed class Control
     {
         // Suppress 'Field is never assigned to, and will always have its
         // default value' warning.
         // Justification: Fields are set during deserialization.
         #pragma warning disable CS0649
 
-        [JsonProperty("lastModified")]
-        public DateTime LastModified;
+        [JsonProperty("uuidAction")]
+        public Uuid Uuid;
 
-        [JsonProperty("msInfo")]
-        public MiniserverInfo MiniserverInfo;
+        [JsonProperty("name")]
+        public string Name;
 
-        [JsonProperty("rooms")]
-        public IDictionary<string, Room> Rooms;
+        [JsonProperty("type")]
+        public string ControlType;
 
-        [JsonProperty("cats")]
-        public IDictionary<string, Category> Categories;
+        [JsonProperty("isFavorite")]
+        public bool IsFavorite;
 
-        [JsonProperty("controls")]
-        public IDictionary<string, Control> Controls;
+        [JsonProperty("isSecured")]
+        public bool IsSecured;
+
+        [JsonProperty("defaultRating")]
+        public int DefaultRating;
+
+        [JsonProperty("room")]
+        public Uuid? Room;
+
+        [JsonProperty("cat")]
+        public Uuid? Category;
 
         [JsonExtensionData]
         public IDictionary<string, JToken> ExtensionData;
