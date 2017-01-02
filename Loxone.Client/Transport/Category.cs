@@ -1,5 +1,5 @@
 ﻿// ----------------------------------------------------------------------
-// <copyright file="StructureFile.cs">
+// <copyright file="Category.cs">
 //     Copyright (c) The Loxone.NET Authors.  All rights reserved.
 // </copyright>
 // <license>
@@ -10,29 +10,28 @@
 
 namespace Loxone.Client.Transport
 {
-    using System;
     using System.Collections.Generic;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
 
-    internal sealed class StructureFile
+    internal sealed class Category
     {
         // Suppress 'Field is never assigned to, and will always have its
         // default value' warning.
         // Justification: Fields are set during deserialization.
         #pragma warning disable CS0649
 
-        [JsonProperty("lastModified")]
-        public DateTime LastModified;
+        [JsonProperty("uuid")]
+        public Uuid Uuid;
 
-        [JsonProperty("msInfo")]
-        public MiniserverInfo MiniserverInfo;
+        [JsonProperty("name")]
+        public string Name;
 
-        [JsonProperty("rooms")]
-        public IDictionary<string, Room> Rooms;
+        [JsonProperty("isFavorite")]
+        public bool IsFavorite;
 
-        [JsonProperty("cats")]
-        public IDictionary<string, Category> Categories;
+        [JsonProperty("defaultRating")]
+        public int DefaultRating;
 
         [JsonExtensionData]
         public IDictionary<string, JToken> ExtensionData;

@@ -18,5 +18,6 @@ namespace Loxone.Client
         public const string MiniserverCommandException_MessageFmt = "Miniserver command failed with status code {0}.";
         public const string MiniserverConnection_MustBeSetBeforeOpenFmt = "Property '{0}' must be set before opening the connection.";
         public const string MiniserverTransportException_Message = "Message received from Miniserver has invalid format.";
+        public const string Uuid_ArgMustBeUuid = "Argument must be of type Uuid";
     }
 }

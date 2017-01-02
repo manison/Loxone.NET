@@ -30,6 +30,36 @@ namespace Loxone.Client
             }
         }
 
+        private RoomCollection _rooms;
+
+        public RoomCollection Rooms
+        {
+            get
+            {
+                if (_rooms == null)
+                {
+                    _rooms = new RoomCollection(_innerFile.Rooms);
+                }
+
+                return _rooms;
+            }
+        }
+
+        private CategoryCollection _categories;
+
+        public CategoryCollection Categories
+        {
+            get
+            {
+                if (_categories == null)
+                {
+                    _categories = new CategoryCollection(_innerFile.Categories);
+                }
+
+                return _categories;
+            }
+        }
+
         private StructureFile(Transport.StructureFile innerFile)
         {
             Contract.Requires(innerFile != null);

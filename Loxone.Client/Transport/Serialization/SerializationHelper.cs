@@ -19,6 +19,7 @@ namespace Loxone.Client.Transport.Serialization
         {
             new JsonWithinStringConverter(typeof(Api)),
             new SerialNumberConverter(),
+            new UuidConverter(),
         };
 
         public static JsonSerializer CreateSerializer()
