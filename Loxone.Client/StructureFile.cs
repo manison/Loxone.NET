@@ -15,7 +15,6 @@ namespace Loxone.Client
     using System.IO;
     using System.Threading;
     using System.Threading.Tasks;
-    using Newtonsoft.Json;
 
     public sealed class StructureFile
     {
@@ -128,7 +127,6 @@ namespace Loxone.Client
         public Task SaveAsync(TextWriter writer, CancellationToken cancellationToken)
         {
             var serializer = Transport.Serialization.SerializationHelper.CreateSerializer();
-            serializer.TraceWriter = new Newtonsoft.Json.Serialization.MemoryTraceWriter() { LevelFilter = TraceLevel.Verbose };
             serializer.Serialize(writer, _innerFile);
             return Task.FromResult(0);
         }

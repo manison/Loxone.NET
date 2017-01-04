@@ -12,6 +12,7 @@ See *Loxone.Client.Samples.Console* project for example how to connect to Loxone
 - .NET Core 1.1 SDK
 
 ## Supported Runtimes
+- .NET Framework 4.6.2
 - .NET Core 1.1 Runtime
 
 ## License

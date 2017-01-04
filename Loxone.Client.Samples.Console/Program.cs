@@ -54,6 +54,8 @@ namespace Loxone.Client.Samples.Console
                     await structureFile.SaveAsync("LoxAPP3.json", CancellationToken.None).ConfigureAwait(false);
                 }
 
+                Console.WriteLine($"Structure file loaded, culture {structureFile.Localization.Culture}.");
+
                 Console.WriteLine("Enabling status updates...");
                 await connection.EnableStatusUpdatesAsync(CancellationToken.None).ConfigureAwait(false);
             }

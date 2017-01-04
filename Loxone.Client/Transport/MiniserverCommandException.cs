@@ -12,6 +12,7 @@ namespace Loxone.Client.Transport
 {
     using System;
     using System.Globalization;
+    using System.Runtime.Serialization;
 
     [Serializable]
     public class MiniserverCommandException : MiniserverTransportException

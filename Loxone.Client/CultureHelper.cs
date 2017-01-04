@@ -10,11 +10,36 @@
 
 namespace Loxone.Client
 {
+    using System;
     using System.Collections.Generic;
     using System.Globalization;
+    using System.Linq;
 
     internal static class CultureHelper
     {
+#if NETFX
+        public static CultureInfo GetCultureByThreeLetterWindowsLanguageName(string languageName)
+        {
+            var all = CultureInfo.GetCultures(CultureTypes.AllCultures);
+
+            // Try specific cultures first.
+            var culture = all
+                .Where(c => !c.IsNeutralCulture &&
+                       string.Equals(c.ThreeLetterWindowsLanguageName, languageName, StringComparison.OrdinalIgnoreCase))
+                .FirstOrDefault();
+
+            if (culture == null)
+            {
+                // Try neutral culture if a specific was not found.
+                culture = all
+                .Where(c => c.IsNeutralCulture &&
+                       string.Equals(c.ThreeLetterWindowsLanguageName, languageName, StringComparison.OrdinalIgnoreCase))
+                .FirstOrDefault();
+            }
+
+            return culture;
+        }
+#else
         private static IDictionary<string, string> _threeLetterWindowsNameMappings = new Dictionary<string, string>()
         {
             ["CSY"] = "cs-CZ",
@@ -35,5 +60,6 @@ namespace Loxone.Client
 
             return culture;
         }
+#endif
     }
 }
