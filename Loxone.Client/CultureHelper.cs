@@ -32,9 +32,9 @@ namespace Loxone.Client
             {
                 // Try neutral culture if a specific was not found.
                 culture = all
-                .Where(c => c.IsNeutralCulture &&
-                       string.Equals(c.ThreeLetterWindowsLanguageName, languageName, StringComparison.OrdinalIgnoreCase))
-                .FirstOrDefault();
+                    .Where(c => c.IsNeutralCulture &&
+                           string.Equals(c.ThreeLetterWindowsLanguageName, languageName, StringComparison.OrdinalIgnoreCase))
+                    .FirstOrDefault();
             }
 
             return culture;
