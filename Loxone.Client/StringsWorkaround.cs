@@ -14,6 +14,7 @@ namespace Loxone.Client
 
     internal static class Strings
     {
+        public const string ColorConverter_InvalidFormat = "The color must be specified in format '#RRGGBB'.";
         public const string HexConverter_BadFormat = "Hex string format is invalid.";
         public const string MiniserverCommandException_MessageFmt = "Miniserver command failed with status code {0}.";
         public const string MiniserverConnection_MustBeSetBeforeOpenFmt = "Property '{0}' must be set before opening the connection.";
