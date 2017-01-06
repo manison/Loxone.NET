@@ -91,6 +91,30 @@ namespace Loxone.Client
             }
         }
 
+        // According to the documentation the Miniserver will close the connection if the
+        // client doesn't send anything for more than 5 minutes.
+        private static readonly TimeSpan _defaultKeepAliveTimeout = TimeSpan.FromMinutes(3);
+
+        private TimeSpan _keepAliveTimeout = _defaultKeepAliveTimeout;
+
+        public TimeSpan KeepAliveTimeout
+        {
+            get
+            {
+                return _keepAliveTimeout;
+            }
+            set
+            {
+                Contract.Requires(value > TimeSpan.Zero);
+
+                CheckDisposed();
+
+                _keepAliveTimeout = value;
+            }
+        }
+
+        private Timer _keepAliveTimer;
+
         public MiniserverConnection()
         {
             _miniserverInfo = new MiniserverLimitedInfo();
@@ -300,7 +324,8 @@ namespace Loxone.Client
                 {
                     if (disposing)
                     {
-                        _webSocket.Dispose();
+                        _keepAliveTimer?.Dispose();
+                        _webSocket?.Dispose();
                     }
 
                     _state = (int)State.Disposed;
