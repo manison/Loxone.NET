@@ -35,6 +35,8 @@ namespace Loxone.Client
 
         private volatile int _state;
 
+        public bool IsDisposed => _state >= (int)State.Disposing;
+
         private MiniserverLimitedInfo _miniserverInfo;
 
         public MiniserverLimitedInfo MiniserverInfo
@@ -256,7 +258,7 @@ namespace Loxone.Client
             }
         }
 
-        private Task OpenWebSocketAsync(CancellationToken cancellationToken)
+        private async Task OpenWebSocketAsync(CancellationToken cancellationToken)
         {
             var uri = new UriBuilder(_baseUri);
             uri.Scheme = HttpUtils.WebSocketScheme;
@@ -268,7 +270,9 @@ namespace Loxone.Client
             }
 
             _webSocket = new Transport.LXWebSocket(uri.Uri, credentials);
-            return _webSocket.OpenAsync(cancellationToken);
+            await _webSocket.OpenAsync(cancellationToken).ConfigureAwait(false);
+
+            StartKeepAliveTimer();
         }
 
         private void CheckState(State requiredState)
@@ -305,11 +309,25 @@ namespace Loxone.Client
             return (State)Interlocked.Exchange(ref _state, (int)newState);
         }
 
+        private void StartKeepAliveTimer()
+        {
+            Contract.Requires(_keepAliveTimer == null);
+            _keepAliveTimer = new Timer(KeepAliveTimerTick, null, _keepAliveTimeout, Timeout.InfiniteTimeSpan);
+        }
+
+        private void KeepAliveTimerTick(object state)
+        {
+            if (!IsDisposed)
+            {
+
+            }
+        }
+
         #region IDisposable Implementation
 
         protected void CheckDisposed()
         {
-            if (_state >= (int)State.Disposing)
+            if (IsDisposed)
             {
                 throw new ObjectDisposedException(this.GetType().FullName);
             }
