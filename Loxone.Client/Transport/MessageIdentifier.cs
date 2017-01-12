@@ -15,7 +15,7 @@ namespace Loxone.Client.Transport
         Text = 0,
         Binary = 1,
         ValueStates = 2,
-        TestStates = 3,
+        TextStates = 3,
         DayTimerStates = 4,
         OutOfService = 5,
         KeepAlive = 6
