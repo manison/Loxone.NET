@@ -18,6 +18,7 @@ namespace Loxone.Client.Transport
         TextStates = 3,
         DayTimerStates = 4,
         OutOfService = 5,
-        KeepAlive = 6
+        KeepAlive = 6,
+        WeatherStates = 7
     }
 }
