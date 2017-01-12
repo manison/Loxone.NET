@@ -176,15 +176,8 @@ namespace Loxone.Client.Transport
 
         public void Dispose()
         {
-            if (_webSocket != null)
-            {
-                _webSocket.Dispose();
-            }
-
-            if (_hmac != null)
-            {
-                _hmac.Dispose();
-            }
+            _webSocket?.Dispose();
+            _hmac?.Dispose();
         }
     }
 }
