@@ -32,12 +32,7 @@ namespace Loxone.Client.Transport
             var h = (IList<byte>)header;
             if (h[0] != 3)
             {
-                throw new MiniserverTransportException();
-            }
-
-            if (!Enum.IsDefined(typeof(MessageIdentifier), (int)h[1]))
-            {
-                throw new MiniserverTransportException();
+                throw new MiniserverTransportException(Strings.MiniserverTransportException_Message);
             }
 
             _identifier = (MessageIdentifier)h[1];
