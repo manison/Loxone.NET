@@ -11,6 +11,7 @@
 namespace Loxone.Client.Transport
 {
     using System;
+    using System.Collections.Generic;
     using System.Diagnostics.Contracts;
     using System.Net;
     using System.Net.WebSockets;
@@ -105,7 +106,62 @@ namespace Loxone.Client.Transport
 
             if (!processed)
             {
-                await SkipBytesAsync(header.Length, cancellationToken).ConfigureAwait(false);
+                processed = await HandleUnsolicitedMessageAsync(header, cancellationToken).ConfigureAwait(false);
+                if (!processed)
+                {
+                    await SkipBytesAsync(header.Length, cancellationToken).ConfigureAwait(false);
+                }
+            }
+        }
+
+        private async Task<bool> HandleUnsolicitedMessageAsync(MessageHeader header, CancellationToken cancellationToken)
+        {
+            switch (header.Identifier)
+            {
+                case MessageIdentifier.ValueStates:
+                    await HandleValueStatesAsync(header.Length, cancellationToken).ConfigureAwait(false);
+                    return true;
+
+                case MessageIdentifier.TextStates:
+                    break;
+
+                case MessageIdentifier.DayTimerStates:
+                    break;
+
+                case MessageIdentifier.OutOfService:
+                    break;
+
+                case MessageIdentifier.KeepAlive:
+                    break;
+
+                case MessageIdentifier.WeatherStates:
+                    break;
+            }
+
+            return false;
+        }
+
+        private async Task HandleValueStatesAsync(int length, CancellationToken cancellationToken)
+        {
+            if (length >= 24)
+            {
+                var states = new List<ValueState>(length / 24);
+                var buffer = new ArraySegment<byte>(new byte[24]);
+
+                while (length >= 24)
+                {
+                    await ReceiveAtomicAsync(buffer, false, cancellationToken).ConfigureAwait(false);
+                    var uuid = new Uuid(new ArraySegment<byte>(buffer.Array, 0, 16));
+                    double value = BitConverter.ToDouble(buffer.Array, 16);
+                    states.Add(new ValueState(uuid, value));
+                    length -= 24;
+                }
+            }
+
+            if (length > 0)
+            {
+                // Extra data beyond the last value state?
+                await SkipBytesAsync(length, cancellationToken).ConfigureAwait(false);
             }
         }
 

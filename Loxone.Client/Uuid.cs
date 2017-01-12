@@ -11,6 +11,8 @@
 namespace Loxone.Client
 {
     using System;
+    using System.Collections.Generic;
+    using System.Diagnostics.Contracts;
 
     /// <summary>
     /// Unique 128b identifier to identify controls, inputs and outputs.
@@ -25,9 +27,24 @@ namespace Loxone.Client
     {
         private readonly Guid _uuid;
 
-        public Uuid(byte[] b)
+        public Uuid(ArraySegment<byte> bytes)
         {
-            _uuid = new Guid(b);
+            Contract.Requires(bytes.Count == 16);
+
+            var b = (IList<byte>)bytes;
+
+            _uuid = new Guid(
+                ((int)b[3] << 24) | ((int)b[2] << 16) | ((int)b[1] << 8) | b[0],
+                (short)(((int)b[5] << 8) | b[4]),
+                (short)(((int)b[7] << 8) | b[6]),
+                b[8],
+                b[9],
+                b[10],
+                b[11],
+                b[12],
+                b[13],
+                b[14],
+                b[15]);
         }
 
         public Uuid(string s)
