@@ -17,6 +17,7 @@ namespace Loxone.Client.Transport
     public class MiniserverTransportException : MiniserverException
     {
         public MiniserverTransportException()
+            : base(Strings.MiniserverTransportException_Message)
         {
         }
 

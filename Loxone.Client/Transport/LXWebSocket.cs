@@ -25,11 +25,15 @@ namespace Loxone.Client.Transport
 
         private ClientWebSocket _webSocket;
 
-        private static readonly Encoding _encoding = Encoding.UTF8;
+        internal static readonly Encoding Encoding = Encoding.UTF8;
 
         private HMACSHA1 _hmac;
 
         private NetworkCredential _credentials;
+
+        private CancellationTokenSource _receiveLoopCancellation;
+
+        private ICommandHandler _pendingCommand;
 
         public LXWebSocket(Uri baseUri, NetworkCredential credentials)
         {
@@ -49,18 +53,88 @@ namespace Loxone.Client.Transport
             _webSocket = new ClientWebSocket();
             await _webSocket.ConnectAsync(new UriBuilder(_baseUri) { Path = "ws/rfc6455" }.Uri, cancellationToken).ConfigureAwait(false);
 
+            StartReceiveLoop();
+
             await ObtainKeyAsync(cancellationToken).ConfigureAwait(false);
             await AuthenticateAsync(cancellationToken).ConfigureAwait(false);
         }
 
+        public void StartReceiveLoop()
+        {
+            Contract.Requires(_receiveLoopCancellation == null, "Receive loop is already running");
+
+            _receiveLoopCancellation = new CancellationTokenSource();
+
+            // Fire and forget, no await here.
+            ReceiveLoopAsync();
+        }
+
+        private async void ReceiveLoopAsync()
+        {
+            Contract.Requires(_receiveLoopCancellation != null, "Receive loop is not running");
+
+            bool quit = false;
+
+            while (!quit)
+            {
+                try
+                {
+                    var header = await ReceiveHeaderAsync(_receiveLoopCancellation.Token).ConfigureAwait(false);
+                    Contract.Assert(!header.IsLengthEstimated);
+                    await DispatchMessageAsync(header, _receiveLoopCancellation.Token).ConfigureAwait(false);
+                }
+                catch
+                {
+                    quit = true;
+                }
+            }
+        }
+
+        private async Task DispatchMessageAsync(MessageHeader header, CancellationToken cancellationToken)
+        {
+            bool processed = false;
+
+            var command = _pendingCommand;
+            if (command != null && command.CanHandleMessage(header.Identifier))
+            {
+                Interlocked.CompareExchange(ref _pendingCommand, null, command);
+                await command.HandleMessageAsync(header, this, cancellationToken).ConfigureAwait(false);
+                processed = true;
+                (command as IDisposable)?.Dispose();
+            }
+
+            if (!processed)
+            {
+                await SkipBytesAsync(header.Length, cancellationToken).ConfigureAwait(false);
+            }
+        }
+
+        private async Task SkipBytesAsync(int numberOfBytesToReadOut, CancellationToken cancellationToken)
+        {
+            int bufferSize = Math.Min(numberOfBytesToReadOut, 4096);
+            var buffer = new ArraySegment<byte>(new byte[bufferSize]);
+
+            while (numberOfBytesToReadOut > 0)
+            {
+                var result = await _webSocket.ReceiveAsync(buffer, cancellationToken).ConfigureAwait(false);
+
+                numberOfBytesToReadOut -= result.Count;
+
+                if (result.CloseStatus != null)
+                {
+                    break;
+                }
+            }
+        }
+
         private Task SendStringAsync(string s, CancellationToken cancellationToken)
         {
-            var encoded = _encoding.GetBytes(s);
+            var encoded = Encoding.GetBytes(s);
             var segment = new ArraySegment<byte>(encoded);
             return _webSocket.SendAsync(segment, WebSocketMessageType.Text, true, cancellationToken);
         }
 
-        private async Task ReceiveAtomicAsync(ArraySegment<byte> segment, bool throwIfNotEom, CancellationToken cancellationToken)
+        internal async Task ReceiveAtomicAsync(ArraySegment<byte> segment, bool throwIfNotEom, CancellationToken cancellationToken)
         {
             int received = 0;
             bool eom = false;
@@ -68,7 +142,7 @@ namespace Loxone.Client.Transport
             while (received < segment.Count)
             {
                 var slice = new ArraySegment<byte>(segment.Array, segment.Offset + received, segment.Count - received);
-                var result = await _webSocket.ReceiveAsync(slice, cancellationToken);
+                var result = await _webSocket.ReceiveAsync(slice, cancellationToken).ConfigureAwait(false);
 
                 received += result.Count;
 
@@ -105,77 +179,96 @@ namespace Loxone.Client.Transport
             return header;
         }
 
-        delegate TResult ReceiveWorkerHandler<TResult>(ref MessageHeader header, byte[] content);
-
-        private static string StringHandler(ref MessageHeader header, byte[] content)
+        public async Task<string> RequestStringAsync(string command, CancellationToken cancellationToken)
         {
-            return _encoding.GetString(content);
+            var handler = new StringCommandHandler();
+            await EnqueueCommandAsync(command, handler, cancellationToken).ConfigureAwait(false);
+            var s = await handler.Task.ConfigureAwait(false);
+            return s;
         }
 
-        private async Task<TResult> ReceiveWorkerAsync<TResult>(ReceiveWorkerHandler<TResult> handler, CancellationToken cancellationToken)
+        [Flags]
+        public enum RequestCommandValidation
         {
-            var header = await ReceiveHeaderAsync(cancellationToken).ConfigureAwait(false);
-            var content = new byte[header.Length];
-            await ReceiveAtomicAsync(new ArraySegment<byte>(content), true, cancellationToken).ConfigureAwait(false);
-            return handler(ref header, content);
+            None = 0,
+            Status = 1,
+            Command = 2,
+            All = Status | Command
         }
 
-        private Task<string> ReceiveStringAsync(CancellationToken cancellationToken)
+        private static bool AreCommandsEqual(string requestCommand, string responseCommand)
         {
-            return ReceiveWorkerAsync<string>(StringHandler, cancellationToken);
-        }
+            bool equals = String.Equals(requestCommand, responseCommand, StringComparison.OrdinalIgnoreCase);
 
-        private Task<Message<TValue>> ReceiveMessageAsync<TValue>(CancellationToken cancellationToken)
-        {
-            return ReceiveWorkerAsync<Message<TValue>>(
-                (ref MessageHeader header, byte[] content) =>
-                {
-                    string s = StringHandler(ref header, content);
-                    var response = LXResponse<TValue>.Deserialize(s);
-                    return new Message<TValue>(ref header, response);
-                }, cancellationToken);
-        }
-
-        public async Task<string> RequestStringAsync(string cmd, CancellationToken cancellationToken)
-        {
-            await SendStringAsync(cmd, cancellationToken).ConfigureAwait(false);
-            return await ReceiveStringAsync(cancellationToken).ConfigureAwait(false);
-        }
-
-        public async Task<Message<TValue>> RequestCommandAsync<TValue>(string cmd, bool checkStatus, CancellationToken cancellationToken)
-        {
-            await SendStringAsync(cmd, cancellationToken).ConfigureAwait(false);
-            var message = await ReceiveMessageAsync<TValue>(cancellationToken).ConfigureAwait(false);
-            if (checkStatus && !LXStatusCode.IsSuccess(message.Response.Code))
+            // Response to 'jdev' may actually be 'dev' instead.
+            if (!equals &&
+                requestCommand.StartsWith("jdev/", StringComparison.OrdinalIgnoreCase) &&
+                responseCommand.StartsWith("dev/", StringComparison.OrdinalIgnoreCase))
             {
-                throw new MiniserverCommandException(message.Response.Code);
+                equals = String.Equals(requestCommand.Substring(5), responseCommand.Substring(4), StringComparison.OrdinalIgnoreCase);
             }
 
-            return message;
+            return equals;
         }
 
-        public Task<Message<TValue>> RequestCommandAsync<TValue>(string cmd, CancellationToken cancellationToken)
+        public async Task<LXResponse<T>> RequestCommandAsync<T>(string command, RequestCommandValidation validation, CancellationToken cancellationToken)
         {
-            return RequestCommandAsync<TValue>(cmd, true, cancellationToken);
+            var handler = new LXResponseCommandHandler<T>();
+            await EnqueueCommandAsync(command, handler, cancellationToken).ConfigureAwait(false);
+            var response = await handler.Task.ConfigureAwait(false);
+
+            if ((validation & RequestCommandValidation.Command) != 0 && !AreCommandsEqual(command, response.Control))
+            {
+                throw new MiniserverTransportException();
+            }
+
+            if ((validation & RequestCommandValidation.Status) != 0 && !LXStatusCode.IsSuccess(response.Code))
+            {
+                throw new MiniserverCommandException(response.Code);
+            }
+
+            return response;
+        }
+
+        public Task<LXResponse<T>> RequestCommandAsync<T>(string command, CancellationToken cancellationToken)
+        {
+            return RequestCommandAsync<T>(command, RequestCommandValidation.All, cancellationToken);
         }
 
         private async Task ObtainKeyAsync(CancellationToken cancellationToken)
         {
-            var message = await RequestCommandAsync<string>("jdev/sys/getkey", cancellationToken).ConfigureAwait(false);
-            var key = HexConverter.FromString(message.Response.Value);
+            var response = await RequestCommandAsync<string>("jdev/sys/getkey", cancellationToken).ConfigureAwait(false);
+            var key = HexConverter.FromString(response.Value);
             _hmac = new HMACSHA1(key);
         }
 
         private async Task AuthenticateAsync(CancellationToken cancellationToken)
         {
             string credentials = string.Concat(_credentials.UserName, ":", _credentials.Password);
-            var hash = _hmac.ComputeHash(_encoding.GetBytes(credentials));
+            var hash = _hmac.ComputeHash(Encoding.GetBytes(credentials));
             string request = "authenticate/" + HexConverter.FromByteArray(hash);
-            var message = await RequestCommandAsync<string>(request, false, cancellationToken).ConfigureAwait(false);
+            var response = await RequestCommandAsync<string>(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        private async Task EnqueueCommandAsync(string command, ICommandHandler handler, CancellationToken cancellationToken)
+        {
+            if (Interlocked.CompareExchange(ref _pendingCommand, handler, null) != null)
+            {
+                // Command already pending.
+                throw new InvalidOperationException();
+            }
+
+            await SendStringAsync(command, cancellationToken).ConfigureAwait(false);
         }
 
         public void Dispose()
         {
+            if (_receiveLoopCancellation != null)
+            {
+                _receiveLoopCancellation.Cancel();
+                _receiveLoopCancellation.Dispose();
+            }
+
             _webSocket?.Dispose();
             _hmac?.Dispose();
         }

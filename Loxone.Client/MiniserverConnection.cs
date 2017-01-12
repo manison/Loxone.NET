@@ -211,14 +211,14 @@ namespace Loxone.Client
         public async Task<DateTime> GetStructureFileLastModifiedDateAsync(CancellationToken cancellationToken)
         {
             CheckBeforeOperation();
-            var message = await _webSocket.RequestCommandAsync<DateTime>("jdev/sps/LoxAPPversion3", cancellationToken).ConfigureAwait(false);
-            return DateTime.SpecifyKind(message.Response.Value, DateTimeKind.Local);
+            var response = await _webSocket.RequestCommandAsync<DateTime>("jdev/sps/LoxAPPversion3", cancellationToken).ConfigureAwait(false);
+            return DateTime.SpecifyKind(response.Value, DateTimeKind.Local);
         }
 
         public async Task EnableStatusUpdatesAsync(CancellationToken cancellationToken)
         {
             CheckBeforeOperation();
-            var message = await _webSocket.RequestCommandAsync<string>("jdev/sps/enablebinstatusupdate", cancellationToken).ConfigureAwait(false);
+            var response = await _webSocket.RequestCommandAsync<string>("jdev/sps/enablebinstatusupdate", cancellationToken).ConfigureAwait(false);
         }
 
         private void CheckBeforeOpen()
