@@ -44,7 +44,7 @@ namespace Loxone.Client
         {
             ["CSY"] = "cs-CZ",
             ["DEU"] = "de",
-            ["ENG"] = "en-UK",
+            ["ENG"] = "en-GB",
             ["ENU"] = "en-US",
         };
 
