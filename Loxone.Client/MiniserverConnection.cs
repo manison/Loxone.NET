@@ -117,6 +117,14 @@ namespace Loxone.Client
 
         private Timer _keepAliveTimer;
 
+        public EventHandler<ValueStateEventArgs> ValueStateChanged;
+
+        protected void OnValueStateChanged(ValueStateEventArgs e)
+        {
+            Contract.Requires(e != null);
+            ValueStateChanged?.Invoke(this, e);
+        }
+
         public MiniserverConnection()
         {
             _miniserverInfo = new MiniserverLimitedInfo();
@@ -340,6 +348,9 @@ namespace Loxone.Client
                 // May be already disposing on another thread.
                 if (Interlocked.Exchange(ref _state, (int)State.Disposing) != (int)State.Disposing)
                 {
+                    // Disconnect event handlers.
+                    ValueStateChanged = null;
+
                     if (disposing)
                     {
                         _keepAliveTimer?.Dispose();
