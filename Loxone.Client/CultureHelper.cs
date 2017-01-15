@@ -51,9 +51,8 @@ namespace Loxone.Client
         public static CultureInfo GetCultureByThreeLetterWindowsLanguageName(string languageName)
         {
             CultureInfo culture = null;
-            string name;
 
-            if (_threeLetterWindowsNameMappings.TryGetValue(languageName, out name))
+            if (_threeLetterWindowsNameMappings.TryGetValue(languageName, out string name))
             {
                 culture = new CultureInfo(name);
             }
