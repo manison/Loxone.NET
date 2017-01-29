@@ -8,7 +8,7 @@ Loxone.NET is a very early developer preview and is not suitable for general usa
 See *Loxone.Client.Samples.Console* project for example how to connect to Loxone Miniserver.
 
 ## Build Prerequisites
-- Visual Studio 2017 RC2
+- Visual Studio 2017 RC3
 - .NET Core 1.1 SDK
 
 ## Supported Runtimes
