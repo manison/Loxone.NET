@@ -78,12 +78,12 @@ namespace Loxone.Client
                 return 1;
             }
 
-            if (!(obj is Uuid))
+            if (!(obj is Uuid other))
             {
                 throw new ArgumentException(Strings.Uuid_ArgMustBeUuid, nameof(obj));
             }
 
-            return _uuid.CompareTo(((Uuid)obj)._uuid);
+            return _uuid.CompareTo(other._uuid);
         }
 
         public int CompareTo(Uuid other)
@@ -98,12 +98,12 @@ namespace Loxone.Client
 
         public override bool Equals(object obj)
         {
-            if (obj == null || !(obj is Uuid))
+            if (obj == null || !(obj is Uuid other))
             {
                 return false;
             }
 
-            return _uuid.Equals(((Uuid)obj)._uuid);
+            return _uuid.Equals(other._uuid);
         }
 
         public override int GetHashCode()
