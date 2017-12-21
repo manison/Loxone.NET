@@ -11,6 +11,7 @@
 namespace Loxone.Client.Samples.Console
 {
     using System;
+    using System.Collections.Generic;
     using System.IO;
     using System.Net;
     using System.Threading;
@@ -18,10 +19,19 @@ namespace Loxone.Client.Samples.Console
 
     class Program
     {
-        private const string _miniserverAddress = "http://testminiserver.loxone.com:7778/";
+        //Login doesn't work anymore!
+        //Due to Loxone this is locked!
+        private static string _miniserverAddress = "http://testminiserver.loxone.com:7778/";
 
         static async Task MainAsync(string[] args)
         {
+            List<string> searchAdresses = await LoxoneMiniserverFinder.SearchForDevices();
+            if (searchAdresses != null && searchAdresses.Count > 0)
+            {
+                _miniserverAddress = searchAdresses[0];
+                Console.WriteLine("Discovered Miniserver at: " + _miniserverAddress);
+            }
+
             using (var connection = new MiniserverConnection(new Uri(_miniserverAddress)))
             {
                 // Specify Miniserver username and password.
