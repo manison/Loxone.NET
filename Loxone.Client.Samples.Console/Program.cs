@@ -32,43 +32,44 @@ namespace Loxone.Client.Samples.Console
                 Console.WriteLine("Discovered Miniserver at: " + _miniserverAddress);
             }
 
-            using (var connection = new MiniserverConnection(new Uri(_miniserverAddress)))
+            var connection = new MiniserverConnection(new Uri(_miniserverAddress));
+
+            // Specify Miniserver username and password.
+            connection.Credentials = new NetworkCredential("admin", "admin");
+
+            Console.WriteLine($"Opening connection to miniserver at {connection.Address}...");
+            await connection.OpenAsync(CancellationToken.None).ConfigureAwait(false);
+
+            // Load cached structure file or download a fresh one if the local file does not exist or is outdated.
+            StructureFile structureFile = null;
+            structureFile = await StructureFile.LoadAsync("LoxAPP3.json", CancellationToken.None).ConfigureAwait(false);
+            var lastModified = await connection.GetStructureFileLastModifiedDateAsync(CancellationToken.None).ConfigureAwait(false);
+            if (lastModified > structureFile.LastModified)
             {
-                // Specify Miniserver username and password.
-                connection.Credentials = new NetworkCredential("web", "web");
-
-                Console.WriteLine($"Opening connection to miniserver at {connection.Address}...");
-                await connection.OpenAsync(CancellationToken.None).ConfigureAwait(false);
-
-                // Load cached structure file or download a fresh one if the local file does not exist or is outdated.
-                StructureFile structureFile = null;
-                if (File.Exists("LoxAPP3.json"))
-                {
-                    structureFile = await StructureFile.LoadAsync("LoxAPP3.json", CancellationToken.None).ConfigureAwait(false);
-                    var lastModified = await connection.GetStructureFileLastModifiedDateAsync(CancellationToken.None).ConfigureAwait(false);
-                    if (lastModified > structureFile.LastModified)
-                    {
-                        // Structure file cached locally is outdated, throw it away.
-                        structureFile = null;
-                    }
-                }
-
-                if (structureFile == null)
-                {
-                    // The structure file either did not exist on disk or was outdated. Download a fresh copy from
-                    // miniserver right now.
-                    Console.WriteLine("Downloading structure file...");
-                    structureFile = await connection.DownloadStructureFileAsync(CancellationToken.None).ConfigureAwait(false);
-
-                    // Save it locally on disk.
-                    await structureFile.SaveAsync("LoxAPP3.json", CancellationToken.None).ConfigureAwait(false);
-                }
-
-                Console.WriteLine($"Structure file loaded, culture {structureFile.Localization.Culture}.");
-
-                Console.WriteLine("Enabling status updates...");
-                await connection.EnableStatusUpdatesAsync(CancellationToken.None).ConfigureAwait(false);
+                // Structure file cached locally is outdated, throw it away.
+                structureFile = null;
             }
+
+            if (structureFile == null)
+            {
+                // The structure file either did not exist on disk or was outdated. Download a fresh copy from
+                // miniserver right now.
+                Console.WriteLine("Downloading structure file...");
+                structureFile = await connection.DownloadStructureFileAsync(CancellationToken.None).ConfigureAwait(false);
+
+                // Save it locally on disk.
+                await structureFile.SaveAsync("LoxAPP3.json", CancellationToken.None).ConfigureAwait(false);
+            }
+
+            Console.WriteLine($"Structure file loaded, culture {structureFile.Localization.Culture}.");
+
+
+            Console.WriteLine("Enabling status updates...");
+            await connection.EnableStatusUpdatesAsync(CancellationToken.None).ConfigureAwait(false);
+            Thread.Sleep(500);
+            await connection.EnableStatusUpdatesAsync(CancellationToken.None).ConfigureAwait(false);
+
+            Thread.Sleep(Timeout.Infinite);
         }
 
         private static void StructureFileRoundTrip()

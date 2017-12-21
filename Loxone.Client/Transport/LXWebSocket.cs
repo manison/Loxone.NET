@@ -86,7 +86,7 @@ namespace Loxone.Client.Transport
                 }
                 catch
                 {
-                    quit = true;
+                    //quit = true;
                 }
             }
         }
@@ -123,7 +123,8 @@ namespace Loxone.Client.Transport
                     return true;
 
                 case MessageIdentifier.TextStates:
-                    break;
+                    await HandleTextStatesAsync(header.Length, cancellationToken).ConfigureAwait(false);
+                    return true;
 
                 case MessageIdentifier.DayTimerStates:
                     break;
@@ -153,8 +154,10 @@ namespace Loxone.Client.Transport
                     await ReceiveAtomicAsync(buffer, false, cancellationToken).ConfigureAwait(false);
                     var uuid = new Uuid(new ArraySegment<byte>(buffer.Array, 0, 16));
                     double value = BitConverter.ToDouble(buffer.Array, 16);
-                    states.Add(new ValueState(uuid, value));
+                    ValueState state = new ValueState(uuid, value);
+                    states.Add(state);
                     length -= 24;
+                    Console.WriteLine("ValueState: " + state.ToString());
                 }
             }
 
@@ -164,6 +167,41 @@ namespace Loxone.Client.Transport
                 await SkipBytesAsync(length, cancellationToken).ConfigureAwait(false);
             }
         }
+
+        private async Task HandleTextStatesAsync(int length, CancellationToken cancellationToken)
+        {
+            int offset = 0;
+
+            var buffer = new ArraySegment<byte>(new byte[length]);
+            await ReceiveAtomicAsync(buffer, false, cancellationToken).ConfigureAwait(false);
+            var states = new List<TextState>();
+
+            while (length > 0)
+            {
+
+                var uuid = new Uuid(new ArraySegment<byte>(buffer.Array, offset, offset + 16));
+                offset += 16;
+
+                var uuidIcon = new Uuid(new ArraySegment<byte>(buffer.Array, offset, offset + 16));
+                offset += 16;
+
+                int textLength = (int)BitConverter.ToUInt32(buffer.Array, offset);
+                offset += 4;
+
+                string text = Encoding.UTF8.GetString(buffer.Array, offset, textLength);
+
+
+                int newOffset = 36 + (textLength % 4 > 0 ? textLength + 4 - (textLength % 4) : textLength);
+                offset += newOffset;
+
+                length -= offset;
+
+                TextState state = new TextState(uuid, uuidIcon, textLength, text);
+                states.Add(state);
+                Console.WriteLine("TextState: " + state.ToString());
+            }
+        }
+
 
         private async Task SkipBytesAsync(int numberOfBytesToReadOut, CancellationToken cancellationToken)
         {
