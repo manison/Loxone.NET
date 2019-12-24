@@ -39,11 +39,9 @@ namespace Loxone.Client.Transport
             this._statusCode = statusCode;
         }
 
-#if NETFX
         protected MiniserverCommandException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
         }
-#endif
     }
 }

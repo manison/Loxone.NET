@@ -22,10 +22,8 @@ namespace Loxone.Client
 
         public string Name => _innerCategory.Name;
 
-#if NETFX
         // There should be support for Color type in .NET Standard 1.7
         public Color Color => _innerCategory.Color;
-#endif
 
         internal Category(Transport.Category category)
         {

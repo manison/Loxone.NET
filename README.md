@@ -8,12 +8,11 @@ Loxone.NET is a very early developer preview and is not suitable for general usa
 See *Loxone.Client.Samples.Console* project for example how to connect to Loxone Miniserver.
 
 ## Build Prerequisites
-- Visual Studio 2017 RC3
-- .NET Core 1.1 SDK
+- Visual Studio 2019
+- .NET Core 3.1 SDK
 
 ## Supported Runtimes
-- .NET Framework 4.6.2
-- .NET Core 1.1 Runtime
+- [.NET Standard 2.0](https://docs.microsoft.com/en-us/dotnet/standard/net-standard#net-implementation-support)
 
 ## License
 Loxone.NET is licensed under the [MIT license](LICENSE.txt).

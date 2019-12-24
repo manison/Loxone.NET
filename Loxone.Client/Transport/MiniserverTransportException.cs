@@ -31,11 +31,9 @@ namespace Loxone.Client.Transport
         {
         }
 
-#if NETFX
         protected MiniserverTransportException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
         }
-#endif
     }
 }

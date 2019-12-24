@@ -34,11 +34,9 @@ namespace Loxone.Client.Transport
         [JsonProperty("defaultRating")]
         public int DefaultRating;
 
-#if NETFX
         // There should be support for Color type in .NET Standard 1.7
         [JsonProperty("color")]
         public Color Color;
-#endif
 
         [JsonExtensionData]
         public IDictionary<string, JToken> ExtensionData;

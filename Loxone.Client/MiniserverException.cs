@@ -30,11 +30,9 @@ namespace Loxone.Client
         {
         }
 
-#if NETFX
         protected MiniserverException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
         }
-#endif
     }
 }

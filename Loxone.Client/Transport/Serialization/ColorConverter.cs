@@ -15,7 +15,6 @@ namespace Loxone.Client.Transport.Serialization
     using System.Globalization;
     using Newtonsoft.Json;
 
-#if NETFX
     // There should be support for Color type in .NET Standard 1.7
     internal sealed class ColorConverter : JsonConverter
     {
@@ -45,5 +44,4 @@ namespace Loxone.Client.Transport.Serialization
                 ));
         }
     }
-#endif
 }

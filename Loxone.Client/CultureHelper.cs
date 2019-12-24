@@ -11,13 +11,11 @@
 namespace Loxone.Client
 {
     using System;
-    using System.Collections.Generic;
     using System.Globalization;
     using System.Linq;
 
     internal static class CultureHelper
     {
-#if NETFX
         public static CultureInfo GetCultureByThreeLetterWindowsLanguageName(string languageName)
         {
             var all = CultureInfo.GetCultures(CultureTypes.AllCultures);
@@ -39,26 +37,5 @@ namespace Loxone.Client
 
             return culture;
         }
-#else
-        private static IDictionary<string, string> _threeLetterWindowsNameMappings = new Dictionary<string, string>()
-        {
-            ["CSY"] = "cs-CZ",
-            ["DEU"] = "de",
-            ["ENG"] = "en-GB",
-            ["ENU"] = "en-US",
-        };
-
-        public static CultureInfo GetCultureByThreeLetterWindowsLanguageName(string languageName)
-        {
-            CultureInfo culture = null;
-
-            if (_threeLetterWindowsNameMappings.TryGetValue(languageName, out string name))
-            {
-                culture = new CultureInfo(name);
-            }
-
-            return culture;
-        }
-#endif
     }
 }
