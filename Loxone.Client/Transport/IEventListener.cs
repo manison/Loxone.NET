@@ -1,5 +1,5 @@
 // ----------------------------------------------------------------------
-// <copyright file="ICommandHandler.cs">
+// <copyright file="IEventListener.cs">
 //     Copyright (c) The Loxone.NET Authors.  All rights reserved.
 // </copyright>
 // <license>
@@ -10,17 +10,10 @@
 
 namespace Loxone.Client.Transport
 {
-    using System.Threading;
-    using System.Threading.Tasks;
+    using System.Collections.Generic;
 
-    internal interface ICommandHandler
+    internal interface IEventListener
     {
-        IRequestEncoder Encoder { get; }
-
-        IResponseDecoder Decoder { get; }
-
-        bool CanHandleMessage(MessageIdentifier identifier);
-
-        Task HandleMessageAsync(MessageHeader header, LXWebSocket socket, CancellationToken cancellationToken);
+        void OnValueStateChanged(IReadOnlyList<ValueState> values);
     }
 }

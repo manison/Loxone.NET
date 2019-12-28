@@ -1,5 +1,5 @@
 ﻿// ----------------------------------------------------------------------
-// <copyright file="Api.cs">
+// <copyright file="GetKey2.cs">
 //     Copyright (c) The Loxone.NET Authors.  All rights reserved.
 // </copyright>
 // <license>
@@ -8,23 +8,25 @@
 // </license>
 // ----------------------------------------------------------------------
 
-namespace Loxone.Client.Transport
+namespace Loxone.Client.Transport.Serialization.Responses
 {
-    using System;
     using Newtonsoft.Json;
 
-    internal sealed class Api
+    internal sealed class GetKey2
     {
         // Suppress 'Field is never assigned to, and will always have its
         // default value' warning.
         // Justification: Fields are set during deserialization.
         #pragma warning disable CS0649
 
-        [JsonProperty("snr")]
-        public SerialNumber SerialNumber;
+        [JsonProperty("key")]
+        public string Key;
 
-        [JsonProperty("version")]
-        public Version Version;
+        [JsonProperty("salt")]
+        public string Salt;
+
+        [JsonProperty("hashAlg")]
+        public string HashAlgorithm;
 
         #pragma warning restore CS0649
     }

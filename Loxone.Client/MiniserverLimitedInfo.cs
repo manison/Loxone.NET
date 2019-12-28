@@ -22,7 +22,7 @@ namespace Loxone.Client
 
         public Version FirmwareVersion => _firmwareVersion;
 
-        internal void Update(Transport.Api api)
+        internal void Update(Transport.Serialization.Responses.Api api)
         {
             _serialNumber = api.SerialNumber;
             _firmwareVersion = api.Version;

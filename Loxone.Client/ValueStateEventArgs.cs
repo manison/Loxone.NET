@@ -1,4 +1,4 @@
-﻿// ----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 // <copyright file="ValueStateEventArgs.cs">
 //     Copyright (c) The Loxone.NET Authors.  All rights reserved.
 // </copyright>
@@ -16,11 +16,11 @@ namespace Loxone.Client
 
     public sealed class ValueStateEventArgs : EventArgs
     {
-        private IReadOnlyCollection<ValueState> _valueStates;
+        private IReadOnlyList<ValueState> _valueStates;
 
-        public IReadOnlyCollection<ValueState> ValueStates => _valueStates;
+        public IReadOnlyList<ValueState> ValueStates => _valueStates;
 
-        public ValueStateEventArgs(IReadOnlyCollection<ValueState> valueStates)
+        public ValueStateEventArgs(IReadOnlyList<ValueState> valueStates)
         {
             Contract.Requires(valueStates != null);
             this._valueStates = valueStates;

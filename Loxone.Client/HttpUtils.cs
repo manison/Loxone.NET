@@ -1,4 +1,4 @@
-﻿// ----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 // <copyright file="HttpUtils.cs">
 //     Copyright (c) The Loxone.NET Authors.  All rights reserved.
 // </copyright>
@@ -12,7 +12,6 @@ namespace Loxone.Client
 {
     using System;
     using System.Diagnostics.Contracts;
-    using System.Net;
     using System.Net.Http.Headers;
 
     internal static class HttpUtils
@@ -40,6 +39,22 @@ namespace Loxone.Client
 
             return string.Equals(WebSocketScheme, uri.Scheme, StringComparison.OrdinalIgnoreCase);
         }
+
+        private static Uri ChangeScheme(Uri uri, string scheme)
+        {
+            Contract.Requires(uri != null);
+
+            if (!String.Equals(uri.Scheme, scheme, StringComparison.OrdinalIgnoreCase))
+            {
+                uri = new UriBuilder(uri) { Scheme = scheme }.Uri;
+            }
+
+            return uri;
+        }
+
+        public static Uri MakeWebSocketUri(Uri uri) => ChangeScheme(uri, WebSocketScheme);
+
+        public static Uri MakeHttpUri(Uri uri) => ChangeScheme(uri, HttpScheme);
 
         public static bool IsJsonMediaType(MediaTypeHeaderValue mediaType)
         {

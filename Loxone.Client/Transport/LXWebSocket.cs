@@ -1,4 +1,4 @@
-﻿// ----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 // <copyright file="LXWebSocket.cs">
 //     Copyright (c) The Loxone.NET Authors.  All rights reserved.
 // </copyright>
@@ -13,51 +13,52 @@ namespace Loxone.Client.Transport
     using System;
     using System.Collections.Generic;
     using System.Diagnostics.Contracts;
-    using System.Net;
     using System.Net.WebSockets;
-    using System.Security.Cryptography;
     using System.Text;
     using System.Threading;
     using System.Threading.Tasks;
 
-    internal sealed class LXWebSocket : IDisposable
+    internal sealed class LXWebSocket : LXClient
     {
-        private Uri _baseUri;
-
         private ClientWebSocket _webSocket;
-
-        internal static readonly Encoding Encoding = Encoding.UTF8;
-
-        private HMACSHA1 _hmac;
-
-        private NetworkCredential _credentials;
 
         private CancellationTokenSource _receiveLoopCancellation;
 
         private ICommandHandler _pendingCommand;
 
-        public LXWebSocket(Uri baseUri, NetworkCredential credentials)
-        {
-            Contract.Requires(baseUri != null);
-            Contract.Requires(HttpUtils.IsWebSocketUri(baseUri));
-            Contract.Requires(string.IsNullOrEmpty(baseUri.PathAndQuery));
-            Contract.Requires(credentials != null);
+        private LXHttpClient _httpClient;
 
-            this._baseUri = baseUri;
-            this._credentials = credentials;
+        private readonly IEncryptorProvider _encryptorProvider;
+
+        private readonly IEventListener _eventListener;
+
+        protected internal override LXClient HttpClient
+        {
+            get
+            {
+                if (_httpClient == null)
+                {
+                    _httpClient = new LXHttpClient(HttpUtils.MakeHttpUri(BaseUri));
+                }
+                return _httpClient;
+            }
         }
 
-        public async Task OpenAsync(CancellationToken cancellationToken)
+        public LXWebSocket(Uri baseUri, IEncryptorProvider encryptorProvider, IEventListener eventListener) : base(baseUri)
+        {
+            Contract.Requires(HttpUtils.IsWebSocketUri(baseUri));
+            this._encryptorProvider = encryptorProvider;
+            this._eventListener = eventListener;
+        }
+
+        protected override async Task OpenInternalAsync(CancellationToken cancellationToken)
         {
             Contract.Requires(_webSocket == null);
 
             _webSocket = new ClientWebSocket();
-            await _webSocket.ConnectAsync(new UriBuilder(_baseUri) { Path = "ws/rfc6455" }.Uri, cancellationToken).ConfigureAwait(false);
+            await _webSocket.ConnectAsync(new UriBuilder(BaseUri) { Path = "ws/rfc6455" }.Uri, cancellationToken).ConfigureAwait(false);
 
             StartReceiveLoop();
-
-            await ObtainKeyAsync(cancellationToken).ConfigureAwait(false);
-            await AuthenticateAsync(cancellationToken).ConfigureAwait(false);
         }
 
         public void StartReceiveLoop()
@@ -156,6 +157,8 @@ namespace Loxone.Client.Transport
                     states.Add(new ValueState(uuid, value));
                     length -= 24;
                 }
+
+                _eventListener.OnValueStateChanged(states);
             }
 
             if (length > 0)
@@ -243,67 +246,12 @@ namespace Loxone.Client.Transport
             return s;
         }
 
-        [Flags]
-        public enum RequestCommandValidation
-        {
-            None = 0,
-            Status = 1,
-            Command = 2,
-            All = Status | Command
-        }
-
-        private static bool AreCommandsEqual(string requestCommand, string responseCommand)
-        {
-            bool equals = String.Equals(requestCommand, responseCommand, StringComparison.OrdinalIgnoreCase);
-
-            // Response to 'jdev' may actually be 'dev' instead.
-            if (!equals &&
-                requestCommand.StartsWith("jdev/", StringComparison.OrdinalIgnoreCase) &&
-                responseCommand.StartsWith("dev/", StringComparison.OrdinalIgnoreCase))
-            {
-                equals = String.Equals(requestCommand.Substring(5), responseCommand.Substring(4), StringComparison.OrdinalIgnoreCase);
-            }
-
-            return equals;
-        }
-
-        public async Task<LXResponse<T>> RequestCommandAsync<T>(string command, RequestCommandValidation validation, CancellationToken cancellationToken)
+        protected override async Task<LXResponse<T>> RequestCommandInternalAsync<T>(string command, CommandEncryption encryption, CancellationToken cancellationToken)
         {
             var handler = new LXResponseCommandHandler<T>();
+            ApplyEncryption(handler, encryption);
             await EnqueueCommandAsync(command, handler, cancellationToken).ConfigureAwait(false);
-            var response = await handler.Task.ConfigureAwait(false);
-
-            if ((validation & RequestCommandValidation.Command) != 0 && !AreCommandsEqual(command, response.Control))
-            {
-                throw new MiniserverTransportException();
-            }
-
-            if ((validation & RequestCommandValidation.Status) != 0 && !LXStatusCode.IsSuccess(response.Code))
-            {
-                throw new MiniserverCommandException(response.Code);
-            }
-
-            return response;
-        }
-
-        public Task<LXResponse<T>> RequestCommandAsync<T>(string command, CancellationToken cancellationToken)
-        {
-            return RequestCommandAsync<T>(command, RequestCommandValidation.All, cancellationToken);
-        }
-
-        private async Task ObtainKeyAsync(CancellationToken cancellationToken)
-        {
-            var response = await RequestCommandAsync<string>("jdev/sys/getkey", cancellationToken).ConfigureAwait(false);
-            var key = HexConverter.FromString(response.Value);
-            _hmac = new HMACSHA1(key);
-        }
-
-        private async Task AuthenticateAsync(CancellationToken cancellationToken)
-        {
-            string credentials = string.Concat(_credentials.UserName, ":", _credentials.Password);
-            var hash = _hmac.ComputeHash(Encoding.GetBytes(credentials));
-            string request = "authenticate/" + HexConverter.FromByteArray(hash);
-            var response = await RequestCommandAsync<string>(request, cancellationToken).ConfigureAwait(false);
+            return await handler.Task.ConfigureAwait(false);
         }
 
         private async Task EnqueueCommandAsync(string command, ICommandHandler handler, CancellationToken cancellationToken)
@@ -314,19 +262,40 @@ namespace Loxone.Client.Transport
                 throw new InvalidOperationException();
             }
 
+            if (handler.Encoder != null)
+            {
+                command = handler.Encoder.EncodeCommand(command);
+            }
+
             await SendStringAsync(command, cancellationToken).ConfigureAwait(false);
         }
 
-        public void Dispose()
+        private void ApplyEncryption<T>(LXResponseCommandHandler<T> handler, CommandEncryption encryption)
         {
-            if (_receiveLoopCancellation != null)
+            Encryptor encryptor = _encryptorProvider.GetEncryptor(encryption);
+            if (encryption != CommandEncryption.Request)
             {
-                _receiveLoopCancellation.Cancel();
-                _receiveLoopCancellation.Dispose();
+                handler.Encoder = encryptor;
+                if (encryption == CommandEncryption.RequestAndResponse)
+                {
+                    handler.Decoder = encryptor;
+                }
             }
+        }
 
-            _webSocket?.Dispose();
-            _hmac?.Dispose();
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (_receiveLoopCancellation != null)
+                {
+                    _receiveLoopCancellation.Cancel();
+                    _receiveLoopCancellation.Dispose();
+                }
+
+                _httpClient?.Dispose();
+                _webSocket?.Dispose();
+            }
         }
     }
 }

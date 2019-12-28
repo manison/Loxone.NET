@@ -1,5 +1,5 @@
 // ----------------------------------------------------------------------
-// <copyright file="ICommandHandler.cs">
+// <copyright file="IEncryptorProvider.cs">
 //     Copyright (c) The Loxone.NET Authors.  All rights reserved.
 // </copyright>
 // <license>
@@ -10,17 +10,8 @@
 
 namespace Loxone.Client.Transport
 {
-    using System.Threading;
-    using System.Threading.Tasks;
-
-    internal interface ICommandHandler
+    internal interface IEncryptorProvider
     {
-        IRequestEncoder Encoder { get; }
-
-        IResponseDecoder Decoder { get; }
-
-        bool CanHandleMessage(MessageIdentifier identifier);
-
-        Task HandleMessageAsync(MessageHeader header, LXWebSocket socket, CancellationToken cancellationToken);
+        Encryptor GetEncryptor(CommandEncryption mode);
     }
 }

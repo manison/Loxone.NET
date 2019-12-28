@@ -1,4 +1,4 @@
-﻿// ----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 // <copyright file="HexConverter.cs">
 //     Copyright (c) The Loxone.NET Authors.  All rights reserved.
 // </copyright>
@@ -8,30 +8,49 @@
 // </license>
 // ----------------------------------------------------------------------
 
-namespace Loxone.Client
+namespace Loxone.Client.Transport
 {
     using System;
     using System.Diagnostics.Contracts;
-    using System.Globalization;
     using System.Linq;
-    using System.Text;
 
     /// <summary>
     /// Converts string of hexadecimal digits into the byte array and vice versa.
     /// </summary>
     internal static class HexConverter
     {
+        private static char GetHexValue(int i)
+        {
+            if (i < 10)
+            {
+                return (char)(i + '0');
+            }
+
+            return (char)(i - 10 + 'A');
+        }
+
+        public static void FromByteArray(char[] dest, int offset, byte[] source)
+        {
+            Contract.Requires(source != null);
+            Contract.Requires(dest != null);
+            Contract.Requires(offset >= 0 && offset < dest.Length);
+
+            for (int i = 0; i < source.Length; i++)
+            {
+                byte b = source[i];
+                dest[i * 2 + offset + 0] = GetHexValue(b / 16);
+                dest[i * 2 + offset + 1] = GetHexValue(b % 16);
+            }
+        }
+
         public static string FromByteArray(byte[] bytes)
         {
             Contract.Requires(bytes != null);
 
-            var s = new StringBuilder(bytes.Length * 2);
-            for (int i = 0; i < bytes.Length; i++)
-            {
-                s.Append(bytes[i].ToString("X2", CultureInfo.InvariantCulture));
-            }
+            char[] chars = new char[bytes.Length * 2];
+            FromByteArray(chars, 0, bytes);
 
-            return s.ToString();
+            return new string(chars);
         }
 
         public static byte[] FromString(string s, params char[] allowedSeparators)

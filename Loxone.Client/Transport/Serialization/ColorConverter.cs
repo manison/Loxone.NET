@@ -1,4 +1,4 @@
-﻿// ----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 // <copyright file="ColorConverter.cs">
 //     Copyright (c) The Loxone.NET Authors.  All rights reserved.
 // </copyright>
@@ -15,7 +15,6 @@ namespace Loxone.Client.Transport.Serialization
     using System.Globalization;
     using Newtonsoft.Json;
 
-    // There should be support for Color type in .NET Standard 1.7
     internal sealed class ColorConverter : JsonConverter
     {
         public override bool CanConvert(Type objectType) => objectType == typeof(Color);

@@ -1,4 +1,4 @@
-﻿// ----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 // <copyright file="LXResponseCommandHandler.cs">
 //     Copyright (c) The Loxone.NET Authors.  All rights reserved.
 // </copyright>
@@ -23,6 +23,12 @@ namespace Loxone.Client.Transport
             var content = new byte[header.Length];
             await socket.ReceiveAtomicAsync(new ArraySegment<byte>(content), true, cancellationToken).ConfigureAwait(false);
             var s = LXWebSocket.Encoding.GetString(content);
+
+            if (Decoder != null)
+            {
+                s = Decoder.DecodeCommand(s);
+            }
+
             var response = LXResponse<T>.Deserialize(s);
             base.TrySetResult(response);
         }

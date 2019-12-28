@@ -1,4 +1,4 @@
-﻿// ----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 // <copyright file="MiniserverConnection.cs">
 //     Copyright (c) The Loxone.NET Authors.  All rights reserved.
 // </copyright>
@@ -14,15 +14,13 @@ namespace Loxone.Client
     using System.Diagnostics.Contracts;
     using System.Globalization;
     using System.Net;
-    using System.Net.Http;
-    using System.Net.Http.Headers;
     using System.Threading;
     using System.Threading.Tasks;
 
     /// <summary>
     /// Encapsulates connection to the Loxone Miniserver.
     /// </summary>
-    public class MiniserverConnection : IDisposable
+    public class MiniserverConnection : IDisposable, Transport.IEncryptorProvider, Transport.IEventListener
     {
         private enum State
         {
@@ -39,22 +37,13 @@ namespace Loxone.Client
 
         private MiniserverLimitedInfo _miniserverInfo;
 
-        public MiniserverLimitedInfo MiniserverInfo
-        {
-            get
-            {
-                return _miniserverInfo;
-            }
-        }
+        public MiniserverLimitedInfo MiniserverInfo => _miniserverInfo;
 
         private Uri _baseUri;
 
         public Uri Address
         {
-            get
-            {
-                return _baseUri;
-            }
+            get => _baseUri;
             set
             {
                 Contract.Requires(value == null || HttpUtils.IsHttpUri(value));
@@ -76,14 +65,13 @@ namespace Loxone.Client
 
         private Transport.LXWebSocket _webSocket;
 
+        private Transport.Session _session;
+
         private ICredentials _credentials;
 
         public ICredentials Credentials
         {
-            get
-            {
-                return _credentials;
-            }
+            get => _credentials;
             set
             {
                 CheckDisposed();
@@ -92,6 +80,26 @@ namespace Loxone.Client
                 _credentials = value;
             }
         }
+
+        private MiniserverAuthenticationMethod _authenticationMethod;
+
+        public MiniserverAuthenticationMethod AuthenticationMethod
+        {
+            get => _authenticationMethod;
+            set
+            {
+                CheckDisposed();
+                CheckState(State.Constructed);
+
+                _authenticationMethod = value;
+            }
+        }
+
+        private static readonly Version _tokenAuthenticationThresholdVersion = new Version(9, 0);
+
+        private Transport.Authenticator _authenticator;
+
+        private CommandEncryption _defaultEncryption = CommandEncryption.None;
 
         // According to the documentation the Miniserver will close the connection if the
         // client doesn't send anything for more than 5 minutes.
@@ -117,7 +125,10 @@ namespace Loxone.Client
 
         private Timer _keepAliveTimer;
 
-        public EventHandler<ValueStateEventArgs> ValueStateChanged;
+        private Transport.Encryptor _requestOnlyEncryptor;
+        private Transport.Encryptor _requestAndResponseEncryptor;
+
+        public event EventHandler<ValueStateEventArgs> ValueStateChanged;
 
         protected void OnValueStateChanged(ValueStateEventArgs e)
         {
@@ -192,8 +203,12 @@ namespace Loxone.Client
 
             try
             {
+                _webSocket = new Transport.LXWebSocket(HttpUtils.MakeWebSocketUri(_baseUri), this, this);
+                _session = new Transport.Session(_webSocket);
                 await CheckMiniserverReachableAsync(cancellationToken).ConfigureAwait(false);
                 await OpenWebSocketAsync(cancellationToken).ConfigureAwait(false);
+                _authenticator = CreateAuthenticator();
+                await _authenticator.AuthenticateAsync(cancellationToken).ConfigureAwait(false);
                 ChangeState(State.Open);
             }
             catch
@@ -219,14 +234,14 @@ namespace Loxone.Client
         public async Task<DateTime> GetStructureFileLastModifiedDateAsync(CancellationToken cancellationToken)
         {
             CheckBeforeOperation();
-            var response = await _webSocket.RequestCommandAsync<DateTime>("jdev/sps/LoxAPPversion3", cancellationToken).ConfigureAwait(false);
+            var response = await _webSocket.RequestCommandAsync<DateTime>("jdev/sps/LoxAPPversion3", _defaultEncryption, cancellationToken).ConfigureAwait(false);
             return DateTime.SpecifyKind(response.Value, DateTimeKind.Local);
         }
 
         public async Task EnableStatusUpdatesAsync(CancellationToken cancellationToken)
         {
             CheckBeforeOperation();
-            var response = await _webSocket.RequestCommandAsync<string>("jdev/sps/enablebinstatusupdate", cancellationToken).ConfigureAwait(false);
+            var response = await _webSocket.RequestCommandAsync<string>("jdev/sps/enablebinstatusupdate", _defaultEncryption, cancellationToken).ConfigureAwait(false);
         }
 
         private void CheckBeforeOpen()
@@ -246,41 +261,54 @@ namespace Loxone.Client
 
         private async Task CheckMiniserverReachableAsync(CancellationToken cancellationToken)
         {
-            using (var httpClient = new HttpClient())
-            {
-                httpClient.BaseAddress = _baseUri;
-                httpClient.DefaultRequestHeaders.Accept.Clear();
-                httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(HttpUtils.JsonMediaType));
-                using (var response = await httpClient.GetAsync("jdev/cfg/api", HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false))
-                {
-                    if (response.IsSuccessStatusCode && HttpUtils.IsJsonMediaType(response.Content.Headers.ContentType))
-                    {
-                        string contentStr = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                        var lxResponse = Transport.LXResponse<Transport.Api>.Deserialize(contentStr);
-                        if (Transport.LXStatusCode.IsSuccess(lxResponse.Code))
-                        {
-                            _miniserverInfo.Update(lxResponse.Value);
-                        }
-                    }
-                }
-            }
+            var api = await _webSocket.CheckMiniserverReachableAsync(cancellationToken).ConfigureAwait(false);
+            _miniserverInfo.Update(api);
         }
 
         private async Task OpenWebSocketAsync(CancellationToken cancellationToken)
         {
-            var uri = new UriBuilder(_baseUri);
-            uri.Scheme = HttpUtils.WebSocketScheme;
+            await _webSocket.OpenAsync(cancellationToken).ConfigureAwait(false);
+            StartKeepAliveTimer();
+        }
 
-            var credentials = _credentials.GetCredential(uri.Uri, HttpUtils.BasicAuthenticationScheme);
+        private Transport.Authenticator CreateAuthenticator()
+        {
+            var credentials = _credentials.GetCredential(_baseUri, HttpUtils.BasicAuthenticationScheme);
             if (credentials == null)
             {
                 throw new InvalidOperationException();
             }
 
-            _webSocket = new Transport.LXWebSocket(uri.Uri, credentials);
-            await _webSocket.OpenAsync(cancellationToken).ConfigureAwait(false);
+            return CreateAuthenticator(credentials);
+        }
 
-            StartKeepAliveTimer();
+        private Transport.Authenticator CreateAuthenticator(NetworkCredential credentials)
+        {
+            Contract.Requires(credentials != null);
+
+            var method = _authenticationMethod;
+
+            if (method == MiniserverAuthenticationMethod.Default)
+            {
+                if (_miniserverInfo.FirmwareVersion < _tokenAuthenticationThresholdVersion)
+                {
+                    method = MiniserverAuthenticationMethod.Password;
+                }
+                else
+                {
+                    method = MiniserverAuthenticationMethod.Token;
+                }
+            }
+
+            switch (method)
+            {
+                case MiniserverAuthenticationMethod.Password:
+                    return new Transport.PasswordAuthenticator(_session, credentials);
+                case MiniserverAuthenticationMethod.Token:
+                    return new Transport.TokenAuthenticator(_session, credentials);
+            }
+
+            throw new ArgumentOutOfRangeException(nameof(AuthenticationMethod));
         }
 
         private void CheckState(State requiredState)
@@ -331,6 +359,31 @@ namespace Loxone.Client
             }
         }
 
+        Transport.Encryptor Transport.IEncryptorProvider.GetEncryptor(CommandEncryption mode)
+        {
+            switch (mode)
+            {
+                case CommandEncryption.None:
+                    return null;
+                case CommandEncryption.Request:
+                    return LazyInitializer.EnsureInitialized(ref _requestOnlyEncryptor, () => new Transport.Encryptor(_session, CommandEncryption.Request));
+                case CommandEncryption.RequestAndResponse:
+                    return LazyInitializer.EnsureInitialized(ref _requestAndResponseEncryptor, () => new Transport.Encryptor(_session, CommandEncryption.RequestAndResponse));
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(mode));
+            }
+        }
+
+        void Transport.IEventListener.OnValueStateChanged(System.Collections.Generic.IReadOnlyList<ValueState> values)
+        {
+            var handler = ValueStateChanged;
+            if (handler != null)
+            {
+                var e = new ValueStateEventArgs(values);
+                handler(this, e);
+            }
+        }
+
         #region IDisposable Implementation
 
         protected void CheckDisposed()
@@ -354,6 +407,8 @@ namespace Loxone.Client
                     if (disposing)
                     {
                         _keepAliveTimer?.Dispose();
+                        _authenticator?.Dispose();
+                        _session?.Dispose();
                         _webSocket?.Dispose();
                     }
 

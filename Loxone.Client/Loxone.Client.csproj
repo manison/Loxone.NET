@@ -10,6 +10,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+    <PackageReference Include="DerConverter" Version="3.0.0.82" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Strings.Designer.cs">

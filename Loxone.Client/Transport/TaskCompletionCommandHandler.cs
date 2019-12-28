@@ -1,4 +1,4 @@
-﻿// ----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 // <copyright file="TaskCompletionCommandHandler.cs">
 //     Copyright (c) The Loxone.NET Authors.  All rights reserved.
 // </copyright>
@@ -10,7 +10,6 @@
 
 namespace Loxone.Client.Transport
 {
-    using System;
     using System.Threading;
     using System.Threading.Tasks;
 
@@ -19,6 +18,10 @@ namespace Loxone.Client.Transport
         private TaskCompletionSource<T> _completionSource;
 
         public Task<T> Task => _completionSource.Task;
+
+        public IRequestEncoder Encoder { get; set; }
+
+        public IResponseDecoder Decoder { get; set; }
 
         protected TaskCompletionCommandHandler()
         {

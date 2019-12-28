@@ -12,6 +12,7 @@ namespace Loxone.Client.Transport.Serialization
 {
     using System.IO;
     using Newtonsoft.Json;
+    using Loxone.Client.Transport.Serialization.Responses;
 
     internal static class SerializationHelper
     {
@@ -27,7 +28,7 @@ namespace Loxone.Client.Transport.Serialization
         {
             var serializer = new JsonSerializer();
             serializer.DateFormatString = "yyyy'-'MM'-'dd' 'HH':'mm':'ss";
-            
+
             for (int i = 0; i < _converters.Length; i++)
             {
                 serializer.Converters.Add(_converters[i]);

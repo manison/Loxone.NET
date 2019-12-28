@@ -1,4 +1,4 @@
-﻿// ----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 // <copyright file="SerialNumber.cs">
 //     Copyright (c) The Loxone.NET Authors.  All rights reserved.
 // </copyright>
@@ -28,13 +28,13 @@ namespace Loxone.Client
         {
             if (string.IsNullOrEmpty(s))
             {
-                return default(SerialNumber);
+                return default;
             }
 
             // Colon, dash and space can be all used as MAC address separators
             // (miniserver serial number), dot is used to separate digits in
             // 1-wire device numbers.
-            var bytes = HexConverter.FromString(s, ':', '-', ' ', '.');
+            var bytes = Transport.HexConverter.FromString(s, ':', '-', ' ', '.');
             return new SerialNumber(bytes);
         }
 
