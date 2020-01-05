@@ -30,13 +30,14 @@ namespace Loxone.Client.Transport
             var userKeyResponse = await Client.RequestCommandAsync<GetKey2>($"jdev/sys/getkey2/{Credentials.UserName}", CommandEncryption.None, cancellationToken).ConfigureAwait(false);
 
             string pwHash;
-            using (var hashAlgorithm = HashAlgorithm.Create(userKeyResponse.Value.HashAlgorithm))
+            string hashAlgorithmName = userKeyResponse.Value.HashAlgorithm ?? "SHA1";
+            using (var hashAlgorithm = HashAlgorithm.Create(hashAlgorithmName))
             {
                 pwHash = HexConverter.FromByteArray(hashAlgorithm.ComputeHash(LXClient.Encoding.GetBytes($"{Credentials.Password}:{userKeyResponse.Value.Salt}")));
             }
 
             string hash;
-            using (var hmac = HMAC.Create($"HMAC{userKeyResponse.Value.HashAlgorithm}"))
+            using (var hmac = HMAC.Create($"HMAC{hashAlgorithmName}"))
             {
                 hmac.Key = HexConverter.FromString(userKeyResponse.Value.Key);
                 hash = HexConverter.FromByteArray(hmac.ComputeHash(LXClient.Encoding.GetBytes($"{Credentials.UserName}:{pwHash}")));
