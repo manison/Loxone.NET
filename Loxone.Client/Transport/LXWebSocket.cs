@@ -124,7 +124,8 @@ namespace Loxone.Client.Transport
                     return true;
 
                 case MessageIdentifier.TextStates:
-                    break;
+                    await HandleTextStatesAsync(header.Length, cancellationToken).ConfigureAwait(false);
+                    return true;
 
                 case MessageIdentifier.DayTimerStates:
                     break;
@@ -166,6 +167,49 @@ namespace Loxone.Client.Transport
                 // Extra data beyond the last value state?
                 await SkipBytesAsync(length, cancellationToken).ConfigureAwait(false);
             }
+        }
+
+        private async Task HandleTextStatesAsync(int length, CancellationToken cancellationToken)
+        {
+            if (length >= 36)
+            {
+                var states = new List<TextState>();
+                var buffer = new ArraySegment<byte>(new byte[length]);
+                await ReceiveAtomicAsync(buffer, false, cancellationToken).ConfigureAwait(false);
+                int offset = 0;
+                while (length >= 36)
+                {
+                    int processed = ParseTextState(buffer.Array, ref offset, out var state);
+                    states.Add(state);
+                    Contract.Assert(processed <= length);
+                    length -= processed;
+                }
+
+                _eventListener.OnTextStateChanged(states);
+            }
+
+            if (length > 0)
+            {
+                // Extra data beyond the last text state?
+                await SkipBytesAsync(length, cancellationToken).ConfigureAwait(false);
+            }
+        }
+
+        private static int ParseTextState(byte[] bytes, ref int offset, out TextState state)
+        {
+            Uuid control = new Uuid(new ArraySegment<byte>(bytes, offset +  0, 16));
+            Uuid icon    = new Uuid(new ArraySegment<byte>(bytes, offset + 16, 16));
+            int  length  = BitConverter.ToInt32(           bytes, offset + 32);
+            string text = String.Empty;
+            if (length > 0)
+            {
+                text = LXClient.Encoding.GetString(        bytes, offset + 36, length);
+                length = 4 * ((length - 1) / 4 + 1);
+            }
+            state = new TextState(control, icon, text);
+            int processed = 36 + length;
+            offset += processed;
+            return processed;
         }
 
         private async Task SkipBytesAsync(int numberOfBytesToReadOut, CancellationToken cancellationToken)

@@ -15,5 +15,7 @@ namespace Loxone.Client.Transport
     internal interface IEventListener
     {
         void OnValueStateChanged(IReadOnlyList<ValueState> values);
+
+        void OnTextStateChanged(IReadOnlyList<TextState> values);
     }
 }

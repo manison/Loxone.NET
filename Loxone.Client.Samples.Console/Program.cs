@@ -17,7 +17,7 @@ namespace Loxone.Client.Samples.Console
 
     internal class Program
     {
-        private const string _miniserverAddress = "http://testminiserver.loxone.com:7779/";
+        private const string _miniserverAddress = "http://testminiserver.loxone.com:7778/";
 
         private async Task RunAsync(CancellationToken cancellationToken)
         {
@@ -28,16 +28,19 @@ namespace Loxone.Client.Samples.Console
 
                 Console.WriteLine($"Opening connection to miniserver at {connection.Address}...");
                 await connection.OpenAsync(cancellationToken);
+                Console.WriteLine($"Connected to Miniserver {connection.MiniserverInfo.SerialNumber}, FW version {connection.MiniserverInfo.FirmwareVersion}");
 
                 // Load cached structure file or download a fresh one if the local file does not exist or is outdated.
+                string structureFileName = $"LoxAPP3.{connection.MiniserverInfo.SerialNumber}.json";
                 StructureFile structureFile = null;
-                if (File.Exists("LoxAPP3.json"))
+                if (File.Exists(structureFileName))
                 {
-                    structureFile = await StructureFile.LoadAsync("LoxAPP3.json", cancellationToken);
+                    structureFile = await StructureFile.LoadAsync(structureFileName, cancellationToken);
                     var lastModified = await connection.GetStructureFileLastModifiedDateAsync(cancellationToken);
                     if (lastModified > structureFile.LastModified)
                     {
                         // Structure file cached locally is outdated, throw it away.
+                        Console.WriteLine("Cached structure file is outdated.");
                         structureFile = null;
                     }
                 }
@@ -50,10 +53,13 @@ namespace Loxone.Client.Samples.Console
                     structureFile = await connection.DownloadStructureFileAsync(cancellationToken);
 
                     // Save it locally on disk.
-                    await structureFile.SaveAsync("LoxAPP3.json", cancellationToken);
+                    await structureFile.SaveAsync(structureFileName, cancellationToken);
                 }
 
-                Console.WriteLine($"Structure file loaded, culture {structureFile.Localization.Culture}.");
+                Console.WriteLine($"Structure file loaded.");
+                Console.WriteLine($"  Culture: {structureFile.Localization.Culture}");
+                Console.WriteLine($"  Last modified: {structureFile.LastModified}");
+                Console.WriteLine($"  Miniserver type: {structureFile.MiniserverInfo.MiniserverType}");
 
                 connection.ValueStateChanged += (sender, e) =>
                 {
@@ -63,10 +69,18 @@ namespace Loxone.Client.Samples.Console
                     }
                 };
 
+                connection.TextStateChanged += (sender, e) =>
+                {
+                    foreach (var change in e.TextStates)
+                    {
+                        Console.WriteLine(change);
+                    }
+                };
+
                 Console.WriteLine("Enabling status updates...");
                 await connection.EnableStatusUpdatesAsync(cancellationToken);
 
-                Console.WriteLine("Status updates enabled, receiving updated. Press Ctrl+C to quit.");
+                Console.WriteLine("Status updates enabled, now receiving updates. Press Ctrl+C to quit.");
 
                 await Task.Delay(Timeout.InfiniteTimeSpan, cancellationToken).ConfigureAwait(false);
             }
@@ -88,7 +102,10 @@ namespace Loxone.Client.Samples.Console
             }
             catch (Exception ex) when (!System.Diagnostics.Debugger.IsAttached)
             {
-                Console.WriteLine(ex);
+                if (!(ex is OperationCanceledException && cancellationTokenSource.IsCancellationRequested))
+                {
+                    Console.WriteLine(ex);
+                }
             }
         }
 

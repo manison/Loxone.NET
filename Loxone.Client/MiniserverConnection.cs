@@ -136,6 +136,14 @@ namespace Loxone.Client
             ValueStateChanged?.Invoke(this, e);
         }
 
+        public event EventHandler<TextStateEventArgs> TextStateChanged;
+
+        protected void OnValueStateChanged(TextStateEventArgs e)
+        {
+            Contract.Requires(e != null);
+            TextStateChanged?.Invoke(this, e);
+        }
+
         public MiniserverConnection()
         {
             _miniserverInfo = new MiniserverLimitedInfo();
@@ -384,6 +392,16 @@ namespace Loxone.Client
             }
         }
 
+        void Transport.IEventListener.OnTextStateChanged(System.Collections.Generic.IReadOnlyList<TextState> values)
+        {
+            var handler = TextStateChanged;
+            if (handler != null)
+            {
+                var e = new TextStateEventArgs(values);
+                handler(this, e);
+            }
+        }
+
         #region IDisposable Implementation
 
         protected void CheckDisposed()
@@ -403,6 +421,7 @@ namespace Loxone.Client
                 {
                     // Disconnect event handlers.
                     ValueStateChanged = null;
+                    TextStateChanged = null;
 
                     if (disposing)
                     {
