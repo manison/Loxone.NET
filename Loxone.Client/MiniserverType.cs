@@ -1,4 +1,4 @@
-﻿// ----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 // <copyright file="MiniserverType.cs">
 //     Copyright (c) The Loxone.NET Authors.  All rights reserved.
 // </copyright>
@@ -16,13 +16,19 @@ namespace Loxone.Client
     public enum MiniserverType
     {
         /// <summary>
-        /// Regular Miniserver.
+        /// Miniserver Gen 1.
         /// </summary>
-        Regular,
+        MiniserverGen1,
 
         /// <summary>
         /// Miniserver Go.
         /// </summary>
-        Go
+        MiniserverGo,
+
+        /// <summary>
+        /// Miniserver Gen 2.
+        /// </summary>
+        /// <devdoc>Need to verify this value, Loxone documentation to structure file has not been updated yet.</devdoc>
+        MiniserverGen2,
     }
 }
