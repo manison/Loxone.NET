@@ -9,7 +9,7 @@
     <Authors>manison</Authors>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+    <PackageReference Include="System.Text.Json" Version="4.7.0" />
     <PackageReference Include="DerConverter" Version="3.0.0.82" />
   </ItemGroup>
   <ItemGroup>

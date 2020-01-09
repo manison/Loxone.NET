@@ -96,16 +96,9 @@ namespace Loxone.Client
 
         public static async Task<StructureFile> LoadAsync(Stream stream, CancellationToken cancellationToken)
         {
-            using (var reader = new StreamReader(stream))
-            {
-                return await LoadAsync(reader, cancellationToken).ConfigureAwait(false);
-            }
-        }
-
-        public static async Task<StructureFile> LoadAsync(TextReader reader, CancellationToken cancellationToken)
-        {
-            string s = await reader.ReadToEndAsync().ConfigureAwait(false);
-            return Parse(s);
+            var transportFile = await Transport.Serialization.SerializationHelper.DeserializeAsync<Transport.StructureFile>(
+                stream, cancellationToken).ConfigureAwait(false);
+            return new StructureFile(transportFile);
         }
 
         public async Task SaveAsync(string fileName, CancellationToken cancellationToken)
@@ -116,19 +109,7 @@ namespace Loxone.Client
             }
         }
 
-        public async Task SaveAsync(Stream stream, CancellationToken cancellationToken)
-        {
-            using (var writer = new StreamWriter(stream))
-            {
-                await SaveAsync(writer, cancellationToken).ConfigureAwait(false);
-            }
-        }
-
-        public Task SaveAsync(TextWriter writer, CancellationToken cancellationToken)
-        {
-            var serializer = Transport.Serialization.SerializationHelper.CreateSerializer();
-            serializer.Serialize(writer, _innerFile);
-            return Task.FromResult(0);
-        }
+        public Task SaveAsync(Stream stream, CancellationToken cancellationToken)
+            => Transport.Serialization.SerializationHelper.SerializeAsync(stream, _innerFile, cancellationToken);
     }
 }

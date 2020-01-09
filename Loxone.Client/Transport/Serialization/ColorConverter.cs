@@ -13,29 +13,28 @@ namespace Loxone.Client.Transport.Serialization
     using System;
     using System.Drawing;
     using System.Globalization;
-    using Newtonsoft.Json;
+    using System.Text.Json;
+    using System.Text.Json.Serialization;
 
-    internal sealed class ColorConverter : JsonConverter
+    internal sealed class ColorConverter : JsonConverter<Color>
     {
-        public override bool CanConvert(Type objectType) => objectType == typeof(Color);
-
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        public override Color Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            string s = reader.Value as string;
+            string s = reader.GetString();
             if (s == null || s.Length != 7 || s[0] != '#')
             {
-                throw new JsonSerializationException(Strings.ColorConverter_InvalidFormat);
+                throw new FormatException(Strings.ColorConverter_InvalidFormat);
             }
 
-            var rgb = int.Parse(s.Substring(1), NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture);
+            int rgb = Int32.Parse(s.Substring(1), NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture);
             return Color.FromArgb(rgb | unchecked((int)0xFF000000));
         }
 
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        public override void Write(Utf8JsonWriter writer, Color value, JsonSerializerOptions options)
         {
-            var rgb = ((Color)value).ToArgb();
-            writer.WriteValue(
-                string.Concat(
+            int rgb = value.ToArgb();
+            writer.WriteStringValue(
+                String.Concat(
                     "#",
                     ((rgb >> 16) & 0xFF).ToString("X2", CultureInfo.InvariantCulture),
                     ((rgb >>  8) & 0xFF).ToString("X2", CultureInfo.InvariantCulture),

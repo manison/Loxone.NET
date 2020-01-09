@@ -1,4 +1,4 @@
-﻿// ----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 // <copyright file="MiniserverInfo.cs">
 //     Copyright (c) The Loxone.NET Authors.  All rights reserved.
 // </copyright>
@@ -12,72 +12,53 @@ namespace Loxone.Client.Transport
 {
     using System;
     using System.Collections.Generic;
+    using System.Text.Json;
+    using System.Text.Json.Serialization;
     using Loxone.Client.Transport.Serialization;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
 
     internal sealed class MiniserverInfo
     {
-        // Suppress 'Field is never assigned to, and will always have its
-        // default value' warning.
-        // Justification: Fields are set during deserialization.
-        #pragma warning disable CS0649
+        [JsonPropertyName("serialNr")]
+        public SerialNumber SerialNumber { get; set; }
 
-        [JsonProperty("serialNr")]
-        public SerialNumber SerialNumber;
+        [JsonPropertyName("msName")]
+        public string MiniserverName { get; set; }
 
-        [JsonProperty("msName")]
-        public string MiniserverName;
+        public string ProjectName { get; set; }
 
-        [JsonProperty("projectName")]
-        public string ProjectName;
+        public string Location { get; set; }
 
-        [JsonProperty("location")]
-        public string Location;
-
-        [JsonProperty("heatPeriodStart")]
         [JsonConverter(typeof(TimePeriodConverter))]
-        public DateTime HeatPeriodStart;
+        public DateTime HeatPeriodStart { get; set; }
 
-        [JsonProperty("heatPeriodEnd")]
         [JsonConverter(typeof(TimePeriodConverter))]
-        public DateTime HeatPeriodEnd;
+        public DateTime HeatPeriodEnd { get; set; }
 
-        [JsonProperty("coolPeriodStart")]
         [JsonConverter(typeof(TimePeriodConverter))]
-        public DateTime CoolPeriodStart;
+        public DateTime CoolPeriodStart { get; set; }
 
-        [JsonProperty("coolPeriodEnd")]
         [JsonConverter(typeof(TimePeriodConverter))]
-        public DateTime CoolPeriodEnd;
+        public DateTime CoolPeriodEnd { get; set; }
 
-        [JsonProperty("catTitle")]
-        public string CategoryTitle;
+        [JsonPropertyName("catTitle")]
+        public string CategoryTitle { get; set; }
 
-        [JsonProperty("roomTitle")]
-        public string RoomTitle;
+        public string RoomTitle { get; set; }
 
-        [JsonProperty("miniserverType")]
-        public int MiniserverType;
+        public int MiniserverType { get; set; }
 
-        [JsonProperty("localUrl")]
-        public string LocalUrl;
+        public string LocalUrl { get; set; }
 
-        [JsonProperty("remoteUrl")]
-        public string RemoteUrl;
+        public string RemoteUrl { get; set; }
 
-        [JsonProperty("languageCode")]
-        public string LanguageCode;
+        public string LanguageCode { get; set; }
 
-        [JsonProperty("currency")]
-        public string Currency;
+        public string Currency { get; set; }
 
-        [JsonProperty("tempUnit")]
-        public int TemperatureUnit;
+        [JsonPropertyName("tempUnit")]
+        public int TemperatureUnit { get; set; }
 
         [JsonExtensionData]
-        public IDictionary<string, JToken> ExtensionData;
-
-        #pragma warning restore CS0649
+        public IDictionary<string, JsonElement> ExtensionData { get; set; }
     }
 }

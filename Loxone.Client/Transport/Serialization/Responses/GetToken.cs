@@ -11,31 +11,20 @@
 namespace Loxone.Client.Transport.Serialization.Responses
 {
     using System;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     internal sealed class GetToken
     {
-        // Suppress 'Field is never assigned to, and will always have its
-        // default value' warning.
-        // Justification: Fields are set during deserialization.
-        #pragma warning disable CS0649
+        public string Token { get; set; }
 
-        [JsonProperty("token")]
-        public string Token;
+        public string Key { get; set; }
 
-        [JsonProperty("key")]
-        public string Key;
-
-        [JsonProperty("validUntil")]
         [JsonConverter(typeof(LXDateTimeConverter))]
-        public DateTime ValidUntil;
+        public DateTime ValidUntil { get; set; }
 
-        [JsonProperty("tokenRights")]
-        public int TokenRights;
+        public int TokenRights { get; set; }
 
-        [JsonProperty("unsecurePass")]
-        public bool UnsecurePassword;
-
-        #pragma warning restore CS0649
+        [JsonPropertyName("unsecurePass")]
+        public bool UnsecurePassword { get; set; }
     }
 }

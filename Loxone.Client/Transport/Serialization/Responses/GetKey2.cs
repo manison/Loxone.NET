@@ -1,4 +1,4 @@
-﻿// ----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 // <copyright file="GetKey2.cs">
 //     Copyright (c) The Loxone.NET Authors.  All rights reserved.
 // </copyright>
@@ -10,24 +10,15 @@
 
 namespace Loxone.Client.Transport.Serialization.Responses
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     internal sealed class GetKey2
     {
-        // Suppress 'Field is never assigned to, and will always have its
-        // default value' warning.
-        // Justification: Fields are set during deserialization.
-        #pragma warning disable CS0649
+        public string Key { get; set; }
 
-        [JsonProperty("key")]
-        public string Key;
+        public string Salt { get; set; }
 
-        [JsonProperty("salt")]
-        public string Salt;
-
-        [JsonProperty("hashAlg")]
-        public string HashAlgorithm;
-
-        #pragma warning restore CS0649
+        [JsonPropertyName("hashAlg")]
+        public string HashAlgorithm { get; set; }
     }
 }

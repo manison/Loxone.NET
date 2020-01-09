@@ -11,32 +11,17 @@
 namespace Loxone.Client.Transport.Serialization
 {
     using System;
-    using Newtonsoft.Json;
+    using System.Text.Json;
+    using System.Text.Json.Serialization;
 
-    internal sealed class LXDateTimeConverter : JsonConverter
+    internal sealed class LXDateTimeConverter : JsonConverter<DateTime>
     {
         private static readonly DateTime _epochStart = new DateTime(2009, 1, 1, 0, 0, 0, DateTimeKind.Local);
 
-        public override bool CanConvert(Type objectType) => objectType == typeof(DateTime);
+        public override DateTime Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+            => FromDouble(reader.GetDouble());
 
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
-        {
-            switch (reader.Value)
-            {
-                case long l:
-                    return FromInt64(l);
-                case double d:
-                    return FromDouble(d);
-                default:
-                    throw new JsonSerializationException(Strings.LXDateTimeConverter_InvalidFormat);
-            }
-        }
-
-        private static DateTime FromInt64(long l) => FromDouble(l);
-
-        private static DateTime FromDouble(double d) => _epochStart.AddSeconds(d);
-
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        public override void Write(Utf8JsonWriter writer, DateTime value, JsonSerializerOptions options)
         {
             var date = (DateTime)value;
 
@@ -44,7 +29,9 @@ namespace Loxone.Client.Transport.Serialization
             date = date.ToLocalTime();
 
             double d = date.Subtract(_epochStart).TotalSeconds;
-            writer.WriteValue(d);
+            writer.WriteNumberValue(d);
         }
+
+        private static DateTime FromDouble(double d) => _epochStart.AddSeconds(d);
     }
 }

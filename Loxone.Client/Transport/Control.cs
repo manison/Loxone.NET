@@ -1,4 +1,4 @@
-﻿// ----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 // <copyright file="Control.cs">
 //     Copyright (c) The Loxone.NET Authors.  All rights reserved.
 // </copyright>
@@ -11,43 +11,31 @@
 namespace Loxone.Client.Transport
 {
     using System.Collections.Generic;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
+    using System.Text.Json;
+    using System.Text.Json.Serialization;
 
     internal sealed class Control
     {
-        // Suppress 'Field is never assigned to, and will always have its
-        // default value' warning.
-        // Justification: Fields are set during deserialization.
-        #pragma warning disable CS0649
+        [JsonPropertyName("uuidAction")]
+        public Uuid Uuid { get; set; }
 
-        [JsonProperty("uuidAction")]
-        public Uuid Uuid;
+        public string Name { get; set; }
 
-        [JsonProperty("name")]
-        public string Name;
+        [JsonPropertyName("type")]
+        public string ControlType { get; set; }
 
-        [JsonProperty("type")]
-        public string ControlType;
+        public bool IsFavorite { get; set; }
 
-        [JsonProperty("isFavorite")]
-        public bool IsFavorite;
+        public bool IsSecured { get; set; }
 
-        [JsonProperty("isSecured")]
-        public bool IsSecured;
+        public int DefaultRating { get; set; }
 
-        [JsonProperty("defaultRating")]
-        public int DefaultRating;
+        public Uuid? Room { get; set; }
 
-        [JsonProperty("room")]
-        public Uuid? Room;
-
-        [JsonProperty("cat")]
-        public Uuid? Category;
+        [JsonPropertyName("cat")]
+        public Uuid? Category { get; set; }
 
         [JsonExtensionData]
-        public IDictionary<string, JToken> ExtensionData;
-
-        #pragma warning restore CS0649
+        public IDictionary<string, JsonElement> ExtensionData { get; set; }
     }
 }

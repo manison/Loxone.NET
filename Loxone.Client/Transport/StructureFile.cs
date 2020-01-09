@@ -1,4 +1,4 @@
-﻿// ----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 // <copyright file="StructureFile.cs">
 //     Copyright (c) The Loxone.NET Authors.  All rights reserved.
 // </copyright>
@@ -12,34 +12,24 @@ namespace Loxone.Client.Transport
 {
     using System;
     using System.Collections.Generic;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
+    using System.Text.Json;
+    using System.Text.Json.Serialization;
 
     internal sealed class StructureFile
     {
-        // Suppress 'Field is never assigned to, and will always have its
-        // default value' warning.
-        // Justification: Fields are set during deserialization.
-        #pragma warning disable CS0649
+        public DateTime LastModified { get; set; }
 
-        [JsonProperty("lastModified")]
-        public DateTime LastModified;
+        [JsonPropertyName("msInfo")]
+        public MiniserverInfo MiniserverInfo { get; set; }
 
-        [JsonProperty("msInfo")]
-        public MiniserverInfo MiniserverInfo;
+        public IDictionary<string, Room> Rooms { get; set; }
 
-        [JsonProperty("rooms")]
-        public IDictionary<string, Room> Rooms;
+        [JsonPropertyName("cats")]
+        public IDictionary<string, Category> Categories { get; set; }
 
-        [JsonProperty("cats")]
-        public IDictionary<string, Category> Categories;
-
-        [JsonProperty("controls")]
-        public IDictionary<string, Control> Controls;
+        public IDictionary<string, Control> Controls { get; set; }
 
         [JsonExtensionData]
-        public IDictionary<string, JToken> ExtensionData;
-
-        #pragma warning restore CS0649
+        public IDictionary<string, JsonElement> ExtensionData { get; set; }
     }
 }

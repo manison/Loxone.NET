@@ -49,6 +49,7 @@ namespace Loxone.Client.Transport
 
             byte[] encryptedResponse = Convert.FromBase64String(command);
             string decrypted = AesDecrypt(encryptedResponse);
+            decrypted = decrypted.TrimEnd('\0'); // Trim trailing zero padding.
             return decrypted;
         }
 

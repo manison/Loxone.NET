@@ -123,9 +123,6 @@
   <data name="HexConverter_BadFormat" xml:space="preserve">
     <value>Hex string format is invalid.</value>
   </data>
-  <data name="LXDateTimeConverter_InvalidFormat" xml:space="preserve">
-    <value>Invalid date format.</value>
-  </data>
   <data name="MiniserverCommandException_MessageFmt" xml:space="preserve">
     <value>Miniserver command failed with status code {0}.</value>
   </data>
@@ -134,9 +131,6 @@
   </data>
   <data name="MiniserverTransportException_Message" xml:space="preserve">
     <value>Message received from Miniserver has invalid format.</value>
-  </data>
-  <data name="UuidConverter_UnexpectedValue" xml:space="preserve">
-    <value>Unexpected value when converting UUID.</value>
   </data>
   <data name="Uuid_ArgMustBeUuid" xml:space="preserve">
     <value>Argument must be of type Uuid.</value>

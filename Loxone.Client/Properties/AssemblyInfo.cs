@@ -1,5 +1,5 @@
 // ----------------------------------------------------------------------
-// <copyright file="Api.cs">
+// <copyright file="AsemblyInfo.cs">
 //     Copyright (c) The Loxone.NET Authors.  All rights reserved.
 // </copyright>
 // <license>
@@ -8,16 +8,6 @@
 // </license>
 // ----------------------------------------------------------------------
 
-namespace Loxone.Client.Transport.Serialization.Responses
-{
-    using System;
-    using System.Text.Json.Serialization;
+using System.Runtime.CompilerServices;
 
-    internal sealed class Api
-    {
-        [JsonPropertyName("snr")]
-        public SerialNumber SerialNumber { get; set; }
-
-        public Version Version { get; set; }
-    }
-}
+[assembly: InternalsVisibleTo("Loxone.Client.Tests")]

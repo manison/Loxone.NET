@@ -79,15 +79,6 @@ namespace Loxone.Client {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid date format..
-        /// </summary>
-        internal static string LXDateTimeConverter_InvalidFormat {
-            get {
-                return ResourceManager.GetString("LXDateTimeConverter_InvalidFormat", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Miniserver command failed with status code {0}..
         /// </summary>
         internal static string MiniserverCommandException_MessageFmt {
@@ -120,15 +111,6 @@ namespace Loxone.Client {
         internal static string Uuid_ArgMustBeUuid {
             get {
                 return ResourceManager.GetString("Uuid_ArgMustBeUuid", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Unexpected value when converting UUID..
-        /// </summary>
-        internal static string UuidConverter_UnexpectedValue {
-            get {
-                return ResourceManager.GetString("UuidConverter_UnexpectedValue", resourceCulture);
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿// ----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 // <copyright file="LXResponse.cs">
 //     Copyright (c) The Loxone.NET Authors.  All rights reserved.
 // </copyright>
@@ -10,31 +10,21 @@
 
 namespace Loxone.Client.Transport
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     internal sealed class LXResponse<TValue>
     {
-        // Suppress 'Field is never assigned to, and will always have its
-        // default value' warning.
-        // Justification: Fields are set during deserialization.
-        #pragma warning disable CS0649
-
         private struct Root
         {
-            [JsonProperty("LL")]
-            public LXResponse<TValue> Value;
+            [JsonPropertyName("LL")]
+            public LXResponse<TValue> Value { get; set; }
         }
 
-        [JsonProperty("control")]
-        public string Control;
+        public string Control { get; set; }
 
-        [JsonProperty("Code")]
-        public int Code;
+        public int Code { get; set; }
 
-        [JsonProperty("value")]
-        public TValue Value;
-
-        #pragma warning restore CS0649
+        public TValue Value { get; set; }
 
         public static LXResponse<TValue> Deserialize(string s)
         {

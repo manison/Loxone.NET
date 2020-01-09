@@ -1,4 +1,4 @@
-﻿// ----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 // <copyright file="Room.cs">
 //     Copyright (c) The Loxone.NET Authors.  All rights reserved.
 // </copyright>
@@ -11,31 +11,20 @@
 namespace Loxone.Client.Transport
 {
     using System.Collections.Generic;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
+    using System.Text.Json;
+    using System.Text.Json.Serialization;
 
     internal sealed class Room
     {
-        // Suppress 'Field is never assigned to, and will always have its
-        // default value' warning.
-        // Justification: Fields are set during deserialization.
-        #pragma warning disable CS0649
+        public Uuid Uuid { get; set; }
 
-        [JsonProperty("uuid")]
-        public Uuid Uuid;
+        public string Name { get; set; }
 
-        [JsonProperty("name")]
-        public string Name;
+        public bool IsFavorite { get; set; }
 
-        [JsonProperty("isFavorite")]
-        public bool IsFavorite;
-
-        [JsonProperty("defaultRating")]
-        public int DefaultRating;
+        public int DefaultRating { get; set; }
 
         [JsonExtensionData]
-        public IDictionary<string, JToken> ExtensionData;
-
-        #pragma warning restore CS0649
+        public IDictionary<string, JsonElement> ExtensionData { get; set; }
     }
 }

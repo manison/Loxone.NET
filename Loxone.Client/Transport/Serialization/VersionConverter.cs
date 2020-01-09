@@ -1,5 +1,5 @@
 // ----------------------------------------------------------------------
-// <copyright file="SerialNumberConverter.cs">
+// <copyright file="VersionConverter.cs">
 //     Copyright (c) The Loxone.NET Authors.  All rights reserved.
 // </copyright>
 // <license>
@@ -14,12 +14,12 @@ namespace Loxone.Client.Transport.Serialization
     using System.Text.Json;
     using System.Text.Json.Serialization;
 
-    internal sealed class SerialNumberConverter : JsonConverter<SerialNumber>
+    internal sealed class VersionConverter : JsonConverter<Version>
     {
-        public override SerialNumber Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-            => SerialNumber.Parse(reader.GetString());
+        public override Version Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+            => Version.Parse(reader.GetString());
 
-        public override void Write(Utf8JsonWriter writer, SerialNumber value, JsonSerializerOptions options)
+        public override void Write(Utf8JsonWriter writer, Version value, JsonSerializerOptions options)
             => writer.WriteStringValue(value.ToString());
     }
 }

@@ -1,4 +1,4 @@
-﻿// ----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 // <copyright file="UuidConverter.cs">
 //     Copyright (c) The Loxone.NET Authors.  All rights reserved.
 // </copyright>
@@ -11,31 +11,15 @@
 namespace Loxone.Client.Transport.Serialization
 {
     using System;
-    using Newtonsoft.Json;
+    using System.Text.Json;
+    using System.Text.Json.Serialization;
 
-    internal sealed class UuidConverter : JsonConverter
+    internal sealed class UuidConverter : JsonConverter<Uuid>
     {
-        public override bool CanConvert(Type objectType) => objectType == typeof(Uuid) || objectType == typeof(Uuid?);
+        public override Uuid Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+            => Uuid.Parse(reader.GetString());
 
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
-        {
-            bool nullable = objectType == typeof(Uuid?);
-
-            if (reader.TokenType == JsonToken.Null && nullable)
-            {
-                return null;
-            }
-            else if (reader.TokenType == JsonToken.String)
-            {
-                return Uuid.Parse(reader.Value as string);
-            }
-
-            throw new JsonSerializationException(Strings.UuidConverter_UnexpectedValue);
-        }
-
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
-        {
-            writer.WriteValue(value.ToString());
-        }
+        public override void Write(Utf8JsonWriter writer, Uuid value, JsonSerializerOptions options)
+            => writer.WriteStringValue(value.ToString());
     }
 }
