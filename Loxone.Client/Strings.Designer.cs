@@ -97,6 +97,15 @@ namespace Loxone.Client {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Miniserver connection has been disposed..
+        /// </summary>
+        internal static string MiniserverContext_ConnectionDisposed {
+            get {
+                return ResourceManager.GetString("MiniserverContext_ConnectionDisposed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Message received from Miniserver has invalid format..
         /// </summary>
         internal static string MiniserverTransportException_Message {

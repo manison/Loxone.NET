@@ -17,7 +17,7 @@ namespace Loxone.Client.Samples.Console
 
     internal class Program
     {
-        private const string _miniserverAddress = "http://testminiserver.loxone.com:7778/";
+        private const string _miniserverAddress = "http://testminiserver.loxone.com:7779/";
 
         private async Task RunAsync(CancellationToken cancellationToken)
         {
@@ -76,6 +76,8 @@ namespace Loxone.Client.Samples.Console
                         Console.WriteLine(change);
                     }
                 };
+
+                var context = new MiniserverContext(structureFile, connection, false);
 
                 Console.WriteLine("Enabling status updates...");
                 await connection.EnableStatusUpdatesAsync(cancellationToken);

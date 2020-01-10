@@ -129,6 +129,9 @@
   <data name="MiniserverConnection_MustBeSetBeforeOpenFmt" xml:space="preserve">
     <value>Property '{0}' must be set before opening the connection.</value>
   </data>
+  <data name="MiniserverContext_ConnectionDisposed" xml:space="preserve">
+    <value>Miniserver connection has been disposed.</value>
+  </data>
   <data name="MiniserverTransportException_Message" xml:space="preserve">
     <value>Message received from Miniserver has invalid format.</value>
   </data>

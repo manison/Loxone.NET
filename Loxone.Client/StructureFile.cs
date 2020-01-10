@@ -20,6 +20,8 @@ namespace Loxone.Client
     {
         private Transport.StructureFile _innerFile;
 
+        internal Transport.StructureFile InnerFile => _innerFile;
+
         public DateTime LastModified
         {
             get

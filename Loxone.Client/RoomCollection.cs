@@ -1,4 +1,4 @@
-﻿// ----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 // <copyright file="RoomCollection.cs">
 //     Copyright (c) The Loxone.NET Authors.  All rights reserved.
 // </copyright>
@@ -17,11 +17,13 @@ namespace Loxone.Client
     public sealed class RoomCollection : IReadOnlyCollection<Room>
     {
         private readonly IDictionary<string, Transport.Room> _innerRooms;
+        private readonly Dictionary<Uuid, Room> _rooms;
 
         internal RoomCollection(IDictionary<string, Transport.Room> innerRooms)
         {
             Contract.Requires(innerRooms != null);
             this._innerRooms = innerRooms;
+            _rooms = new Dictionary<Uuid, Room>(_innerRooms.Count);
         }
 
         public int Count => _innerRooms.Count;
@@ -30,13 +32,24 @@ namespace Loxone.Client
         {
             foreach (var pair in _innerRooms)
             {
-                yield return new Room(pair.Value);
+                yield return this[Uuid.Parse(pair.Key)];
             }
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
+        IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
+
+        internal Room this[Uuid uuid]
         {
-            return this.GetEnumerator();
+            get
+            {
+                if (!_rooms.TryGetValue(uuid, out var room))
+                {
+                    var innerRoom = _innerRooms[uuid.ToString()];
+                    room = new Room(innerRoom);
+                    _rooms[uuid] = room;
+                }
+                return room;
+            }
         }
     }
 }

@@ -35,6 +35,8 @@ namespace Loxone.Client.Transport
         [JsonPropertyName("cat")]
         public Uuid? Category { get; set; }
 
+        public IDictionary<string, Uuid> States { get; set; }
+
         [JsonExtensionData]
         public IDictionary<string, JsonElement> ExtensionData { get; set; }
     }

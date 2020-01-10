@@ -1,0 +1,4253 @@
+{
+  "lastModified": "2020-01-09 23:31:26",
+  "msInfo": {
+    "serialNr": "EEE000A8004A",
+    "msName": "Test Miniserver",
+    "projectName": "Testovací miniserver",
+    "location": "Kollerschlag",
+    "heatPeriodStart": "10-01",
+    "heatPeriodEnd": "04-30",
+    "coolPeriodStart": "05-01",
+    "coolPeriodEnd": "09-30",
+    "catTitle": "Kategorie",
+    "roomTitle": "Místnost",
+    "miniserverType": "0",
+    "localUrl": "10.7.7.249",
+    "remoteUrl": "dns.loxonecloud.com/EEE000A8004A",
+    "languageCode": "CSY",
+    "currency": "€",
+    "tempUnit": "0",
+    "squareMeasure": "m²",
+    "currentUser": {
+      "name": "web",
+      "uuid": "107a0101-013a-c4c7-ffffc926a26a8d21",
+      "isAdmin": false,
+      "changePassword": false,
+      "userRights": 1030
+    }
+  },
+  "rooms": {
+    "10412616-01db-08db-ffffc926a26a8d21": {
+      "uuid": "10412616-01db-08db-ffffc926a26a8d21",
+      "name": "Nepřiřazeno",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "image": "00000000-0000-0001-2100000000000000.svg",
+      "type": 2
+    },
+    "10412616-01ec-08df-ffffc926a26a8d21": {
+      "uuid": "10412616-01ec-08df-ffffc926a26a8d21",
+      "name": "Hala v přízemí",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "image": "00000000-0000-0002-2100000000000000.svg",
+      "type": 3
+    },
+    "10412616-01ec-08e3-ffffc926a26a8d21": {
+      "uuid": "10412616-01ec-08e3-ffffc926a26a8d21",
+      "name": "Hala v prvním patře",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "image": "00000000-0000-0003-2100000000000000.svg",
+      "type": 3
+    },
+    "10412616-01ec-08e7-ffffc926a26a8d21": {
+      "uuid": "10412616-01ec-08e7-ffffc926a26a8d21",
+      "name": "Obývací pokoj",
+      "isFavorite": true,
+      "defaultRating": "10",
+      "image": "00000000-0000-0004-2100000000000000.svg",
+      "type": 2
+    },
+    "10412616-01ec-08eb-ffffc926a26a8d21": {
+      "uuid": "10412616-01ec-08eb-ffffc926a26a8d21",
+      "name": "Kuchyně",
+      "isFavorite": true,
+      "defaultRating": "9",
+      "image": "00000000-0000-0005-2100000000000000.svg",
+      "type": 2
+    },
+    "10412616-01ec-08ef-ffffc926a26a8d21": {
+      "uuid": "10412616-01ec-08ef-ffffc926a26a8d21",
+      "name": "Koupelna v přízemí",
+      "isFavorite": false,
+      "defaultRating": "1",
+      "image": "00000000-0000-0006-2100000000000000.svg",
+      "type": 2
+    },
+    "10412616-01ec-08f3-ffffc926a26a8d21": {
+      "uuid": "10412616-01ec-08f3-ffffc926a26a8d21",
+      "name": "Koupelna v prvním patře",
+      "isFavorite": false,
+      "defaultRating": "1",
+      "image": "00000000-0000-0007-2100000000000000.svg",
+      "type": 2
+    },
+    "10412616-01ec-08f7-ffffc926a26a8d21": {
+      "uuid": "10412616-01ec-08f7-ffffc926a26a8d21",
+      "name": "Ložnice",
+      "isFavorite": true,
+      "defaultRating": "8",
+      "image": "00000000-0000-0008-2100000000000000.svg",
+      "type": 1
+    },
+    "10412616-01ec-08fb-ffffc926a26a8d21": {
+      "uuid": "10412616-01ec-08fb-ffffc926a26a8d21",
+      "name": "Dětský pokoj Lukáš",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "image": "00000000-0000-0009-2100000000000000.svg",
+      "type": 1
+    },
+    "10412616-01ec-08ff-ffffc926a26a8d21": {
+      "uuid": "10412616-01ec-08ff-ffffc926a26a8d21",
+      "name": "WC",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "image": "00000000-0000-000a-2100000000000000.svg",
+      "type": 3
+    },
+    "10412616-01ec-0903-ffffc926a26a8d21": {
+      "uuid": "10412616-01ec-0903-ffffc926a26a8d21",
+      "name": "Šatna",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "image": "00000000-0000-000b-2100000000000000.svg",
+      "type": 3
+    },
+    "10412616-01ec-0907-ffffc926a26a8d21": {
+      "uuid": "10412616-01ec-0907-ffffc926a26a8d21",
+      "name": "Garáž",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "image": "00000000-0000-000c-2100000000000000.svg",
+      "type": 3
+    },
+    "10412616-01ec-090b-ffffc926a26a8d21": {
+      "uuid": "10412616-01ec-090b-ffffc926a26a8d21",
+      "name": "Zádvěří",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "image": "00000000-0000-000d-2100000000000000.svg",
+      "type": 3
+    },
+    "10412616-01ec-090f-ffffc926a26a8d21": {
+      "uuid": "10412616-01ec-090f-ffffc926a26a8d21",
+      "name": "Schodiště",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "image": "00000000-0000-000e-2100000000000000.svg",
+      "type": 3
+    },
+    "10412616-01ec-0913-ffffc926a26a8d21": {
+      "uuid": "10412616-01ec-0913-ffffc926a26a8d21",
+      "name": "Sauna",
+      "isFavorite": true,
+      "defaultRating": "8",
+      "image": "00000000-0000-000f-2100000000000000.svg",
+      "type": 2
+    },
+    "10412616-01ec-0917-ffffc926a26a8d21": {
+      "uuid": "10412616-01ec-0917-ffffc926a26a8d21",
+      "name": "Zimní zahrada",
+      "isFavorite": true,
+      "defaultRating": "7",
+      "image": "00000000-0000-0010-2100000000000000.svg",
+      "type": 2
+    },
+    "10412616-01ec-091b-ffffc926a26a8d21": {
+      "uuid": "10412616-01ec-091b-ffffc926a26a8d21",
+      "name": "Pracovna",
+      "isFavorite": true,
+      "defaultRating": "1",
+      "image": "00000000-0000-0011-2100000000000000.svg",
+      "type": 2
+    },
+    "10412616-01ec-091f-ffffc926a26a8d21": {
+      "uuid": "10412616-01ec-091f-ffffc926a26a8d21",
+      "name": "Herna",
+      "isFavorite": true,
+      "defaultRating": "1",
+      "image": "00000000-0000-0012-2100000000000000.svg",
+      "type": 2
+    },
+    "10412616-01ec-0923-ffffc926a26a8d21": {
+      "uuid": "10412616-01ec-0923-ffffc926a26a8d21",
+      "name": "Prádelna",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "image": "00000000-0000-0013-2100000000000000.svg",
+      "type": 3
+    },
+    "10412616-01ec-0927-ffffc926a26a8d21": {
+      "uuid": "10412616-01ec-0927-ffffc926a26a8d21",
+      "name": "Úklidová místnost",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "image": "00000000-0000-0014-2100000000000000.svg",
+      "type": 3
+    },
+    "10412616-01ec-092b-ffffc926a26a8d21": {
+      "uuid": "10412616-01ec-092b-ffffc926a26a8d21",
+      "name": "Posilovna",
+      "isFavorite": true,
+      "defaultRating": "1",
+      "image": "00000000-0000-0015-2100000000000000.svg",
+      "type": 2
+    },
+    "10412616-01ec-092f-ffffc926a26a8d21": {
+      "uuid": "10412616-01ec-092f-ffffc926a26a8d21",
+      "name": "Terasa",
+      "isFavorite": true,
+      "defaultRating": "1",
+      "image": "00000000-0000-0016-2100000000000000.svg",
+      "type": 2
+    },
+    "10412616-01fe-0933-ffffc926a26a8d21": {
+      "uuid": "10412616-01fe-0933-ffffc926a26a8d21",
+      "name": "Zahrada",
+      "isFavorite": true,
+      "defaultRating": "1",
+      "image": "00000000-0000-0017-2100000000000000.svg",
+      "type": 2
+    },
+    "10412616-01fe-0937-ffffc926a26a8d21": {
+      "uuid": "10412616-01fe-0937-ffffc926a26a8d21",
+      "name": "Jídelna",
+      "isFavorite": true,
+      "defaultRating": "1",
+      "image": "00000000-0000-0018-2100000000000000.svg",
+      "type": 2
+    },
+    "10412616-01fe-093b-ffffc926a26a8d21": {
+      "uuid": "10412616-01fe-093b-ffffc926a26a8d21",
+      "name": "Podkroví",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "image": "00000000-0000-0019-2100000000000000.svg",
+      "type": 3
+    },
+    "10412616-01fe-093f-ffffc926a26a8d21": {
+      "uuid": "10412616-01fe-093f-ffffc926a26a8d21",
+      "name": "Sklep",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "image": "00000000-0000-001a-2100000000000000.svg",
+      "type": 3
+    },
+    "10412616-01fe-0943-ffffc926a26a8d21": {
+      "uuid": "10412616-01fe-0943-ffffc926a26a8d21",
+      "name": "Bar",
+      "isFavorite": true,
+      "defaultRating": "1",
+      "image": "00000000-0000-001b-2100000000000000.svg",
+      "type": 2
+    },
+    "10412616-01fe-0955-ffffc926a26a8d21": {
+      "uuid": "10412616-01fe-0955-ffffc926a26a8d21",
+      "name": "Sanitär",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "image": "00000000-0000-0023-2100000000000000.svg",
+      "type": 3
+    },
+    "10412616-01fe-095d-ffffc926a26a8d21": {
+      "uuid": "10412616-01fe-095d-ffffc926a26a8d21",
+      "name": "Konferenční místnost",
+      "isFavorite": true,
+      "defaultRating": "1",
+      "image": "00000000-0000-0026-2100000000000000.svg",
+      "type": 2
+    },
+    "10412616-01fe-0969-ffffc926a26a8d21": {
+      "uuid": "10412616-01fe-0969-ffffc926a26a8d21",
+      "name": "Bazén",
+      "isFavorite": true,
+      "defaultRating": "1",
+      "image": "00000000-0000-002b-2100000000000000.svg",
+      "type": 2
+    },
+    "10412616-01fe-096d-ffffc926a26a8d21": {
+      "uuid": "10412616-01fe-096d-ffffc926a26a8d21",
+      "name": "Chodba",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "image": "00000000-0000-002c-2100000000000000.svg",
+      "type": 3
+    },
+    "10412616-01fe-0971-ffffc926a26a8d21": {
+      "uuid": "10412616-01fe-0971-ffffc926a26a8d21",
+      "name": "Okolí domu",
+      "isFavorite": false,
+      "defaultRating": "1",
+      "image": "00000000-0000-002d-2100000000000000.svg",
+      "type": 3
+    },
+    "10412616-01fe-0975-ffffc926a26a8d21": {
+      "uuid": "10412616-01fe-0975-ffffc926a26a8d21",
+      "name": "Technická místnost",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "image": "00000000-0000-002e-2100000000000000.svg",
+      "type": 4
+    },
+    "10412616-01fe-097d-ffffc926a26a8d21": {
+      "uuid": "10412616-01fe-097d-ffffc926a26a8d21",
+      "name": "Centrál",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "image": "00000000-0000-0031-2100000000000000.svg",
+      "type": 4
+    },
+    "10412616-01fe-0981-ffffc926a26a8d21": {
+      "uuid": "10412616-01fe-0981-ffffc926a26a8d21",
+      "name": "Serverovna",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "image": "00000000-0000-0032-2100000000000000.svg",
+      "type": 4
+    },
+    "10412616-01fe-0985-ffffc926a26a8d21": {
+      "uuid": "10412616-01fe-0985-ffffc926a26a8d21",
+      "name": "Kotelna",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "image": "00000000-0000-0033-2100000000000000.svg",
+      "type": 4
+    },
+    "104126e8-0188-1165-ffffc926a26a8d21": {
+      "uuid": "104126e8-0188-1165-ffffc926a26a8d21",
+      "name": "Dětský pokoj Petr",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "image": "00000000-0000-0012-2100000000000000.svg",
+      "type": 1
+    },
+    "10412b39-0077-5362-ffffc926a26a8d21": {
+      "uuid": "10412b39-0077-5362-ffffc926a26a8d21",
+      "name": "WC v přízemí",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "image": "00000000-0000-000a-2100000000000000.svg",
+      "type": 3
+    },
+    "10412b61-0084-5364-ffffc926a26a8d21": {
+      "uuid": "10412b61-0084-5364-ffffc926a26a8d21",
+      "name": "WC v prvním patře",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "image": "00000000-0000-000a-2100000000000000.svg",
+      "type": 3
+    },
+    "10414417-039a-ef54-ffffc926a26a8d21": {
+      "uuid": "10414417-039a-ef54-ffffc926a26a8d21",
+      "name": "Zahradní domek",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "image": "00000000-0000-001b-2100000000000000.svg",
+      "type": 3
+    },
+    "1041488d-0204-5501-ffffc926a26a8d21": {
+      "uuid": "1041488d-0204-5501-ffffc926a26a8d21",
+      "name": "Vchod",
+      "isFavorite": false,
+      "defaultRating": "1",
+      "image": "00000000-0000-000e-2100000000000000.svg",
+      "type": 3
+    },
+    "10415767-03e6-ada7-ffffc926a26a8d21": {
+      "uuid": "10415767-03e6-ada7-ffffc926a26a8d21",
+      "name": "Komora",
+      "isFavorite": false,
+      "defaultRating": "1",
+      "image": "00000000-0000-000b-2100000000000000.svg",
+      "type": 2
+    }
+  },
+  "cats": {
+    "10412616-01a4-079c-ffffc926a26a8d21": {
+      "uuid": "10412616-01a4-079c-ffffc926a26a8d21",
+      "name": "Není přiřazeno",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-0001-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01a4-07a0-ffffc926a26a8d21": {
+      "uuid": "10412616-01a4-07a0-ffffc926a26a8d21",
+      "name": "Osvětlení",
+      "isFavorite": true,
+      "defaultRating": "1",
+      "color": "#69C350",
+      "image": "00000000-0000-0002-2000000000000000.svg",
+      "type": "lights"
+    },
+    "10412616-01a4-07a4-ffffc926a26a8d21": {
+      "uuid": "10412616-01a4-07a4-ffffc926a26a8d21",
+      "name": "Žaluzie",
+      "isFavorite": true,
+      "defaultRating": "1",
+      "color": "#69C350",
+      "image": "00000000-0000-0003-2000000000000000.svg",
+      "type": "shading"
+    },
+    "10412616-01a4-07a8-ffffc926a26a8d21": {
+      "uuid": "10412616-01a4-07a8-ffffc926a26a8d21",
+      "name": "Topení",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-0004-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01a4-07ac-ffffc926a26a8d21": {
+      "uuid": "10412616-01a4-07ac-ffffc926a26a8d21",
+      "name": "Podnebí",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-0005-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01a4-07b0-ffffc926a26a8d21": {
+      "uuid": "10412616-01a4-07b0-ffffc926a26a8d21",
+      "name": "Audio",
+      "isFavorite": true,
+      "defaultRating": "1",
+      "color": "#69C350",
+      "image": "00000000-0000-0006-2000000000000000.svg",
+      "type": "multimedia"
+    },
+    "10412616-01a4-07b4-ffffc926a26a8d21": {
+      "uuid": "10412616-01a4-07b4-ffffc926a26a8d21",
+      "name": "Čidlo",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-0007-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01a4-07b8-ffffc926a26a8d21": {
+      "uuid": "10412616-01a4-07b8-ffffc926a26a8d21",
+      "name": "Hlavice",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-0008-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01a4-07bc-ffffc926a26a8d21": {
+      "uuid": "10412616-01a4-07bc-ffffc926a26a8d21",
+      "name": "Teplota",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-0009-2000000000000000.svg",
+      "type": "indoortemperature"
+    },
+    "10412616-01a4-07c0-ffffc926a26a8d21": {
+      "uuid": "10412616-01a4-07c0-ffffc926a26a8d21",
+      "name": "Detektor",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-000a-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01a4-07c4-ffffc926a26a8d21": {
+      "uuid": "10412616-01a4-07c4-ffffc926a26a8d21",
+      "name": "Větrání",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-000b-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01a4-07c8-ffffc926a26a8d21": {
+      "uuid": "10412616-01a4-07c8-ffffc926a26a8d21",
+      "name": "Okno",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-000c-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01a4-07cc-ffffc926a26a8d21": {
+      "uuid": "10412616-01a4-07cc-ffffc926a26a8d21",
+      "name": "Monitorování",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-000d-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01a4-07d0-ffffc926a26a8d21": {
+      "uuid": "10412616-01a4-07d0-ffffc926a26a8d21",
+      "name": "Chlazení",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-000e-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01a4-07d4-ffffc926a26a8d21": {
+      "uuid": "10412616-01a4-07d4-ffffc926a26a8d21",
+      "name": "Alarm",
+      "isFavorite": true,
+      "defaultRating": "1",
+      "color": "#69C350",
+      "image": "00000000-0000-000f-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01a4-07d8-ffffc926a26a8d21": {
+      "uuid": "10412616-01a4-07d8-ffffc926a26a8d21",
+      "name": "Brána",
+      "isFavorite": true,
+      "defaultRating": "1",
+      "color": "#69C350",
+      "image": "00000000-0000-0010-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01a4-07dc-ffffc926a26a8d21": {
+      "uuid": "10412616-01a4-07dc-ffffc926a26a8d21",
+      "name": "Wellness",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-0011-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01a4-07e0-ffffc926a26a8d21": {
+      "uuid": "10412616-01a4-07e0-ffffc926a26a8d21",
+      "name": "Technická místnost",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-0012-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01b6-07fa-ffffc926a26a8d21": {
+      "uuid": "10412616-01b6-07fa-ffffc926a26a8d21",
+      "name": "Serverovna",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-001e-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01b6-0800-ffffc926a26a8d21": {
+      "uuid": "10412616-01b6-0800-ffffc926a26a8d21",
+      "name": "Přístup",
+      "isFavorite": true,
+      "defaultRating": "1",
+      "color": "#69C350",
+      "image": "00000000-0000-0020-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01b6-0806-ffffc926a26a8d21": {
+      "uuid": "10412616-01b6-0806-ffffc926a26a8d21",
+      "name": "Spotřebiče",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-0022-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01b6-080c-ffffc926a26a8d21": {
+      "uuid": "10412616-01b6-080c-ffffc926a26a8d21",
+      "name": "Závlaha",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-0024-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01b6-0812-ffffc926a26a8d21": {
+      "uuid": "10412616-01b6-0812-ffffc926a26a8d21",
+      "name": "Fotovoltaika",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-0026-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01b6-081a-ffffc926a26a8d21": {
+      "uuid": "10412616-01b6-081a-ffffc926a26a8d21",
+      "name": "Čas",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-0029-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01b6-081e-ffffc926a26a8d21": {
+      "uuid": "10412616-01b6-081e-ffffc926a26a8d21",
+      "name": "Elektromobil",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-002a-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01b6-0822-ffffc926a26a8d21": {
+      "uuid": "10412616-01b6-0822-ffffc926a26a8d21",
+      "name": "Slunce",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-002b-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01b6-0826-ffffc926a26a8d21": {
+      "uuid": "10412616-01b6-0826-ffffc926a26a8d21",
+      "name": "Budík",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-002c-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01b6-082a-ffffc926a26a8d21": {
+      "uuid": "10412616-01b6-082a-ffffc926a26a8d21",
+      "name": "Proud",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-002d-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01b6-082e-ffffc926a26a8d21": {
+      "uuid": "10412616-01b6-082e-ffffc926a26a8d21",
+      "name": "Info",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-002e-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01b6-0832-ffffc926a26a8d21": {
+      "uuid": "10412616-01b6-0832-ffffc926a26a8d21",
+      "name": "Oběhové čerpadlo",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-002f-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01b6-0836-ffffc926a26a8d21": {
+      "uuid": "10412616-01b6-0836-ffffc926a26a8d21",
+      "name": "Tepelné čerpadlo",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-0030-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01b6-083a-ffffc926a26a8d21": {
+      "uuid": "10412616-01b6-083a-ffffc926a26a8d21",
+      "name": "Počasí",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-0031-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01b6-083e-ffffc926a26a8d21": {
+      "uuid": "10412616-01b6-083e-ffffc926a26a8d21",
+      "name": "Vlhkost",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-0032-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "10412616-01c8-0842-ffffc926a26a8d21": {
+      "uuid": "10412616-01c8-0842-ffffc926a26a8d21",
+      "name": "Multimedia",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-0033-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "1079dfc1-0370-15e6-ffffc926a26a8d21": {
+      "uuid": "1079dfc1-0370-15e6-ffffc926a26a8d21",
+      "name": "Nastavení",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-0035-2000000000000000.svg",
+      "type": "undefined"
+    },
+    "1079dfc1-0388-15f2-ffffc926a26a8d21": {
+      "uuid": "1079dfc1-0388-15f2-ffffc926a26a8d21",
+      "name": "Ovládání",
+      "isFavorite": false,
+      "defaultRating": "0",
+      "color": "#69C350",
+      "image": "00000000-0000-003a-2000000000000000.svg",
+      "type": "undefined"
+    }
+  },
+  "controls": {
+    "1079e237-0277-fc54-ffffc926a26a8d21": {
+      "uuidAction": "1079e237-0277-fc54-ffffc926a26a8d21",
+      "name": "Alarm",
+      "type": "Alarm",
+      "isFavorite": false,
+      "isSecured": true,
+      "defaultRating": "5",
+      "room": "10412616-01fe-097d-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07d4-ffffc926a26a8d21",
+      "details": {
+        "alert": true,
+        "presenceConnected": true
+      },
+      "states": {
+        "armed": "1079e237-0277-fc47-ffff7deea263b860",
+        "nextLevel": "1079e237-0277-fc21-ffff7deea263b860",
+        "nextLevelDelay": "1079e237-0277-fc22-ffff7deea263b860",
+        "nextLevelDelayTotal": "1079e237-0277-fc23-ffff7deea263b860",
+        "level": "1079e237-0277-fc24-ffff7deea263b860",
+        "startTime": "1079e237-0277-fc25-ffff7deea263b860",
+        "armedDelay": "1079e237-0277-fc50-ffff7deea263b860",
+        "armedDelayTotal": "1079e237-0277-fc3a-ffff7deea263b860",
+        "sensors": "1079e237-0277-fc54-ffffc926a26a8d21",
+        "disabledMove": "1079e237-0277-fc26-ffff7deea263b860"
+      },
+      "subControls": {
+        "1079e237-0277-fc54-ffffc926a26a8d21/sensors": {
+          "name": "sensors",
+          "type": "Tracker",
+          "uuidAction": "1079e237-0277-fc54-ffffc926a26a8d21/sensors",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "details": {
+            "maxEntries": 40
+          },
+          "states": {
+            "entries": "1079e237-0277-fc54-ffffc926a26a8d21"
+          }
+        }
+      }
+    },
+    "1079e237-031b-fdb9-ffffc926a26a8d21": {
+      "uuidAction": "1079e237-031b-fdb9-ffffc926a26a8d21",
+      "name": "Centrála požáru a úniku vody",
+      "type": "SmokeAlarm",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "6",
+      "room": "10412616-01fe-097d-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07d4-ffffc926a26a8d21",
+      "details": {
+        "hasAcousticAlarm": true,
+        "availableAlarms": 4
+      },
+      "states": {
+        "sensors": "1079e237-031b-fdb9-ffffc926a26a8d21",
+        "testAlarm": "1079e237-031b-fdb7-ffffb398ea21658f",
+        "acousticAlarm": "1079e237-031b-fdb5-ffffb398ea21658f",
+        "level": "13adeaef-03ca-18a9-ffffc926a26a8d21",
+        "nextLevel": "13adeaef-03ca-18aa-ffffc926a26a8d21",
+        "nextLevelDelay": "13adeaef-03ca-18ab-ffffc926a26a8d21",
+        "nextLevelDelayTotal": "13adeaef-03ca-18ac-ffffc926a26a8d21",
+        "timeServiceMode": "13adeaef-03ca-18ad-ffffc926a26a8d21",
+        "alarmCause": "13adeaef-03ca-18ae-ffffc926a26a8d21",
+        "startTime": "13adeaef-03ca-18af-ffffc926a26a8d21",
+        "areAlarmSignalsOff": "13adeaef-03ca-18b0-ffffc926a26a8d21"
+      },
+      "subControls": {
+        "1079e237-031b-fdb9-ffffc926a26a8d21/sensors": {
+          "name": "sensors",
+          "type": "Tracker",
+          "uuidAction": "1079e237-031b-fdb9-ffffc926a26a8d21/sensors",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "details": {
+            "maxEntries": 40
+          },
+          "states": {
+            "entries": "1079e237-031b-fdb9-ffffc926a26a8d21"
+          }
+        }
+      }
+    },
+    "1079e237-0332-ff7c-ffffc926a26a8d21": {
+      "uuidAction": "1079e237-0332-ff7c-ffffc926a26a8d21",
+      "name": "Centrál audio",
+      "type": "CentralAudioZone",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "8",
+      "room": "10412616-01fe-097d-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07b0-ffffc926a26a8d21",
+      "details": {
+        "controls": [
+          {
+            "id": 0,
+            "uuid": "10412808-00ec-16d1-ffffc926a26a8d21"
+          },
+          {
+            "id": 1,
+            "uuid": "10412808-00ec-17bb-ffffc926a26a8d21"
+          },
+          {
+            "id": 2,
+            "uuid": "10412808-00ec-1635-ffffc926a26a8d21"
+          },
+          {
+            "id": 3,
+            "uuid": "10412808-00ec-1683-ffffc926a26a8d21"
+          },
+          {
+            "id": 4,
+            "uuid": "10412808-00ec-171f-ffffc926a26a8d21"
+          },
+          {
+            "id": 5,
+            "uuid": "10412808-00ec-176d-ffffc926a26a8d21"
+          },
+          {
+            "id": 6,
+            "uuid": "10412808-00ec-15e7-ffffc926a26a8d21"
+          }
+        ]
+      }
+    },
+    "1079e382-03d2-d437-ffffc926a26a8d21": {
+      "uuidAction": "1079e382-03d2-d437-ffffc926a26a8d21",
+      "name": "Energetický monitor",
+      "type": "Fronius",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "6",
+      "room": "10412616-01fe-097d-ffffc926a26a8d21",
+      "cat": "10412616-01b6-0812-ffffc926a26a8d21",
+      "states": {
+        "prodCurr": "1079e382-03d2-d419-ffff016dc3e156fa",
+        "prodCurrDay": "1079e382-03d2-d41a-ffff016dc3e156fa",
+        "prodCurrMonth": "1079e382-03d2-d41b-ffff016dc3e156fa",
+        "prodCurrYear": "1079e382-03d2-d41c-ffff016dc3e156fa",
+        "prodTotal": "1079e382-03d2-d41d-ffff016dc3e156fa",
+        "consCurr": "1079e382-03d2-d41e-ffff016dc3e156fa",
+        "consCurrDay": "1079e382-03d2-d41f-ffff016dc3e156fa",
+        "deliveryDay": "1079e382-03d2-d423-ffff016dc3e156fa",
+        "earningsDay": "1079e382-03d2-d427-ffff016dc3e156fa",
+        "earningsMonth": "1079e382-03d2-d428-ffff016dc3e156fa",
+        "earningsYear": "1079e382-03d2-d429-ffff016dc3e156fa",
+        "earningsTotal": "1079e382-03d2-d42a-ffff016dc3e156fa",
+        "prodStatus": "1079e382-03d2-d42b-ffff016dc3e156fa",
+        "prodError": "1079e382-03d2-d42c-ffff016dc3e156fa",
+        "error": "1079e382-03d2-d42d-ffff016dc3e156fa",
+        "gridCurr": "1079e382-03d2-d42e-ffff016dc3e156fa",
+        "batteryCurr": "1079e382-03d2-d42f-ffff016dc3e156fa",
+        "stateOfCharge": "1079e382-03d2-d430-ffff016dc3e156fa",
+        "priceDelivery": "1079ee10-01fc-50e0-ffffc926a26a8d21",
+        "priceConsumption": "1079ee10-01fc-50e1-ffffc926a26a8d21",
+        "co2Factor": "1079ee10-01fc-50df-ffffc926a26a8d21",
+        "generatorType": "1079ee10-01fc-50e3-ffffc926a26a8d21",
+        "mode": "1079ee10-01fc-50e4-ffffc926a26a8d21",
+        "online": "1079ee10-01fc-50e2-ffffc926a26a8d21"
+      }
+    },
+    "1079e237-031b-fecd-ffffc926a26a8d21": {
+      "uuidAction": "1079e237-031b-fecd-ffffc926a26a8d21",
+      "name": "Monitorování oken a dveří",
+      "type": "WindowMonitor",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "7",
+      "room": "10412616-01fe-097d-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07cc-ffffc926a26a8d21",
+      "details": {
+        "windows": [
+          {
+            "name": "Dveře Terasa",
+            "room": "10412616-01ec-092f-ffffc926a26a8d21"
+          },
+          {
+            "name": "Okno Komora",
+            "room": "10415767-03e6-ada7-ffffc926a26a8d21"
+          },
+          {
+            "name": "Okno jídelní stůl",
+            "room": "10412616-01ec-08eb-ffffc926a26a8d21"
+          },
+          {
+            "name": "Dveře Balkon",
+            "room": "10412616-01ec-08f7-ffffc926a26a8d21"
+          },
+          {
+            "name": "Okno Ložnice",
+            "room": "10412616-01ec-08f7-ffffc926a26a8d21"
+          },
+          {
+            "name": "Okno pracovní deska",
+            "room": "10412616-01ec-08eb-ffffc926a26a8d21"
+          },
+          {
+            "name": "Okno sedačka",
+            "room": "10412616-01ec-08e7-ffffc926a26a8d21"
+          },
+          {
+            "name": "Okno Terasa",
+            "room": "10412616-01ec-092f-ffffc926a26a8d21"
+          }
+        ]
+      },
+      "states": {
+        "numOpen": "1079e237-031b-fec6-ffffb398ea21658f",
+        "numClosed": "1079e237-031b-fec8-ffffb398ea21658f",
+        "numTilted": "1079e237-031b-fec7-ffffb398ea21658f",
+        "numOffline": "1079e237-031b-fec9-ffffb398ea21658f",
+        "numLocked": "1079e237-031b-feca-ffffb398ea21658f",
+        "numUnlocked": "1079e237-031b-fecb-ffffb398ea21658f",
+        "windowStates": "1079e237-031b-febd-ffffb398ea21658f"
+      }
+    },
+    "1079e239-007b-ffbd-ffffc926a26a8d21": {
+      "uuidAction": "1079e239-007b-ffbd-ffffc926a26a8d21",
+      "name": "Nepřítomnost",
+      "type": "Switch",
+      "isFavorite": false,
+      "isSecured": true,
+      "defaultRating": "1",
+      "room": "10412616-01fe-097d-ffffc926a26a8d21",
+      "cat": "1079dfc1-0370-15e6-ffffc926a26a8d21",
+      "defaultIcon": "00000000-0000-0039-2000000000000000",
+      "states": {
+        "active": "1079e239-007b-ffba-ffff9d7d34bb1761"
+      }
+    },
+    "1079e239-01da-0099-ffffc926a26a8d21": {
+      "uuidAction": "1079e239-01da-0099-ffffc926a26a8d21",
+      "name": "Noční režim",
+      "type": "Switch",
+      "isFavorite": false,
+      "isSecured": true,
+      "defaultRating": "3",
+      "room": "10412616-01fe-097d-ffffc926a26a8d21",
+      "cat": "1079dfc1-0370-15e6-ffffc926a26a8d21",
+      "defaultIcon": "00000000-0000-0036-2000000000000000",
+      "states": {
+        "active": "1079e239-01da-0096-ffff9d7d34bb1761"
+      }
+    },
+    "1079e239-0368-01a3-ffffc926a26a8d21": {
+      "uuidAction": "1079e239-0368-01a3-ffffc926a26a8d21",
+      "name": "Ochrana Budovy",
+      "type": "Switch",
+      "isFavorite": false,
+      "isSecured": true,
+      "defaultRating": "1",
+      "room": "10412616-01fe-097d-ffffc926a26a8d21",
+      "cat": "1079dfc1-0370-15e6-ffffc926a26a8d21",
+      "defaultIcon": "00000000-0000-0038-2000000000000000",
+      "states": {
+        "active": "1079e239-0368-01a0-ffff9d7d34bb1761"
+      }
+    },
+    "1079e237-0332-ff5f-ffffc926a26a8d21": {
+      "uuidAction": "1079e237-0332-ff5f-ffffc926a26a8d21",
+      "name": "Centrál Osvětlení",
+      "type": "CentralLightController",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "9",
+      "room": "10412616-01fe-097d-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a0-ffffc926a26a8d21",
+      "details": {
+        "controls": [
+          {
+            "id": 0,
+            "uuid": "1079e231-03e6-eb5e-ffffc926a26a8d21"
+          },
+          {
+            "id": 1,
+            "uuid": "1079e232-0323-efb9-ffffc926a26a8d21"
+          },
+          {
+            "id": 2,
+            "uuid": "1079e236-0370-f7dd-ffffc926a26a8d21"
+          },
+          {
+            "id": 3,
+            "uuid": "1079e234-0211-f135-ffffc926a26a8d21"
+          },
+          {
+            "id": 4,
+            "uuid": "1079e234-00ff-f324-ffffc926a26a8d21"
+          },
+          {
+            "id": 5,
+            "uuid": "1079e231-0202-ec31-ffffc926a26a8d21"
+          },
+          {
+            "id": 6,
+            "uuid": "1079e234-025f-f3c7-ffffc926a26a8d21"
+          },
+          {
+            "id": 7,
+            "uuid": "1079e232-0136-ee1b-ffffc926a26a8d21"
+          },
+          {
+            "id": 8,
+            "uuid": "1079e237-0126-f8be-ffffc926a26a8d21"
+          },
+          {
+            "id": 9,
+            "uuid": "1079e236-007a-f5ae-ffffc926a26a8d21"
+          },
+          {
+            "id": 10,
+            "uuid": "1079e234-00f7-f0cf-ffffc926a26a8d21"
+          },
+          {
+            "id": 11,
+            "uuid": "1079e234-03b7-f270-ffffc926a26a8d21"
+          },
+          {
+            "id": 12,
+            "uuid": "1079e232-001e-ed5f-ffffc926a26a8d21"
+          },
+          {
+            "id": 13,
+            "uuid": "1079e231-02ec-eca3-ffffc926a26a8d21"
+          },
+          {
+            "id": 14,
+            "uuid": "1079e237-0387-fa95-ffffc926a26a8d21"
+          }
+        ]
+      }
+    },
+    "1079e237-0332-ff48-ffffc926a26a8d21": {
+      "uuidAction": "1079e237-0332-ff48-ffffc926a26a8d21",
+      "name": "Centrál stínění",
+      "type": "CentralJalousie",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "10",
+      "room": "10412616-01fe-097d-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a4-ffffc926a26a8d21",
+      "details": {
+        "controls": [
+          {
+            "id": 0,
+            "uuid": "1079e775-024a-57f7-ffffc926a26a8d21"
+          },
+          {
+            "id": 1,
+            "uuid": "1079e775-01db-79ab-ffffc926a26a8d21"
+          },
+          {
+            "id": 2,
+            "uuid": "1079e7ab-034b-a62e-ffffc926a26a8d21"
+          },
+          {
+            "id": 3,
+            "uuid": "1079e84b-02f7-1732-ffffc926a26a8d21"
+          },
+          {
+            "id": 4,
+            "uuid": "1079e926-0389-364a-ffffc926a26a8d21"
+          },
+          {
+            "id": 5,
+            "uuid": "1079e92e-00d3-57fe-ffffc926a26a8d21"
+          },
+          {
+            "id": 6,
+            "uuid": "1079ea32-0314-a5de-ffffc926a26a8d21"
+          },
+          {
+            "id": 7,
+            "uuid": "1079ea33-02be-c792-ffffc926a26a8d21"
+          },
+          {
+            "id": 8,
+            "uuid": "1079ea80-0372-1585-ffffc926a26a8d21"
+          },
+          {
+            "id": 9,
+            "uuid": "1079ea81-0239-3739-ffffc926a26a8d21"
+          },
+          {
+            "id": 10,
+            "uuid": "1079ea83-03a2-591c-ffffc926a26a8d21"
+          },
+          {
+            "id": 11,
+            "uuid": "1079e87f-0393-6423-ffffc926a26a8d21"
+          }
+        ]
+      }
+    },
+    "1079e239-03df-0214-ffffc926a26a8d21": {
+      "uuidAction": "1079e239-03df-0214-ffffc926a26a8d21",
+      "name": "Ochrana proti zámraze",
+      "type": "Switch",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01fe-097d-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a4-ffffc926a26a8d21",
+      "defaultIcon": null,
+      "states": {
+        "active": "1079e239-03df-0211-ffff9d7d34bb1761"
+      }
+    },
+    "1079e23a-003c-025d-ffffc926a26a8d21": {
+      "uuidAction": "1079e23a-003c-025d-ffffc926a26a8d21",
+      "name": "Ochrana před bouří",
+      "type": "Switch",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01fe-097d-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a4-ffffc926a26a8d21",
+      "defaultIcon": null,
+      "states": {
+        "active": "1079e23a-003c-025a-ffff9d7d34bb1761"
+      }
+    },
+    "1079e234-0304-f525-ffffc926a26a8d21": {
+      "uuidAction": "1079e234-0304-f525-ffffc926a26a8d21",
+      "name": "Budík",
+      "type": "AlarmClock",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01ec-08fb-ffffc926a26a8d21",
+      "cat": "10412616-01b6-0826-ffffc926a26a8d21",
+      "details": {
+        "hasNightLight": false,
+        "snoozeDurationConnected": false,
+        "brightInactiveConnected": false,
+        "brightActiveConnected": false,
+        "wakeAlarmSoundConnected": false,
+        "wakeAlarmVolumeConnected": false,
+        "wakeAlarmSlopingConnected": false,
+        "wakeAlarmSounds": [
+          {
+            "id": 1,
+            "name": "Čtyři nízké pípnutí"
+          },
+          {
+            "id": 2,
+            "name": "Čtyři vysoké pípnutí"
+          },
+          {
+            "id": 3,
+            "name": "Dvojité nízké pípnutí"
+          },
+          {
+            "id": 4,
+            "name": "Dvojité vysoké pípnutí"
+          },
+          {
+            "id": 5,
+            "name": "siréna"
+          }
+        ]
+      },
+      "states": {
+        "isEnabled": "13adeaef-03d0-1bc6-ffffc926a26a8d21",
+        "isAlarmActive": "1079e234-0304-f521-ffff4fa31fadae9b",
+        "confirmationNeeded": "13adeaef-03d0-1bbe-ffffc926a26a8d21",
+        "entryList": "13adeaef-03d0-1bbf-ffffc926a26a8d21",
+        "currentEntry": "13adeaef-03d0-1bc0-ffffc926a26a8d21",
+        "nextEntry": "13adeaef-03d0-1bc1-ffffc926a26a8d21",
+        "nextEntryMode": "13adeaef-03d0-1bc7-ffffc926a26a8d21",
+        "ringingTime": "13adeaef-03d0-1bc2-ffffc926a26a8d21",
+        "ringDuration": "13adeaef-03d0-1bc3-ffffc926a26a8d21",
+        "prepareDuration": "13adeaef-03d0-1bc4-ffffc926a26a8d21",
+        "snoozeTime": "1079e234-0304-f524-ffff4fa31fadae9b",
+        "snoozeDuration": "13adeaef-03d0-1bc5-ffffc926a26a8d21",
+        "nextEntryTime": "13adeaef-03d0-1bc8-ffffc926a26a8d21",
+        "deviceState": "13adeaef-03d0-1bc9-ffffc926a26a8d21",
+        "deviceSettings": "13adeaef-03d0-1bca-ffffc926a26a8d21",
+        "wakeAlarmSoundSettings": "13adeaef-03d0-1bcb-ffffc926a26a8d21"
+      }
+    },
+    "1079e234-025f-f3c7-ffffc926a26a8d21": {
+      "uuidAction": "1079e234-025f-f3c7-ffffc926a26a8d21",
+      "name": "Osvětlení",
+      "type": "LightControllerV2",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01ec-08fb-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a0-ffffc926a26a8d21",
+      "presence": true,
+      "details": {
+        "masterValue": "1079e234-025f-f3c7-ffffc926a26a8d21/masterValue"
+      },
+      "states": {
+        "activeMoods": "112e8a91-03b0-17d5-ffffc926a26a8d21",
+        "moodList": "112e8a91-03b0-17d6-ffffc926a26a8d21",
+        "favoriteMoods": "112e8a91-03b0-17d7-ffffc926a26a8d21",
+        "additionalMoods": "112e8a91-03b0-17d8-ffffc926a26a8d21",
+        "presenceFrom": "112e8a91-03b0-17d3-ffffc926a26a8d21",
+        "presenceTo": "112e8a91-03b0-17d4-ffffc926a26a8d21"
+      },
+      "subControls": {
+        "1079e234-025f-f3c7-ffffc926a26a8d21/masterValue": {
+          "name": "Hlavní jas",
+          "type": "Dimmer",
+          "uuidAction": "1079e234-025f-f3c7-ffffc926a26a8d21/masterValue",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "position": "1079e234-025f-f3c3-ffffc53a48ca7260",
+            "min": "112e8a91-03b0-17da-ffffc926a26a8d21",
+            "max": "112e8a91-03b0-17db-ffffc926a26a8d21",
+            "step": "1079e234-025f-f39f-ffffc53a48ca7260"
+          }
+        },
+        "1079e234-025f-f3c7-ffffc926a26a8d21/AI1": {
+          "name": "Orientační",
+          "type": "Switch",
+          "uuidAction": "1079e234-025f-f3c7-ffffc926a26a8d21/AI1",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "active": "1079e234-025f-f3b0-ffffc53a48ca7260"
+          }
+        },
+        "1079e234-025f-f3c7-ffffc926a26a8d21/AI2": {
+          "name": "Stmívané",
+          "type": "Dimmer",
+          "uuidAction": "1079e234-025f-f3c7-ffffc926a26a8d21/AI2",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "position": "1079e234-025f-f3b1-ffffc53a48ca7260",
+            "min": "1079e234-025f-f3a1-ffffc53a48ca7260",
+            "max": "1079e234-025f-f3a2-ffffc53a48ca7260",
+            "step": "1079e234-025f-f39f-ffffc53a48ca7260"
+          }
+        }
+      }
+    },
+    "1079fd77-030b-5217-ffff83debc808829": {
+      "uuidAction": "1079fd77-030b-5217-ffff83debc808829",
+      "name": "Inteligentní regulace pokojové teploty",
+      "type": "IRoomControllerV2",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01ec-08fb-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07bc-ffffc926a26a8d21",
+      "details": {
+        "timerModes": [
+          {
+            "name": "Režim přítomnost",
+            "description": "Komfort",
+            "id": 1
+          },
+          {
+            "name": "Režim nepřítomnost",
+            "description": "Úsporný provoz",
+            "id": 0
+          },
+          {
+            "name": "Režim Vyp.",
+            "description": "Režim ochrana budovy",
+            "id": 2
+          }
+        ],
+        "format": "%.1f°",
+        "connectedInputs": 0
+      },
+      "states": {
+        "tempActual": "13d2fe3f-03bb-8056-ffff016e3a918d01",
+        "tempTarget": "13d2fe3f-03bb-807b-ffff016e3a918d01",
+        "comfortTemperature": "13d2fe3f-03bb-805e-ffff016e3a918d01",
+        "comfortTolerance": "13d2fe3f-03bb-805f-ffff016e3a918d01",
+        "absentMinOffset": "13d2fe3f-03bb-8060-ffff016e3a918d01",
+        "absentMaxOffset": "13d2fe3f-03bb-8061-ffff016e3a918d01",
+        "frostProtectTemperature": "13d2fe3f-03bb-8062-ffff016e3a918d01",
+        "heatProtectTemperature": "13d2fe3f-03bb-8063-ffff016e3a918d01",
+        "activeMode": "13d2fe3f-03bb-8050-ffff016e3a918d01",
+        "comfortTemperatureOffset": "13d2fe3f-03bb-804b-ffff016e3a918d01",
+        "overrideEntries": "13d2fe3f-03bb-804c-ffff016e3a918d01",
+        "prepareState": "13d2fe3f-03bb-804d-ffff016e3a918d01",
+        "useOutdoor": "13d2fe3f-03bb-804e-ffff016e3a918d01",
+        "operatingMode": "13d2fe3f-03bb-8051-ffff016e3a918d01",
+        "overrideReason": "13d2fe3f-03bb-8053-ffff016e3a918d01",
+        "openWindow": "13d2fe3f-03bb-8057-ffff016e3a918d01",
+        "modeList": "13d2fe3f-03bb-8052-ffff016e3a918d01"
+      },
+      "statistic": {
+        "frequency": 6,
+        "outputs": [
+          {
+            "id": 0,
+            "name": "Inteligentní regulace pokojové teploty",
+            "format": "",
+            "uuid": "13d2fe3f-03bb-8056-ffff016e3a918d01",
+            "visuType": 0
+          }
+        ]
+      },
+      "subControls": {
+        "13d2fe3f-03bb-804a-ffff016e3a918d01": {
+          "name": "Heating and Cooling",
+          "type": "IRCV2Daytimer",
+          "uuidAction": "13d2fe3f-03bb-804a-ffff016e3a918d01",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "details": {
+            "analog": true,
+            "format": "%.1f°"
+          },
+          "states": {
+            "entriesAndDefaultValue": "13d2fe3f-03bb-804a-ffff016e3a918d01",
+            "mode": "13d2fe3f-03bb-807c-ffff016e3a918d01",
+            "modeList": "13d2fe3f-03bb-8052-ffff016e3a918d01",
+            "value": "13d2fe3f-03bb-8050-ffff016e3a918d01"
+          }
+        }
+      }
+    },
+    "1079e775-01db-79ab-ffffc926a26a8d21": {
+      "uuidAction": "1079e775-01db-79ab-ffffc926a26a8d21",
+      "name": "Okno sever",
+      "type": "Jalousie",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "0",
+      "room": "10412616-01ec-08fb-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a4-ffffc926a26a8d21",
+      "details": {
+        "isAutomatic": true,
+        "animation": 0
+      },
+      "states": {
+        "infoText": "12578778-0294-429b-ffffc926a26a8d21",
+        "up": "1079e775-01db-79a3-ffffa0056e1a541b",
+        "down": "1079e775-01db-79a4-ffffa0056e1a541b",
+        "position": "1079e775-01db-79a5-ffffa0056e1a541b",
+        "shadePosition": "1079e775-01db-79a6-ffffa0056e1a541b",
+        "safetyActive": "1079e775-01db-79a8-ffffa0056e1a541b",
+        "autoAllowed": "1079e775-01db-7984-ffffa0056e1a541b",
+        "autoActive": "1079e775-01db-79a7-ffffa0056e1a541b",
+        "locked": "1079e775-01db-79a9-ffffa0056e1a541b",
+        "autoInfoText": "12578778-0294-429c-ffffc926a26a8d21",
+        "autoState": "12578778-0294-429d-ffffc926a26a8d21"
+      }
+    },
+    "1079e775-024a-57f7-ffffc926a26a8d21": {
+      "uuidAction": "1079e775-024a-57f7-ffffc926a26a8d21",
+      "name": "Okno západ",
+      "type": "Jalousie",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "0",
+      "room": "10412616-01ec-08fb-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a4-ffffc926a26a8d21",
+      "details": {
+        "isAutomatic": true,
+        "animation": 0
+      },
+      "states": {
+        "infoText": "12578778-0294-4269-ffffc926a26a8d21",
+        "up": "1079e775-024a-57ef-ffff0f58c0b19535",
+        "down": "1079e775-024a-57f0-ffff0f58c0b19535",
+        "position": "1079e775-024a-57f1-ffff0f58c0b19535",
+        "shadePosition": "1079e775-024a-57f2-ffff0f58c0b19535",
+        "safetyActive": "1079e775-024a-57f4-ffff0f58c0b19535",
+        "autoAllowed": "1079e775-024a-57d0-ffff0f58c0b19535",
+        "autoActive": "1079e775-024a-57f3-ffff0f58c0b19535",
+        "locked": "1079e775-024a-57f5-ffff0f58c0b19535",
+        "autoInfoText": "12578778-0294-426a-ffffc926a26a8d21",
+        "autoState": "12578778-0294-426b-ffffc926a26a8d21"
+      }
+    },
+    "1079e234-02ec-f4ed-ffffc926a26a8d21": {
+      "uuidAction": "1079e234-02ec-f4ed-ffffc926a26a8d21",
+      "name": "Stínění",
+      "type": "CentralJalousie",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01ec-08fb-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a4-ffffc926a26a8d21",
+      "details": {
+        "controls": [
+          {
+            "id": 0,
+            "uuid": "1079e775-024a-57f7-ffffc926a26a8d21"
+          },
+          {
+            "id": 1,
+            "uuid": "1079e775-01db-79ab-ffffc926a26a8d21"
+          }
+        ]
+      }
+    },
+    "1079e232-01da-ef30-ffffc926a26a8d21": {
+      "uuidAction": "1079e232-01da-ef30-ffffc926a26a8d21",
+      "name": "Budík",
+      "type": "AlarmClock",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "104126e8-0188-1165-ffffc926a26a8d21",
+      "cat": "10412616-01b6-0826-ffffc926a26a8d21",
+      "details": {
+        "hasNightLight": false,
+        "snoozeDurationConnected": false,
+        "brightInactiveConnected": false,
+        "brightActiveConnected": false,
+        "wakeAlarmSoundConnected": false,
+        "wakeAlarmVolumeConnected": false,
+        "wakeAlarmSlopingConnected": false,
+        "wakeAlarmSounds": [
+          {
+            "id": 1,
+            "name": "Čtyři nízké pípnutí"
+          },
+          {
+            "id": 2,
+            "name": "Čtyři vysoké pípnutí"
+          },
+          {
+            "id": 3,
+            "name": "Dvojité nízké pípnutí"
+          },
+          {
+            "id": 4,
+            "name": "Dvojité vysoké pípnutí"
+          },
+          {
+            "id": 5,
+            "name": "siréna"
+          }
+        ]
+      },
+      "states": {
+        "isEnabled": "13adeaef-03d4-1dad-ffffc926a26a8d21",
+        "isAlarmActive": "1079e232-01da-ef2c-ffffd70feac5259d",
+        "confirmationNeeded": "13adeaef-03d4-1da5-ffffc926a26a8d21",
+        "entryList": "13adeaef-03d4-1da6-ffffc926a26a8d21",
+        "currentEntry": "13adeaef-03d4-1da7-ffffc926a26a8d21",
+        "nextEntry": "13adeaef-03d4-1da8-ffffc926a26a8d21",
+        "nextEntryMode": "13adeaef-03d4-1dae-ffffc926a26a8d21",
+        "ringingTime": "13adeaef-03d4-1da9-ffffc926a26a8d21",
+        "ringDuration": "13adeaef-03d4-1daa-ffffc926a26a8d21",
+        "prepareDuration": "13adeaef-03d4-1dab-ffffc926a26a8d21",
+        "snoozeTime": "1079e232-01da-ef2f-ffffd70feac5259d",
+        "snoozeDuration": "13adeaef-03d4-1dac-ffffc926a26a8d21",
+        "nextEntryTime": "13adeaef-03d4-1daf-ffffc926a26a8d21",
+        "deviceState": "13adeaef-03d4-1db0-ffffc926a26a8d21",
+        "deviceSettings": "13adeaef-03d4-1db1-ffffc926a26a8d21",
+        "wakeAlarmSoundSettings": "13adeaef-03d4-1db2-ffffc926a26a8d21"
+      }
+    },
+    "1079e232-0136-ee1b-ffffc926a26a8d21": {
+      "uuidAction": "1079e232-0136-ee1b-ffffc926a26a8d21",
+      "name": "Osvětlení",
+      "type": "LightControllerV2",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "104126e8-0188-1165-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a0-ffffc926a26a8d21",
+      "presence": true,
+      "details": {
+        "masterValue": "1079e232-0136-ee1b-ffffc926a26a8d21/masterValue"
+      },
+      "states": {
+        "activeMoods": "112e8a91-03b0-19d5-ffffc926a26a8d21",
+        "moodList": "112e8a91-03b0-19d6-ffffc926a26a8d21",
+        "favoriteMoods": "112e8a91-03b0-19d7-ffffc926a26a8d21",
+        "additionalMoods": "112e8a91-03b0-19d8-ffffc926a26a8d21",
+        "presenceFrom": "112e8a91-03b0-19d3-ffffc926a26a8d21",
+        "presenceTo": "112e8a91-03b0-19d4-ffffc926a26a8d21"
+      },
+      "subControls": {
+        "1079e232-0136-ee1b-ffffc926a26a8d21/masterValue": {
+          "name": "Hlavní jas",
+          "type": "Dimmer",
+          "uuidAction": "1079e232-0136-ee1b-ffffc926a26a8d21/masterValue",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "position": "1079e232-0136-ee17-ffff51a3dbe134b9",
+            "min": "112e8a91-03b0-19da-ffffc926a26a8d21",
+            "max": "112e8a91-03b0-19db-ffffc926a26a8d21",
+            "step": "1079e232-0136-edf3-ffff51a3dbe134b9"
+          }
+        },
+        "1079e232-0136-ee1b-ffffc926a26a8d21/AI1": {
+          "name": "Orientační",
+          "type": "Switch",
+          "uuidAction": "1079e232-0136-ee1b-ffffc926a26a8d21/AI1",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "active": "1079e232-0136-ee04-ffff51a3dbe134b9"
+          }
+        },
+        "1079e232-0136-ee1b-ffffc926a26a8d21/AI2": {
+          "name": "Stmívané",
+          "type": "Dimmer",
+          "uuidAction": "1079e232-0136-ee1b-ffffc926a26a8d21/AI2",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "position": "1079e232-0136-ee05-ffff51a3dbe134b9",
+            "min": "1079e232-0136-edf5-ffff51a3dbe134b9",
+            "max": "1079e232-0136-edf6-ffff51a3dbe134b9",
+            "step": "1079e232-0136-edf3-ffff51a3dbe134b9"
+          }
+        }
+      }
+    },
+    "1079febf-0089-0db4-ffff069da2622874": {
+      "uuidAction": "1079febf-0089-0db4-ffff069da2622874",
+      "name": "Inteligentní regulace pokojové teploty",
+      "type": "IRoomControllerV2",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "104126e8-0188-1165-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07bc-ffffc926a26a8d21",
+      "details": {
+        "timerModes": [
+          {
+            "name": "Režim přítomnost",
+            "description": "Komfort",
+            "id": 1
+          },
+          {
+            "name": "Režim nepřítomnost",
+            "description": "Úsporný provoz",
+            "id": 0
+          },
+          {
+            "name": "Režim Vyp.",
+            "description": "Režim ochrana budovy",
+            "id": 2
+          }
+        ],
+        "format": "%.1f°",
+        "connectedInputs": 0
+      },
+      "states": {
+        "tempActual": "13d2fe3f-03bb-8091-ffff4739ae9e554e",
+        "tempTarget": "13d2fe3f-03bb-80b6-ffff4739ae9e554e",
+        "comfortTemperature": "13d2fe3f-03bb-8099-ffff4739ae9e554e",
+        "comfortTolerance": "13d2fe3f-03bb-809a-ffff4739ae9e554e",
+        "absentMinOffset": "13d2fe3f-03bb-809b-ffff4739ae9e554e",
+        "absentMaxOffset": "13d2fe3f-03bb-809c-ffff4739ae9e554e",
+        "frostProtectTemperature": "13d2fe3f-03bb-809d-ffff4739ae9e554e",
+        "heatProtectTemperature": "13d2fe3f-03bb-809e-ffff4739ae9e554e",
+        "activeMode": "13d2fe3f-03bb-808b-ffff4739ae9e554e",
+        "comfortTemperatureOffset": "13d2fe3f-03bb-8086-ffff4739ae9e554e",
+        "overrideEntries": "13d2fe3f-03bb-8087-ffff4739ae9e554e",
+        "prepareState": "13d2fe3f-03bb-8088-ffff4739ae9e554e",
+        "useOutdoor": "13d2fe3f-03bb-8089-ffff4739ae9e554e",
+        "operatingMode": "13d2fe3f-03bb-808c-ffff4739ae9e554e",
+        "overrideReason": "13d2fe3f-03bb-808e-ffff4739ae9e554e",
+        "openWindow": "13d2fe3f-03bb-8092-ffff4739ae9e554e",
+        "modeList": "13d2fe3f-03bb-808d-ffff4739ae9e554e"
+      },
+      "statistic": {
+        "frequency": 6,
+        "outputs": [
+          {
+            "id": 0,
+            "name": "Inteligentní regulace pokojové teploty",
+            "format": "",
+            "uuid": "13d2fe3f-03bb-8091-ffff4739ae9e554e",
+            "visuType": 0
+          }
+        ]
+      },
+      "subControls": {
+        "13d2fe3f-03bb-8085-ffff4739ae9e554e": {
+          "name": "Heating and Cooling",
+          "type": "IRCV2Daytimer",
+          "uuidAction": "13d2fe3f-03bb-8085-ffff4739ae9e554e",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "details": {
+            "analog": true,
+            "format": "%.1f°"
+          },
+          "states": {
+            "entriesAndDefaultValue": "13d2fe3f-03bb-8085-ffff4739ae9e554e",
+            "mode": "13d2fe3f-03bb-80b7-ffff4739ae9e554e",
+            "modeList": "13d2fe3f-03bb-808d-ffff4739ae9e554e",
+            "value": "13d2fe3f-03bb-808b-ffff4739ae9e554e"
+          }
+        }
+      }
+    },
+    "1079e7ab-034b-a62e-ffffc926a26a8d21": {
+      "uuidAction": "1079e7ab-034b-a62e-ffffc926a26a8d21",
+      "name": "Stínění",
+      "type": "Jalousie",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "0",
+      "room": "104126e8-0188-1165-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a4-ffffc926a26a8d21",
+      "details": {
+        "isAutomatic": true,
+        "animation": 0
+      },
+      "states": {
+        "infoText": "12578778-0299-4448-ffffc926a26a8d21",
+        "up": "1079e7ab-034b-a626-ffff35dfeec799c0",
+        "down": "1079e7ab-034b-a627-ffff35dfeec799c0",
+        "position": "1079e7ab-034b-a628-ffff35dfeec799c0",
+        "shadePosition": "1079e7ab-034b-a629-ffff35dfeec799c0",
+        "safetyActive": "1079e7ab-034b-a62b-ffff35dfeec799c0",
+        "autoAllowed": "1079e7ab-034b-a607-ffff35dfeec799c0",
+        "autoActive": "1079e7ab-034b-a62a-ffff35dfeec799c0",
+        "locked": "1079e7ab-034b-a62c-ffff35dfeec799c0",
+        "autoInfoText": "12578778-0299-4449-ffffc926a26a8d21",
+        "autoState": "12578778-0299-444a-ffffc926a26a8d21"
+      }
+    },
+    "107a2d9e-00cf-4695-ffffc926a26a8d21": {
+      "uuidAction": "107a2d9e-00cf-4695-ffffc926a26a8d21",
+      "name": "Dobíjecí stanice",
+      "type": "CarCharger",
+      "isFavorite": true,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01ec-0907-ffffc926a26a8d21",
+      "cat": "10412616-01b6-081e-ffffc926a26a8d21",
+      "details": {
+        "chargerType": -1,
+        "limitAllowed": false
+      },
+      "states": {
+        "connected": "107a2d9e-00cf-468b-ffff10b8d1c7d4cb",
+        "power": "107a2d9e-00cf-468c-ffff10b8d1c7d4cb",
+        "energySession": "107a2d9e-00cf-468d-ffff10b8d1c7d4cb",
+        "currentLimit": "107a2d9e-00cf-4692-ffff10b8d1c7d4cb",
+        "chargingFinished": "107a2d9e-00cf-4694-ffff10b8d1c7d4cb",
+        "currentProfile": "107a2d9e-00ce-4674-ffff10b8d1c7d4cb",
+        "profiles": "107a2d9e-00ce-4675-ffff10b8d1c7d4cb",
+        "minLimit": "107a2d9e-00ce-4676-ffff10b8d1c7d4cb",
+        "maxLimit": "107a2d9e-00ce-4677-ffff10b8d1c7d4cb",
+        "status": "107a2d9e-00ce-467b-ffff10b8d1c7d4cb",
+        "chargeDuration": "107a2d9e-00ce-4679-ffff10b8d1c7d4cb",
+        "limitMode": "107a2d9e-00cf-467c-ffff10b8d1c7d4cb",
+        "showLoadManagement": "107a2d9e-00cf-467d-ffff10b8d1c7d4cb",
+        "charging": "107a2d9e-00cf-468a-ffff10b8d1c7d4cb"
+      }
+    },
+    "1079e234-00ff-f324-ffffc926a26a8d21": {
+      "uuidAction": "1079e234-00ff-f324-ffffc926a26a8d21",
+      "name": "Osvětlení",
+      "type": "LightControllerV2",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01ec-0907-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a0-ffffc926a26a8d21",
+      "presence": true,
+      "details": {
+        "masterValue": "1079e234-00ff-f324-ffffc926a26a8d21/masterValue"
+      },
+      "states": {
+        "activeMoods": "112e8a91-03c4-1b56-ffffc926a26a8d21",
+        "moodList": "112e8a91-03c4-1b57-ffffc926a26a8d21",
+        "favoriteMoods": "112e8a91-03c4-1b58-ffffc926a26a8d21",
+        "additionalMoods": "112e8a91-03c4-1b59-ffffc926a26a8d21",
+        "presenceFrom": "112e8a91-03c4-1b54-ffffc926a26a8d21",
+        "presenceTo": "112e8a91-03c4-1b55-ffffc926a26a8d21"
+      },
+      "subControls": {
+        "1079e234-00ff-f324-ffffc926a26a8d21/masterValue": {
+          "name": "Hlavní jas",
+          "type": "Dimmer",
+          "uuidAction": "1079e234-00ff-f324-ffffc926a26a8d21/masterValue",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "position": "1079e234-00ff-f320-ffffb29cd7703dba",
+            "min": "112e8a91-03c4-1b5b-ffffc926a26a8d21",
+            "max": "112e8a91-03c4-1b5c-ffffc926a26a8d21",
+            "step": "1079e234-00ff-f2fc-ffffb29cd7703dba"
+          }
+        },
+        "1079e234-00ff-f324-ffffc926a26a8d21/AI1": {
+          "name": "Orientierungslicht",
+          "type": "Switch",
+          "uuidAction": "1079e234-00ff-f324-ffffc926a26a8d21/AI1",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "active": "1079e234-00ff-f30d-ffffb29cd7703dba"
+          }
+        },
+        "1079e234-00ff-f324-ffffc926a26a8d21/AI2": {
+          "name": "Dimmer",
+          "type": "Dimmer",
+          "uuidAction": "1079e234-00ff-f324-ffffc926a26a8d21/AI2",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "position": "1079e234-00ff-f30e-ffffb29cd7703dba",
+            "min": "1079e234-00ff-f2fe-ffffb29cd7703dba",
+            "max": "1079e234-00ff-f2ff-ffffb29cd7703dba",
+            "step": "1079e234-00ff-f2fc-ffffb29cd7703dba"
+          }
+        }
+      }
+    },
+    "1079e231-03e6-eb5e-ffffc926a26a8d21": {
+      "uuidAction": "1079e231-03e6-eb5e-ffffc926a26a8d21",
+      "name": "Osvětlení",
+      "type": "LightControllerV2",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10415767-03e6-ada7-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a0-ffffc926a26a8d21",
+      "presence": true,
+      "details": {
+        "masterValue": "1079e231-03e6-eb5e-ffffc926a26a8d21/masterValue"
+      },
+      "states": {
+        "activeMoods": "112e8a91-03c4-1c81-ffffc926a26a8d21",
+        "moodList": "112e8a91-03c4-1c82-ffffc926a26a8d21",
+        "favoriteMoods": "112e8a91-03c4-1c83-ffffc926a26a8d21",
+        "additionalMoods": "112e8a91-03c4-1c84-ffffc926a26a8d21",
+        "presenceFrom": "112e8a91-03c4-1c7f-ffffc926a26a8d21",
+        "presenceTo": "112e8a91-03c4-1c80-ffffc926a26a8d21"
+      },
+      "subControls": {
+        "1079e231-03e6-eb5e-ffffc926a26a8d21/masterValue": {
+          "name": "Hlavní jas",
+          "type": "Dimmer",
+          "uuidAction": "1079e231-03e6-eb5e-ffffc926a26a8d21/masterValue",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "position": "1079e231-03e6-eb5a-ffffef449c7b58c3",
+            "min": "112e8a91-03c4-1c86-ffffc926a26a8d21",
+            "max": "112e8a91-03c4-1c87-ffffc926a26a8d21",
+            "step": "1079e231-03e6-eb36-ffffef449c7b58c3"
+          }
+        },
+        "1079e231-03e6-eb5e-ffffc926a26a8d21/AI1": {
+          "name": "Orientierungslicht",
+          "type": "Switch",
+          "uuidAction": "1079e231-03e6-eb5e-ffffc926a26a8d21/AI1",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "active": "1079e231-03e6-eb47-ffffef449c7b58c3"
+          }
+        },
+        "1079e231-03e6-eb5e-ffffc926a26a8d21/AI2": {
+          "name": "Dimmer",
+          "type": "Dimmer",
+          "uuidAction": "1079e231-03e6-eb5e-ffffc926a26a8d21/AI2",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "position": "1079e231-03e6-eb48-ffffef449c7b58c3",
+            "min": "1079e231-03e6-eb38-ffffef449c7b58c3",
+            "max": "1079e231-03e6-eb39-ffffef449c7b58c3",
+            "step": "1079e231-03e6-eb36-ffffef449c7b58c3"
+          }
+        }
+      }
+    },
+    "1079e84b-02f7-1732-ffffc926a26a8d21": {
+      "uuidAction": "1079e84b-02f7-1732-ffffc926a26a8d21",
+      "name": "Okno Jih",
+      "type": "Jalousie",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "0",
+      "room": "10415767-03e6-ada7-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a4-ffffc926a26a8d21",
+      "details": {
+        "isAutomatic": true,
+        "animation": 0
+      },
+      "states": {
+        "infoText": "12578778-029e-46b1-ffffc926a26a8d21",
+        "up": "1079e84b-02f7-172a-ffff56b34d9fb409",
+        "down": "1079e84b-02f7-172b-ffff56b34d9fb409",
+        "position": "1079e84b-02f7-172c-ffff56b34d9fb409",
+        "shadePosition": "1079e84b-02f7-172d-ffff56b34d9fb409",
+        "safetyActive": "1079e84b-02f7-172f-ffff56b34d9fb409",
+        "autoAllowed": "1079e84b-02f7-170b-ffff56b34d9fb409",
+        "autoActive": "1079e84b-02f7-172e-ffff56b34d9fb409",
+        "locked": "1079e84b-02f7-1730-ffff56b34d9fb409",
+        "autoInfoText": "12578778-029e-46b2-ffffc926a26a8d21",
+        "autoState": "12578778-029e-46b3-ffffc926a26a8d21"
+      }
+    },
+    "10412808-00ec-16d1-ffffc926a26a8d21": {
+      "uuidAction": "10412808-00ec-16d1-ffffc926a26a8d21",
+      "name": "Music Server Zone",
+      "type": "AudioZone",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01ec-08ef-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07b0-ffffc926a26a8d21",
+      "presence": true,
+      "details": {
+        "server": "10412808-00ec-1590-ffffc926a26a8d21",
+        "playerid": 4,
+        "clientType": 0,
+        "parameterConnections": 0
+      },
+      "states": {
+        "power": "10412808-00ec-1685-ffffaaeb29220ef0",
+        "serverState": "10412808-00ec-1695-ffffaaeb29220ef0",
+        "playState": "10412808-00ec-1689-ffffaaeb29220ef0",
+        "clientState": "10412808-00ec-1696-ffffaaeb29220ef0",
+        "volume": "10412808-00ec-1686-ffffaaeb29220ef0",
+        "maxVolume": "10412808-00ec-1687-ffffaaeb29220ef0",
+        "mute": "10412808-00ec-168a-ffffaaeb29220ef0",
+        "shuffle": "10412808-00ec-168d-ffffaaeb29220ef0",
+        "repeat": "10412808-00ec-168e-ffffaaeb29220ef0",
+        "source": "10412808-00ec-1688-ffffaaeb29220ef0",
+        "sourceList": "10412808-00ec-168c-ffffaaeb29220ef0",
+        "songName": "10412808-00ec-168b-ffffaaeb29220ef0",
+        "duration": "10412808-00ec-1690-ffffaaeb29220ef0",
+        "progress": "10412808-00ec-168f-ffffaaeb29220ef0",
+        "album": "10412808-00ec-1691-ffffaaeb29220ef0",
+        "artist": "10412808-00ec-1692-ffffaaeb29220ef0",
+        "station": "10412808-00ec-1698-ffffaaeb29220ef0",
+        "genre": "10412808-00ec-1693-ffffaaeb29220ef0",
+        "cover": "10412808-00ec-1694-ffffaaeb29220ef0",
+        "volumeStep": "10412808-00ec-1697-ffffaaeb29220ef0",
+        "queueIndex": "14bba21a-02ae-44cc-ffffeee000a8004a",
+        "enableAirPlay": "14bba21a-02ae-44cd-ffffeee000a8004a",
+        "enableSpotifyConnect": "14bba21a-02ae-44ce-ffffeee000a8004a",
+        "alarmVolume": "10412808-00ec-16c1-ffffaaeb29220ef0",
+        "bellVolume": "10412808-00ec-16c2-ffffaaeb29220ef0",
+        "buzzerVolume": "10412808-00ec-16c3-ffffaaeb29220ef0",
+        "ttsVolume": "10412808-00ec-16c4-ffffaaeb29220ef0",
+        "ttsVolume": "10412808-00ec-16c4-ffffaaeb29220ef0",
+        "defaultVolume": "10412808-00ec-16c0-ffffaaeb29220ef0",
+        "equalizerSettings": "14bba21a-02ae-44cf-ffffeee000a8004a",
+        "presenceFrom": "10412808-00ec-1699-ffffaaeb29220ef0",
+        "presenceTo": "10412808-00ec-169a-ffffaaeb29220ef0"
+      }
+    },
+    "1079e236-0370-f7dd-ffffc926a26a8d21": {
+      "uuidAction": "1079e236-0370-f7dd-ffffc926a26a8d21",
+      "name": "Osvětlení",
+      "type": "LightControllerV2",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01ec-08ef-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a0-ffffc926a26a8d21",
+      "presence": true,
+      "details": {
+        "masterValue": "1079e236-0370-f7dd-ffffc926a26a8d21/masterValue"
+      },
+      "states": {
+        "activeMoods": "112e8a91-03c4-1d5e-ffffc926a26a8d21",
+        "moodList": "112e8a91-03c4-1d5f-ffffc926a26a8d21",
+        "favoriteMoods": "112e8a91-03c4-1d60-ffffc926a26a8d21",
+        "additionalMoods": "112e8a91-03c4-1d61-ffffc926a26a8d21",
+        "presenceFrom": "112e8a91-03c4-1d5c-ffffc926a26a8d21",
+        "presenceTo": "112e8a91-03c4-1d5d-ffffc926a26a8d21"
+      },
+      "subControls": {
+        "1079e236-0370-f7dd-ffffc926a26a8d21/masterValue": {
+          "name": "Hlavní jas",
+          "type": "Dimmer",
+          "uuidAction": "1079e236-0370-f7dd-ffffc926a26a8d21/masterValue",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "position": "1079e236-0370-f7d9-ffff07f1f2a2a8c3",
+            "min": "112e8a91-03c4-1d63-ffffc926a26a8d21",
+            "max": "112e8a91-03c4-1d64-ffffc926a26a8d21",
+            "step": "1079e236-0370-f7b5-ffff07f1f2a2a8c3"
+          }
+        },
+        "1079e236-0370-f7dd-ffffc926a26a8d21/AI1": {
+          "name": "Orientierungslicht",
+          "type": "Switch",
+          "uuidAction": "1079e236-0370-f7dd-ffffc926a26a8d21/AI1",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "active": "1079e236-0370-f7c6-ffff07f1f2a2a8c3"
+          }
+        },
+        "1079e236-0370-f7dd-ffffc926a26a8d21/AI2": {
+          "name": "Dimmer",
+          "type": "Dimmer",
+          "uuidAction": "1079e236-0370-f7dd-ffffc926a26a8d21/AI2",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "position": "1079e236-0370-f7c7-ffff07f1f2a2a8c3",
+            "min": "1079e236-0370-f7b7-ffff07f1f2a2a8c3",
+            "max": "1079e236-0370-f7b8-ffff07f1f2a2a8c3",
+            "step": "1079e236-0370-f7b5-ffff07f1f2a2a8c3"
+          }
+        }
+      }
+    },
+    "1079fc4c-031f-5f2d-fffff1d301a80b0b": {
+      "uuidAction": "1079fc4c-031f-5f2d-fffff1d301a80b0b",
+      "name": "Inteligentní regulace pokojové teploty",
+      "type": "IRoomControllerV2",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01ec-08ef-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07bc-ffffc926a26a8d21",
+      "details": {
+        "timerModes": [
+          {
+            "name": "Režim přítomnost",
+            "description": "Komfort",
+            "id": 1
+          },
+          {
+            "name": "Režim nepřítomnost",
+            "description": "Úsporný provoz",
+            "id": 0
+          },
+          {
+            "name": "Režim Vyp.",
+            "description": "Režim ochrana budovy",
+            "id": 2
+          }
+        ],
+        "format": "%.1f°",
+        "connectedInputs": 0
+      },
+      "states": {
+        "tempActual": "13d2fe3f-03bb-80cc-ffff4739ae9e554e",
+        "tempTarget": "13d2fe3f-03bb-80f1-ffff4739ae9e554e",
+        "comfortTemperature": "13d2fe3f-03bb-80d4-ffff4739ae9e554e",
+        "comfortTolerance": "13d2fe3f-03bb-80d5-ffff4739ae9e554e",
+        "absentMinOffset": "13d2fe3f-03bb-80d6-ffff4739ae9e554e",
+        "absentMaxOffset": "13d2fe3f-03bb-80d7-ffff4739ae9e554e",
+        "frostProtectTemperature": "13d2fe3f-03bb-80d8-ffff4739ae9e554e",
+        "heatProtectTemperature": "13d2fe3f-03bb-80d9-ffff4739ae9e554e",
+        "activeMode": "13d2fe3f-03bb-80c6-ffff4739ae9e554e",
+        "comfortTemperatureOffset": "13d2fe3f-03bb-80c1-ffff4739ae9e554e",
+        "overrideEntries": "13d2fe3f-03bb-80c2-ffff4739ae9e554e",
+        "prepareState": "13d2fe3f-03bb-80c3-ffff4739ae9e554e",
+        "useOutdoor": "13d2fe3f-03bb-80c4-ffff4739ae9e554e",
+        "operatingMode": "13d2fe3f-03bb-80c7-ffff4739ae9e554e",
+        "overrideReason": "13d2fe3f-03bb-80c9-ffff4739ae9e554e",
+        "openWindow": "13d2fe3f-03bb-80cd-ffff4739ae9e554e",
+        "modeList": "13d2fe3f-03bb-80c8-ffff4739ae9e554e"
+      },
+      "statistic": {
+        "frequency": 6,
+        "outputs": [
+          {
+            "id": 0,
+            "name": "Inteligentní regulace pokojové teploty",
+            "format": "",
+            "uuid": "13d2fe3f-03bb-80cc-ffff4739ae9e554e",
+            "visuType": 0
+          }
+        ]
+      },
+      "subControls": {
+        "13d2fe3f-03bb-80c0-ffff4739ae9e554e": {
+          "name": "Heating and Cooling",
+          "type": "IRCV2Daytimer",
+          "uuidAction": "13d2fe3f-03bb-80c0-ffff4739ae9e554e",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "details": {
+            "analog": true,
+            "format": "%.1f°"
+          },
+          "states": {
+            "entriesAndDefaultValue": "13d2fe3f-03bb-80c0-ffff4739ae9e554e",
+            "mode": "13d2fe3f-03bb-80f2-ffff4739ae9e554e",
+            "modeList": "13d2fe3f-03bb-80c8-ffff4739ae9e554e",
+            "value": "13d2fe3f-03bb-80c6-ffff4739ae9e554e"
+          }
+        }
+      }
+    },
+    "10412808-00ec-1635-ffffc926a26a8d21": {
+      "uuidAction": "10412808-00ec-1635-ffffc926a26a8d21",
+      "name": "Zóna Music serveru",
+      "type": "AudioZone",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01ec-08eb-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07b0-ffffc926a26a8d21",
+      "presence": true,
+      "details": {
+        "server": "10412808-00ec-1590-ffffc926a26a8d21",
+        "playerid": 2,
+        "clientType": 0,
+        "parameterConnections": 0
+      },
+      "states": {
+        "power": "10412808-00ec-15e9-ffffaaeb29220ef0",
+        "serverState": "10412808-00ec-15f9-ffffaaeb29220ef0",
+        "playState": "10412808-00ec-15ed-ffffaaeb29220ef0",
+        "clientState": "10412808-00ec-15fa-ffffaaeb29220ef0",
+        "volume": "10412808-00ec-15ea-ffffaaeb29220ef0",
+        "maxVolume": "10412808-00ec-15eb-ffffaaeb29220ef0",
+        "mute": "10412808-00ec-15ee-ffffaaeb29220ef0",
+        "shuffle": "10412808-00ec-15f1-ffffaaeb29220ef0",
+        "repeat": "10412808-00ec-15f2-ffffaaeb29220ef0",
+        "source": "10412808-00ec-15ec-ffffaaeb29220ef0",
+        "sourceList": "10412808-00ec-15f0-ffffaaeb29220ef0",
+        "songName": "10412808-00ec-15ef-ffffaaeb29220ef0",
+        "duration": "10412808-00ec-15f4-ffffaaeb29220ef0",
+        "progress": "10412808-00ec-15f3-ffffaaeb29220ef0",
+        "album": "10412808-00ec-15f5-ffffaaeb29220ef0",
+        "artist": "10412808-00ec-15f6-ffffaaeb29220ef0",
+        "station": "10412808-00ec-15fc-ffffaaeb29220ef0",
+        "genre": "10412808-00ec-15f7-ffffaaeb29220ef0",
+        "cover": "10412808-00ec-15f8-ffffaaeb29220ef0",
+        "volumeStep": "10412808-00ec-15fb-ffffaaeb29220ef0",
+        "queueIndex": "14bba21a-032e-45ea-ffffeee000a8004a",
+        "enableAirPlay": "14bba21a-032e-45eb-ffffeee000a8004a",
+        "enableSpotifyConnect": "14bba21a-032e-45ec-ffffeee000a8004a",
+        "alarmVolume": "10412808-00ec-1625-ffffaaeb29220ef0",
+        "bellVolume": "10412808-00ec-1626-ffffaaeb29220ef0",
+        "buzzerVolume": "10412808-00ec-1627-ffffaaeb29220ef0",
+        "ttsVolume": "10412808-00ec-1628-ffffaaeb29220ef0",
+        "ttsVolume": "10412808-00ec-1628-ffffaaeb29220ef0",
+        "defaultVolume": "10412808-00ec-1624-ffffaaeb29220ef0",
+        "equalizerSettings": "14bba21a-032e-45ed-ffffeee000a8004a",
+        "presenceFrom": "10412808-00ec-15fd-ffffaaeb29220ef0",
+        "presenceTo": "10412808-00ec-15fe-ffffaaeb29220ef0"
+      }
+    },
+    "1079e237-0126-f8be-ffffc926a26a8d21": {
+      "uuidAction": "1079e237-0126-f8be-ffffc926a26a8d21",
+      "name": "Osvětlení",
+      "type": "LightControllerV2",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01ec-08eb-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a0-ffffc926a26a8d21",
+      "presence": true,
+      "details": {
+        "masterValue": "1079e237-0126-f8be-ffffc926a26a8d21/masterValue"
+      },
+      "states": {
+        "activeMoods": "112e8a91-03c4-1ed9-ffffc926a26a8d21",
+        "moodList": "112e8a91-03c4-1eda-ffffc926a26a8d21",
+        "favoriteMoods": "112e8a91-03c4-1edb-ffffc926a26a8d21",
+        "additionalMoods": "112e8a91-03c4-1edc-ffffc926a26a8d21",
+        "presenceFrom": "112e8a91-03c4-1ed7-ffffc926a26a8d21",
+        "presenceTo": "112e8a91-03c4-1ed8-ffffc926a26a8d21"
+      },
+      "subControls": {
+        "1079e237-0126-f8be-ffffc926a26a8d21/masterValue": {
+          "name": "Hlavní jas",
+          "type": "Dimmer",
+          "uuidAction": "1079e237-0126-f8be-ffffc926a26a8d21/masterValue",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "position": "1079e237-0126-f8ba-ffff197761c795d6",
+            "min": "112e8a91-03c4-1ede-ffffc926a26a8d21",
+            "max": "112e8a91-03c4-1edf-ffffc926a26a8d21",
+            "step": "1079e237-0126-f896-ffff197761c795d6"
+          }
+        },
+        "1079e237-0126-f8be-ffffc926a26a8d21/AI1": {
+          "name": "Orientierungslicht",
+          "type": "Switch",
+          "uuidAction": "1079e237-0126-f8be-ffffc926a26a8d21/AI1",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "active": "1079e237-0126-f8a7-ffff197761c795d6"
+          }
+        },
+        "1079e237-0126-f8be-ffffc926a26a8d21/AI2": {
+          "name": "Dimmer",
+          "type": "Dimmer",
+          "uuidAction": "1079e237-0126-f8be-ffffc926a26a8d21/AI2",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "position": "1079e237-0126-f8a8-ffff197761c795d6",
+            "min": "1079e237-0126-f898-ffff197761c795d6",
+            "max": "1079e237-0126-f899-ffff197761c795d6",
+            "step": "1079e237-0126-f896-ffff197761c795d6"
+          }
+        },
+        "1079e237-0126-f8be-ffffc926a26a8d21/AI3": {
+          "name": "Farblicht",
+          "type": "ColorPickerV2",
+          "uuidAction": "1079e237-0126-f8be-ffffc926a26a8d21/AI3",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "details": {
+            "pickerType": "Rgb"
+          },
+          "states": {
+            "color": "1079e237-0126-f8a9-ffff197761c795d6",
+            "sequence": "13adeaf1-001c-2d78-ffff8ecffc9987d9",
+            "sequenceColorIdx": "13adeaf1-001c-2d8c-ffff8ecffc9987d9"
+          }
+        }
+      }
+    },
+    "1079f93e-0225-4b73-ffff35a1bef79127": {
+      "uuidAction": "1079f93e-0225-4b73-ffff35a1bef79127",
+      "name": "Inteligentní regulace pokojové teploty",
+      "type": "IRoomControllerV2",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01ec-08eb-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07bc-ffffc926a26a8d21",
+      "details": {
+        "timerModes": [
+          {
+            "name": "Režim přítomnost",
+            "description": "Komfort",
+            "id": 1
+          },
+          {
+            "name": "Režim nepřítomnost",
+            "description": "Úsporný provoz",
+            "id": 0
+          },
+          {
+            "name": "Režim Vyp.",
+            "description": "Režim ochrana budovy",
+            "id": 2
+          }
+        ],
+        "format": "%.1f°",
+        "connectedInputs": 0
+      },
+      "states": {
+        "tempActual": "13d2fe3f-03bb-8105-ffff4739ae9e554e",
+        "tempTarget": "13d2fe3f-03bb-812a-ffff4739ae9e554e",
+        "comfortTemperature": "13d2fe3f-03bb-810d-ffff4739ae9e554e",
+        "comfortTolerance": "13d2fe3f-03bb-810e-ffff4739ae9e554e",
+        "absentMinOffset": "13d2fe3f-03bb-810f-ffff4739ae9e554e",
+        "absentMaxOffset": "13d2fe3f-03bb-8110-ffff4739ae9e554e",
+        "frostProtectTemperature": "13d2fe3f-03bb-8111-ffff4739ae9e554e",
+        "heatProtectTemperature": "13d2fe3f-03bb-8112-ffff4739ae9e554e",
+        "activeMode": "13d2fe3f-03bb-80ff-ffff4739ae9e554e",
+        "comfortTemperatureOffset": "13d2fe3f-03bb-80fa-ffff4739ae9e554e",
+        "overrideEntries": "13d2fe3f-03bb-80fb-ffff4739ae9e554e",
+        "prepareState": "13d2fe3f-03bb-80fc-ffff4739ae9e554e",
+        "useOutdoor": "13d2fe3f-03bb-80fd-ffff4739ae9e554e",
+        "operatingMode": "13d2fe3f-03bb-8100-ffff4739ae9e554e",
+        "overrideReason": "13d2fe3f-03bb-8102-ffff4739ae9e554e",
+        "openWindow": "13d2fe3f-03bb-8106-ffff4739ae9e554e",
+        "modeList": "13d2fe3f-03bb-8101-ffff4739ae9e554e"
+      },
+      "statistic": {
+        "frequency": 6,
+        "outputs": [
+          {
+            "id": 0,
+            "name": "Inteligentní regulace pokojové teploty",
+            "format": "",
+            "uuid": "13d2fe3f-03bb-8105-ffff4739ae9e554e",
+            "visuType": 0
+          }
+        ]
+      },
+      "subControls": {
+        "13d2fe3f-03bb-80f9-ffff4739ae9e554e": {
+          "name": "Heating and Cooling",
+          "type": "IRCV2Daytimer",
+          "uuidAction": "13d2fe3f-03bb-80f9-ffff4739ae9e554e",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "details": {
+            "analog": true,
+            "format": "%.1f°"
+          },
+          "states": {
+            "entriesAndDefaultValue": "13d2fe3f-03bb-80f9-ffff4739ae9e554e",
+            "mode": "13d2fe3f-03bb-812b-ffff4739ae9e554e",
+            "modeList": "13d2fe3f-03bb-8101-ffff4739ae9e554e",
+            "value": "13d2fe3f-03bb-80ff-ffff4739ae9e554e"
+          }
+        }
+      }
+    },
+    "1079e237-0228-fa10-ffffc926a26a8d21": {
+      "uuidAction": "1079e237-0228-fa10-ffffc926a26a8d21",
+      "name": "Kuchyně stínění",
+      "type": "CentralJalousie",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01ec-08eb-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a4-ffffc926a26a8d21",
+      "details": {
+        "controls": [
+          {
+            "id": 0,
+            "uuid": "1079e926-0389-364a-ffffc926a26a8d21"
+          },
+          {
+            "id": 1,
+            "uuid": "1079e92e-00d3-57fe-ffffc926a26a8d21"
+          }
+        ]
+      }
+    },
+    "1079e92e-00d3-57fe-ffffc926a26a8d21": {
+      "uuidAction": "1079e92e-00d3-57fe-ffffc926a26a8d21",
+      "name": "Okno Východ",
+      "type": "Jalousie",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "0",
+      "room": "10412616-01ec-08eb-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a4-ffffc926a26a8d21",
+      "details": {
+        "isAutomatic": true,
+        "animation": 0
+      },
+      "states": {
+        "infoText": "12578778-02a4-498f-ffffc926a26a8d21",
+        "up": "1079e92e-00d3-57f6-ffff2fd0af3ad059",
+        "down": "1079e92e-00d3-57f7-ffff2fd0af3ad059",
+        "position": "1079e92e-00d3-57f8-ffff2fd0af3ad059",
+        "shadePosition": "1079e92e-00d3-57f9-ffff2fd0af3ad059",
+        "safetyActive": "1079e92e-00d3-57fb-ffff2fd0af3ad059",
+        "autoAllowed": "1079e92e-00d3-57d7-ffff2fd0af3ad059",
+        "autoActive": "1079e92e-00d3-57fa-ffff2fd0af3ad059",
+        "locked": "1079e92e-00d3-57fc-ffff2fd0af3ad059",
+        "autoInfoText": "12578778-02a4-4990-ffffc926a26a8d21",
+        "autoState": "12578778-02a4-4991-ffffc926a26a8d21"
+      }
+    },
+    "1079e926-0389-364a-ffffc926a26a8d21": {
+      "uuidAction": "1079e926-0389-364a-ffffc926a26a8d21",
+      "name": "Okno pracovní stůl",
+      "type": "Jalousie",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "0",
+      "room": "10412616-01ec-08eb-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a4-ffffc926a26a8d21",
+      "details": {
+        "isAutomatic": true,
+        "animation": 0
+      },
+      "states": {
+        "infoText": "12578778-02a3-495d-ffffc926a26a8d21",
+        "up": "1079e926-0389-3642-ffffa5bbf87b3374",
+        "down": "1079e926-0389-3643-ffffa5bbf87b3374",
+        "position": "1079e926-0389-3644-ffffa5bbf87b3374",
+        "shadePosition": "1079e926-0389-3645-ffffa5bbf87b3374",
+        "safetyActive": "1079e926-0389-3647-ffffa5bbf87b3374",
+        "autoAllowed": "1079e926-0389-3623-ffffa5bbf87b3374",
+        "autoActive": "1079e926-0389-3646-ffffa5bbf87b3374",
+        "locked": "1079e926-0389-3648-ffffa5bbf87b3374",
+        "autoInfoText": "12578778-02a3-495e-ffffc926a26a8d21",
+        "autoState": "12578778-02a3-495f-ffffc926a26a8d21"
+      }
+    },
+    "10412808-00ec-1683-ffffc926a26a8d21": {
+      "uuidAction": "10412808-00ec-1683-ffffc926a26a8d21",
+      "name": "Music Server Zone",
+      "type": "AudioZone",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01ec-08f7-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07b0-ffffc926a26a8d21",
+      "presence": true,
+      "details": {
+        "server": "10412808-00ec-1590-ffffc926a26a8d21",
+        "playerid": 3,
+        "clientType": 0,
+        "parameterConnections": 0
+      },
+      "states": {
+        "power": "10412808-00ec-1637-ffffaaeb29220ef0",
+        "serverState": "10412808-00ec-1647-ffffaaeb29220ef0",
+        "playState": "10412808-00ec-163b-ffffaaeb29220ef0",
+        "clientState": "10412808-00ec-1648-ffffaaeb29220ef0",
+        "volume": "10412808-00ec-1638-ffffaaeb29220ef0",
+        "maxVolume": "10412808-00ec-1639-ffffaaeb29220ef0",
+        "mute": "10412808-00ec-163c-ffffaaeb29220ef0",
+        "shuffle": "10412808-00ec-163f-ffffaaeb29220ef0",
+        "repeat": "10412808-00ec-1640-ffffaaeb29220ef0",
+        "source": "10412808-00ec-163a-ffffaaeb29220ef0",
+        "sourceList": "10412808-00ec-163e-ffffaaeb29220ef0",
+        "songName": "10412808-00ec-163d-ffffaaeb29220ef0",
+        "duration": "10412808-00ec-1642-ffffaaeb29220ef0",
+        "progress": "10412808-00ec-1641-ffffaaeb29220ef0",
+        "album": "10412808-00ec-1643-ffffaaeb29220ef0",
+        "artist": "10412808-00ec-1644-ffffaaeb29220ef0",
+        "station": "10412808-00ec-164a-ffffaaeb29220ef0",
+        "genre": "10412808-00ec-1645-ffffaaeb29220ef0",
+        "cover": "10412808-00ec-1646-ffffaaeb29220ef0",
+        "volumeStep": "10412808-00ec-1649-ffffaaeb29220ef0",
+        "queueIndex": "14bba21a-03e6-4786-ffffeee000a8004a",
+        "enableAirPlay": "14bba21a-03e6-4787-ffffeee000a8004a",
+        "enableSpotifyConnect": "14bba21a-03e6-4788-ffffeee000a8004a",
+        "alarmVolume": "10412808-00ec-1673-ffffaaeb29220ef0",
+        "bellVolume": "10412808-00ec-1674-ffffaaeb29220ef0",
+        "buzzerVolume": "10412808-00ec-1675-ffffaaeb29220ef0",
+        "ttsVolume": "10412808-00ec-1676-ffffaaeb29220ef0",
+        "ttsVolume": "10412808-00ec-1676-ffffaaeb29220ef0",
+        "defaultVolume": "10412808-00ec-1672-ffffaaeb29220ef0",
+        "equalizerSettings": "14bba21a-03e6-4789-ffffeee000a8004a",
+        "presenceFrom": "10412808-00ec-164b-ffffaaeb29220ef0",
+        "presenceTo": "10412808-00ec-164c-ffffaaeb29220ef0"
+      }
+    },
+    "1079e236-01ac-f754-ffffc926a26a8d21": {
+      "uuidAction": "1079e236-01ac-f754-ffffc926a26a8d21",
+      "name": "Budík",
+      "type": "AlarmClock",
+      "isFavorite": true,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01ec-08f7-ffffc926a26a8d21",
+      "cat": "10412616-01b6-0826-ffffc926a26a8d21",
+      "details": {
+        "hasNightLight": false,
+        "snoozeDurationConnected": false,
+        "brightInactiveConnected": false,
+        "brightActiveConnected": false,
+        "wakeAlarmSoundConnected": false,
+        "wakeAlarmVolumeConnected": false,
+        "wakeAlarmSlopingConnected": false,
+        "wakeAlarmSounds": [
+          {
+            "id": 1,
+            "name": "Čtyři nízké pípnutí"
+          },
+          {
+            "id": 2,
+            "name": "Čtyři vysoké pípnutí"
+          },
+          {
+            "id": 3,
+            "name": "Dvojité nízké pípnutí"
+          },
+          {
+            "id": 4,
+            "name": "Dvojité vysoké pípnutí"
+          },
+          {
+            "id": 5,
+            "name": "siréna"
+          }
+        ]
+      },
+      "states": {
+        "isEnabled": "13adeaef-03e2-24fd-ffffc926a26a8d21",
+        "isAlarmActive": "1079e236-01ac-f750-ffffa7c2bf8ebd8f",
+        "confirmationNeeded": "13adeaef-03e2-24f5-ffffc926a26a8d21",
+        "entryList": "13adeaef-03e2-24f6-ffffc926a26a8d21",
+        "currentEntry": "13adeaef-03e2-24f7-ffffc926a26a8d21",
+        "nextEntry": "13adeaef-03e2-24f8-ffffc926a26a8d21",
+        "nextEntryMode": "13adeaef-03e2-24fe-ffffc926a26a8d21",
+        "ringingTime": "13adeaef-03e2-24f9-ffffc926a26a8d21",
+        "ringDuration": "13adeaef-03e2-24fa-ffffc926a26a8d21",
+        "prepareDuration": "13adeaef-03e2-24fb-ffffc926a26a8d21",
+        "snoozeTime": "1079e236-01ac-f753-ffffa7c2bf8ebd8f",
+        "snoozeDuration": "13adeaef-03e2-24fc-ffffc926a26a8d21",
+        "nextEntryTime": "13adeaef-03e2-24ff-ffffc926a26a8d21",
+        "deviceState": "13adeaef-03e2-2500-ffffc926a26a8d21",
+        "deviceSettings": "13adeaef-03e2-2501-ffffc926a26a8d21",
+        "wakeAlarmSoundSettings": "13adeaef-03e2-2502-ffffc926a26a8d21"
+      }
+    },
+    "1079e236-007a-f5ae-ffffc926a26a8d21": {
+      "uuidAction": "1079e236-007a-f5ae-ffffc926a26a8d21",
+      "name": "Osvětlení",
+      "type": "LightControllerV2",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01ec-08f7-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a0-ffffc926a26a8d21",
+      "presence": true,
+      "details": {
+        "masterValue": "1079e236-007a-f5ae-ffffc926a26a8d21/masterValue"
+      },
+      "states": {
+        "activeMoods": "112e8a91-03c4-20e5-ffffc926a26a8d21",
+        "moodList": "112e8a91-03c4-20e6-ffffc926a26a8d21",
+        "favoriteMoods": "112e8a91-03c4-20e7-ffffc926a26a8d21",
+        "additionalMoods": "112e8a91-03c4-20e8-ffffc926a26a8d21",
+        "presenceFrom": "112e8a91-03c4-20e3-ffffc926a26a8d21",
+        "presenceTo": "112e8a91-03c4-20e4-ffffc926a26a8d21"
+      },
+      "subControls": {
+        "1079e236-007a-f5ae-ffffc926a26a8d21/masterValue": {
+          "name": "Hlavní jas",
+          "type": "Dimmer",
+          "uuidAction": "1079e236-007a-f5ae-ffffc926a26a8d21/masterValue",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "position": "1079e236-007a-f5aa-ffff0b8639e408df",
+            "min": "112e8a91-03c4-20ea-ffffc926a26a8d21",
+            "max": "112e8a91-03c4-20eb-ffffc926a26a8d21",
+            "step": "1079e236-007a-f586-ffff0b8639e408df"
+          }
+        },
+        "1079e236-007a-f5ae-ffffc926a26a8d21/AI1": {
+          "name": "Orientační",
+          "type": "Switch",
+          "uuidAction": "1079e236-007a-f5ae-ffffc926a26a8d21/AI1",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "active": "1079e236-007a-f597-ffff0b8639e408df"
+          }
+        },
+        "1079e236-007a-f5ae-ffffc926a26a8d21/AI2": {
+          "name": "Stmívané",
+          "type": "Dimmer",
+          "uuidAction": "1079e236-007a-f5ae-ffffc926a26a8d21/AI2",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "position": "1079e236-007a-f598-ffff0b8639e408df",
+            "min": "1079e236-007a-f588-ffff0b8639e408df",
+            "max": "1079e236-007a-f589-ffff0b8639e408df",
+            "step": "1079e236-007a-f586-ffff0b8639e408df"
+          }
+        }
+      }
+    },
+    "1079fae3-0103-d4b5-ffff0dfd2ad993bf": {
+      "uuidAction": "1079fae3-0103-d4b5-ffff0dfd2ad993bf",
+      "name": "Inteligentní regulace pokojové teploty",
+      "type": "IRoomControllerV2",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01ec-08f7-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07bc-ffffc926a26a8d21",
+      "details": {
+        "timerModes": [
+          {
+            "name": "Režim přítomnost",
+            "description": "Komfort",
+            "id": 1
+          },
+          {
+            "name": "Režim nepřítomnost",
+            "description": "Úsporný provoz",
+            "id": 0
+          },
+          {
+            "name": "Režim Vyp.",
+            "description": "Režim ochrana budovy",
+            "id": 2
+          }
+        ],
+        "format": "%.1f°",
+        "connectedInputs": 0
+      },
+      "states": {
+        "tempActual": "13d2fe3f-03bc-8143-ffff4739ae9e554e",
+        "tempTarget": "13d2fe3f-03bc-8168-ffff4739ae9e554e",
+        "comfortTemperature": "13d2fe3f-03bc-814b-ffff4739ae9e554e",
+        "comfortTolerance": "13d2fe3f-03bc-814c-ffff4739ae9e554e",
+        "absentMinOffset": "13d2fe3f-03bc-814d-ffff4739ae9e554e",
+        "absentMaxOffset": "13d2fe3f-03bc-814e-ffff4739ae9e554e",
+        "frostProtectTemperature": "13d2fe3f-03bc-814f-ffff4739ae9e554e",
+        "heatProtectTemperature": "13d2fe3f-03bc-8150-ffff4739ae9e554e",
+        "activeMode": "13d2fe3f-03bc-813d-ffff4739ae9e554e",
+        "comfortTemperatureOffset": "13d2fe3f-03bc-8138-ffff4739ae9e554e",
+        "overrideEntries": "13d2fe3f-03bc-8139-ffff4739ae9e554e",
+        "prepareState": "13d2fe3f-03bc-813a-ffff4739ae9e554e",
+        "useOutdoor": "13d2fe3f-03bc-813b-ffff4739ae9e554e",
+        "operatingMode": "13d2fe3f-03bc-813e-ffff4739ae9e554e",
+        "overrideReason": "13d2fe3f-03bc-8140-ffff4739ae9e554e",
+        "openWindow": "13d2fe3f-03bc-8144-ffff4739ae9e554e",
+        "modeList": "13d2fe3f-03bc-813f-ffff4739ae9e554e"
+      },
+      "statistic": {
+        "frequency": 6,
+        "outputs": [
+          {
+            "id": 0,
+            "name": "Inteligentní regulace pokojové teploty",
+            "format": "",
+            "uuid": "13d2fe3f-03bc-8143-ffff4739ae9e554e",
+            "visuType": 0
+          }
+        ]
+      },
+      "subControls": {
+        "13d2fe3f-03bc-8137-ffff4739ae9e554e": {
+          "name": "Heating and Cooling",
+          "type": "IRCV2Daytimer",
+          "uuidAction": "13d2fe3f-03bc-8137-ffff4739ae9e554e",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "details": {
+            "analog": true,
+            "format": "%.1f°"
+          },
+          "states": {
+            "entriesAndDefaultValue": "13d2fe3f-03bc-8137-ffff4739ae9e554e",
+            "mode": "13d2fe3f-03bc-8169-ffff4739ae9e554e",
+            "modeList": "13d2fe3f-03bc-813f-ffff4739ae9e554e",
+            "value": "13d2fe3f-03bc-813d-ffff4739ae9e554e"
+          }
+        }
+      }
+    },
+    "1079ea32-0314-a5de-ffffc926a26a8d21": {
+      "uuidAction": "1079ea32-0314-a5de-ffffc926a26a8d21",
+      "name": "Balkonové dveře",
+      "type": "Jalousie",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "0",
+      "room": "10412616-01ec-08f7-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a4-ffffc926a26a8d21",
+      "details": {
+        "isAutomatic": true,
+        "animation": 0
+      },
+      "states": {
+        "infoText": "12578778-02a8-4b8c-ffffc926a26a8d21",
+        "up": "1079ea32-0314-a5d6-ffff43207b854bbb",
+        "down": "1079ea32-0314-a5d7-ffff43207b854bbb",
+        "position": "1079ea32-0314-a5d8-ffff43207b854bbb",
+        "shadePosition": "1079ea32-0314-a5d9-ffff43207b854bbb",
+        "safetyActive": "1079ea32-0314-a5db-ffff43207b854bbb",
+        "autoAllowed": "1079ea32-0314-a5b7-ffff43207b854bbb",
+        "autoActive": "1079ea32-0314-a5da-ffff43207b854bbb",
+        "locked": "1079ea32-0314-a5dc-ffff43207b854bbb",
+        "autoInfoText": "12578778-02a8-4b8d-ffffc926a26a8d21",
+        "autoState": "12578778-02a8-4b8e-ffffc926a26a8d21"
+      }
+    },
+    "1079e236-0194-f70a-ffffc926a26a8d21": {
+      "uuidAction": "1079e236-0194-f70a-ffffc926a26a8d21",
+      "name": "Ložnice stínění",
+      "type": "CentralJalousie",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01ec-08f7-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a4-ffffc926a26a8d21",
+      "details": {
+        "controls": [
+          {
+            "id": 0,
+            "uuid": "1079ea32-0314-a5de-ffffc926a26a8d21"
+          },
+          {
+            "id": 1,
+            "uuid": "1079ea33-02be-c792-ffffc926a26a8d21"
+          }
+        ]
+      }
+    },
+    "1079ea33-02be-c792-ffffc926a26a8d21": {
+      "uuidAction": "1079ea33-02be-c792-ffffc926a26a8d21",
+      "name": "Okno východ",
+      "type": "Jalousie",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "0",
+      "room": "10412616-01ec-08f7-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a4-ffffc926a26a8d21",
+      "details": {
+        "isAutomatic": true,
+        "animation": 0
+      },
+      "states": {
+        "infoText": "12578778-02a9-4bbe-ffffc926a26a8d21",
+        "up": "1079ea33-02be-c78a-fffff4a9fae7f405",
+        "down": "1079ea33-02be-c78b-fffff4a9fae7f405",
+        "position": "1079ea33-02be-c78c-fffff4a9fae7f405",
+        "shadePosition": "1079ea33-02be-c78d-fffff4a9fae7f405",
+        "safetyActive": "1079ea33-02be-c78f-fffff4a9fae7f405",
+        "autoAllowed": "1079ea33-02be-c76b-fffff4a9fae7f405",
+        "autoActive": "1079ea33-02be-c78e-fffff4a9fae7f405",
+        "locked": "1079ea33-02be-c790-fffff4a9fae7f405",
+        "autoInfoText": "12578778-02a9-4bbf-ffffc926a26a8d21",
+        "autoState": "12578778-02a9-4bc0-ffffc926a26a8d21"
+      }
+    },
+    "10412808-00ec-15e7-ffffc926a26a8d21": {
+      "uuidAction": "10412808-00ec-15e7-ffffc926a26a8d21",
+      "name": "Music Server Zone",
+      "type": "AudioZone",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01ec-08e7-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07b0-ffffc926a26a8d21",
+      "presence": true,
+      "details": {
+        "server": "10412808-00ec-1590-ffffc926a26a8d21",
+        "playerid": 1,
+        "clientType": 0,
+        "parameterConnections": 0
+      },
+      "states": {
+        "power": "10412808-00ec-159b-ffffaaeb29220ef0",
+        "serverState": "10412808-00ec-15ab-ffffaaeb29220ef0",
+        "playState": "10412808-00ec-159f-ffffaaeb29220ef0",
+        "clientState": "10412808-00ec-15ac-ffffaaeb29220ef0",
+        "volume": "10412808-00ec-159c-ffffaaeb29220ef0",
+        "maxVolume": "10412808-00ec-159d-ffffaaeb29220ef0",
+        "mute": "10412808-00ec-15a0-ffffaaeb29220ef0",
+        "shuffle": "10412808-00ec-15a3-ffffaaeb29220ef0",
+        "repeat": "10412808-00ec-15a4-ffffaaeb29220ef0",
+        "source": "10412808-00ec-159e-ffffaaeb29220ef0",
+        "sourceList": "10412808-00ec-15a2-ffffaaeb29220ef0",
+        "songName": "10412808-00ec-15a1-ffffaaeb29220ef0",
+        "duration": "10412808-00ec-15a6-ffffaaeb29220ef0",
+        "progress": "10412808-00ec-15a5-ffffaaeb29220ef0",
+        "album": "10412808-00ec-15a7-ffffaaeb29220ef0",
+        "artist": "10412808-00ec-15a8-ffffaaeb29220ef0",
+        "station": "10412808-00ec-15ae-ffffaaeb29220ef0",
+        "genre": "10412808-00ec-15a9-ffffaaeb29220ef0",
+        "cover": "10412808-00ec-15aa-ffffaaeb29220ef0",
+        "volumeStep": "10412808-00ec-15ad-ffffaaeb29220ef0",
+        "queueIndex": "14bba21b-00ac-491d-ffffeee000a8004a",
+        "enableAirPlay": "14bba21b-00ac-491e-ffffeee000a8004a",
+        "enableSpotifyConnect": "14bba21b-00ac-491f-ffffeee000a8004a",
+        "alarmVolume": "10412808-00ec-15d7-ffffaaeb29220ef0",
+        "bellVolume": "10412808-00ec-15d8-ffffaaeb29220ef0",
+        "buzzerVolume": "10412808-00ec-15d9-ffffaaeb29220ef0",
+        "ttsVolume": "10412808-00ec-15da-ffffaaeb29220ef0",
+        "ttsVolume": "10412808-00ec-15da-ffffaaeb29220ef0",
+        "defaultVolume": "10412808-00ec-15d6-ffffaaeb29220ef0",
+        "equalizerSettings": "14bba21b-00ac-4920-ffffeee000a8004a",
+        "presenceFrom": "10412808-00ec-15af-ffffaaeb29220ef0",
+        "presenceTo": "10412808-00ec-15b0-ffffaaeb29220ef0"
+      }
+    },
+    "1079e237-0387-fa95-ffffc926a26a8d21": {
+      "uuidAction": "1079e237-0387-fa95-ffffc926a26a8d21",
+      "name": "Osvětlení",
+      "type": "LightControllerV2",
+      "isFavorite": true,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01ec-08e7-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a0-ffffc926a26a8d21",
+      "presence": true,
+      "details": {
+        "masterValue": "1079e237-0387-fa95-ffffc926a26a8d21/masterValue"
+      },
+      "states": {
+        "activeMoods": "112e8a91-03d8-22f3-ffffc926a26a8d21",
+        "moodList": "112e8a91-03d8-22f4-ffffc926a26a8d21",
+        "favoriteMoods": "112e8a91-03d8-22f5-ffffc926a26a8d21",
+        "additionalMoods": "112e8a91-03d8-22f6-ffffc926a26a8d21",
+        "presenceFrom": "112e8a91-03d8-22f1-ffffc926a26a8d21",
+        "presenceTo": "112e8a91-03d8-22f2-ffffc926a26a8d21"
+      },
+      "subControls": {
+        "1079e237-0387-fa95-ffffc926a26a8d21/masterValue": {
+          "name": "Hlavní jas",
+          "type": "Dimmer",
+          "uuidAction": "1079e237-0387-fa95-ffffc926a26a8d21/masterValue",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "position": "1079e237-0387-fa91-ffff33d925b51b5a",
+            "min": "112e8a91-03d8-22f8-ffffc926a26a8d21",
+            "max": "112e8a91-03d8-22f9-ffffc926a26a8d21",
+            "step": "1079e237-0387-fa6d-ffff33d925b51b5a"
+          }
+        },
+        "1079e237-0387-fa95-ffffc926a26a8d21/AI1": {
+          "name": "Orientační",
+          "type": "Switch",
+          "uuidAction": "1079e237-0387-fa95-ffffc926a26a8d21/AI1",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "active": "1079e237-0387-fa7e-ffff33d925b51b5a"
+          }
+        },
+        "1079e237-0387-fa95-ffffc926a26a8d21/AI2": {
+          "name": "Barevné",
+          "type": "ColorPickerV2",
+          "uuidAction": "1079e237-0387-fa95-ffffc926a26a8d21/AI2",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "details": {
+            "pickerType": "Rgb"
+          },
+          "states": {
+            "color": "1079e237-0387-fa7f-ffff33d925b51b5a",
+            "sequence": "13adeaf1-001c-2dd3-ffff8ecffc9987d9",
+            "sequenceColorIdx": "13adeaf1-001c-2de7-ffff8ecffc9987d9"
+          }
+        },
+        "1079e237-0387-fa95-ffffc926a26a8d21/AI3": {
+          "name": "Stmívané",
+          "type": "Dimmer",
+          "uuidAction": "1079e237-0387-fa95-ffffc926a26a8d21/AI3",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "position": "1079e237-0387-fa80-ffff33d925b51b5a",
+            "min": "1079e237-0387-fa6f-ffff33d925b51b5a",
+            "max": "1079e237-0387-fa70-ffff33d925b51b5a",
+            "step": "1079e237-0387-fa6d-ffff33d925b51b5a"
+          }
+        }
+      }
+    },
+    "1079e237-0016-fb0e-ffffc926a26a8d21": {
+      "uuidAction": "1079e237-0016-fb0e-ffffc926a26a8d21",
+      "name": "Inteligentní regulace pokojové teploty",
+      "type": "IRoomControllerV2",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01ec-08e7-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07bc-ffffc926a26a8d21",
+      "details": {
+        "timerModes": [
+          {
+            "name": "Režim přítomnost",
+            "description": "Komfort",
+            "id": 1
+          },
+          {
+            "name": "Režim nepřítomnost",
+            "description": "Úsporný provoz",
+            "id": 0
+          },
+          {
+            "name": "Režim Vyp.",
+            "description": "Režim ochrana budovy",
+            "id": 2
+          }
+        ],
+        "format": "%.1f°",
+        "connectedInputs": 0
+      },
+      "states": {
+        "tempActual": "13d2fe3f-03bc-817e-ffff4739ae9e554e",
+        "tempTarget": "13d2fe3f-03bc-81a3-ffff4739ae9e554e",
+        "comfortTemperature": "13d2fe3f-03bc-8186-ffff4739ae9e554e",
+        "comfortTolerance": "13d2fe3f-03bc-8187-ffff4739ae9e554e",
+        "absentMinOffset": "13d2fe3f-03bc-8188-ffff4739ae9e554e",
+        "absentMaxOffset": "13d2fe3f-03bc-8189-ffff4739ae9e554e",
+        "frostProtectTemperature": "13d2fe3f-03bc-818a-ffff4739ae9e554e",
+        "heatProtectTemperature": "13d2fe3f-03bc-818b-ffff4739ae9e554e",
+        "activeMode": "13d2fe3f-03bc-8178-ffff4739ae9e554e",
+        "comfortTemperatureOffset": "13d2fe3f-03bc-8173-ffff4739ae9e554e",
+        "overrideEntries": "13d2fe3f-03bc-8174-ffff4739ae9e554e",
+        "prepareState": "13d2fe3f-03bc-8175-ffff4739ae9e554e",
+        "useOutdoor": "13d2fe3f-03bc-8176-ffff4739ae9e554e",
+        "operatingMode": "13d2fe3f-03bc-8179-ffff4739ae9e554e",
+        "overrideReason": "13d2fe3f-03bc-817b-ffff4739ae9e554e",
+        "openWindow": "13d2fe3f-03bc-817f-ffff4739ae9e554e",
+        "modeList": "13d2fe3f-03bc-817a-ffff4739ae9e554e"
+      },
+      "subControls": {
+        "13d2fe3f-03bc-8172-ffff4739ae9e554e": {
+          "name": "Heating and Cooling",
+          "type": "IRCV2Daytimer",
+          "uuidAction": "13d2fe3f-03bc-8172-ffff4739ae9e554e",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "details": {
+            "analog": true,
+            "format": "%.1f°"
+          },
+          "states": {
+            "entriesAndDefaultValue": "13d2fe3f-03bc-8172-ffff4739ae9e554e",
+            "mode": "13d2fe3f-03bc-81a4-ffff4739ae9e554e",
+            "modeList": "13d2fe3f-03bc-817a-ffff4739ae9e554e",
+            "value": "13d2fe3f-03bc-8178-ffff4739ae9e554e"
+          }
+        }
+      }
+    },
+    "1079ea81-0239-3739-ffffc926a26a8d21": {
+      "uuidAction": "1079ea81-0239-3739-ffffc926a26a8d21",
+      "name": "Balkonové dveře",
+      "type": "Jalousie",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "0",
+      "room": "10412616-01ec-08e7-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a4-ffffc926a26a8d21",
+      "details": {
+        "isAutomatic": true,
+        "animation": 0
+      },
+      "states": {
+        "infoText": "12578778-02ad-4dcd-ffffc926a26a8d21",
+        "up": "1079ea81-0239-3731-ffff99a7a1f7177d",
+        "down": "1079ea81-0239-3732-ffff99a7a1f7177d",
+        "position": "1079ea81-0239-3733-ffff99a7a1f7177d",
+        "shadePosition": "1079ea81-0239-3734-ffff99a7a1f7177d",
+        "safetyActive": "1079ea81-0239-3736-ffff99a7a1f7177d",
+        "autoAllowed": "1079ea81-0239-3712-ffff99a7a1f7177d",
+        "autoActive": "1079ea81-0239-3735-ffff99a7a1f7177d",
+        "locked": "1079ea81-0239-3737-ffff99a7a1f7177d",
+        "autoInfoText": "12578778-02ad-4dce-ffffc926a26a8d21",
+        "autoState": "12578778-02ad-4dcf-ffffc926a26a8d21"
+      }
+    },
+    "1079e237-0073-fbf1-ffffc926a26a8d21": {
+      "uuidAction": "1079e237-0073-fbf1-ffffc926a26a8d21",
+      "name": "Obývák stínění",
+      "type": "CentralJalousie",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01ec-08e7-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a4-ffffc926a26a8d21",
+      "details": {
+        "controls": [
+          {
+            "id": 0,
+            "uuid": "1079ea80-0372-1585-ffffc926a26a8d21"
+          },
+          {
+            "id": 1,
+            "uuid": "1079ea81-0239-3739-ffffc926a26a8d21"
+          },
+          {
+            "id": 2,
+            "uuid": "1079ea83-03a2-591c-ffffc926a26a8d21"
+          }
+        ]
+      }
+    },
+    "1079ea80-0372-1585-ffffc926a26a8d21": {
+      "uuidAction": "1079ea80-0372-1585-ffffc926a26a8d21",
+      "name": "Okno Gauč",
+      "type": "Jalousie",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "0",
+      "room": "10412616-01ec-08e7-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a4-ffffc926a26a8d21",
+      "details": {
+        "isAutomatic": true,
+        "animation": 0
+      },
+      "states": {
+        "infoText": "12578778-02ad-4d9b-ffffc926a26a8d21",
+        "up": "1079ea80-0372-157d-ffff66465af3de6b",
+        "down": "1079ea80-0372-157e-ffff66465af3de6b",
+        "position": "1079ea80-0372-157f-ffff66465af3de6b",
+        "shadePosition": "1079ea80-0372-1580-ffff66465af3de6b",
+        "safetyActive": "1079ea80-0372-1582-ffff66465af3de6b",
+        "autoAllowed": "1079ea80-0372-155e-ffff66465af3de6b",
+        "autoActive": "1079ea80-0372-1581-ffff66465af3de6b",
+        "locked": "1079ea80-0372-1583-ffff66465af3de6b",
+        "autoInfoText": "12578778-02ad-4d9c-ffffc926a26a8d21",
+        "autoState": "12578778-02ad-4d9d-ffffc926a26a8d21"
+      }
+    },
+    "1079ea83-03a2-591c-ffffc926a26a8d21": {
+      "uuidAction": "1079ea83-03a2-591c-ffffc926a26a8d21",
+      "name": "Okno sever",
+      "type": "Jalousie",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "0",
+      "room": "10412616-01ec-08e7-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a4-ffffc926a26a8d21",
+      "details": {
+        "isAutomatic": true,
+        "animation": 0
+      },
+      "states": {
+        "infoText": "12578778-02ae-4dff-ffffc926a26a8d21",
+        "up": "1079ea83-03a2-5914-ffff2bebd4894ec5",
+        "down": "1079ea83-03a2-5915-ffff2bebd4894ec5",
+        "position": "1079ea83-03a2-5916-ffff2bebd4894ec5",
+        "shadePosition": "1079ea83-03a2-5917-ffff2bebd4894ec5",
+        "safetyActive": "1079ea83-03a2-5919-ffff2bebd4894ec5",
+        "autoAllowed": "1079ea83-03a2-58f5-ffff2bebd4894ec5",
+        "autoActive": "1079ea83-03a2-5918-ffff2bebd4894ec5",
+        "locked": "1079ea83-03a2-591a-ffff2bebd4894ec5",
+        "autoInfoText": "12578778-02ae-4e00-ffffc926a26a8d21",
+        "autoState": "12578778-02ae-4e01-ffffc926a26a8d21"
+      }
+    },
+    "1079e232-0323-efb9-ffffc926a26a8d21": {
+      "uuidAction": "1079e232-0323-efb9-ffffc926a26a8d21",
+      "name": "Osvětlení",
+      "type": "LightControllerV2",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01fe-0971-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a0-ffffc926a26a8d21",
+      "presence": true,
+      "details": {},
+      "states": {
+        "activeMoods": "112e8a91-03d8-24a9-ffffc926a26a8d21",
+        "moodList": "112e8a91-03d8-24aa-ffffc926a26a8d21",
+        "favoriteMoods": "112e8a91-03d8-24ab-ffffc926a26a8d21",
+        "additionalMoods": "112e8a91-03d8-24ac-ffffc926a26a8d21",
+        "presenceFrom": "112e8a91-03d8-24a7-ffffc926a26a8d21",
+        "presenceTo": "112e8a91-03d8-24a8-ffffc926a26a8d21"
+      },
+      "subControls": {
+        "1079e232-0323-efb9-ffffc926a26a8d21/AI1": {
+          "name": "Farblicht",
+          "type": "ColorPickerV2",
+          "uuidAction": "1079e232-0323-efb9-ffffc926a26a8d21/AI1",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "details": {
+            "pickerType": "Rgb"
+          },
+          "states": {
+            "color": "1079e232-0323-efa2-ffff701a6a034b27",
+            "sequence": "13adeaf1-001c-2e00-ffff8ecffc9987d9",
+            "sequenceColorIdx": "13adeaf1-001c-2e14-ffff8ecffc9987d9"
+          }
+        }
+      }
+    },
+    "1079e234-03b7-f270-ffffc926a26a8d21": {
+      "uuidAction": "1079e234-03b7-f270-ffffc926a26a8d21",
+      "name": "Osvětlení",
+      "type": "LightControllerV2",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01ec-0923-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a0-ffffc926a26a8d21",
+      "presence": true,
+      "details": {},
+      "states": {
+        "activeMoods": "112e8a91-03d8-2659-ffffc926a26a8d21",
+        "moodList": "112e8a91-03d8-265a-ffffc926a26a8d21",
+        "favoriteMoods": "112e8a91-03d8-265b-ffffc926a26a8d21",
+        "additionalMoods": "112e8a91-03d8-265c-ffffc926a26a8d21",
+        "presenceFrom": "112e8a91-03d8-2657-ffffc926a26a8d21",
+        "presenceTo": "112e8a91-03d8-2658-ffffc926a26a8d21"
+      },
+      "subControls": {
+        "1079e234-03b7-f270-ffffc926a26a8d21/AI1": {
+          "name": "Dimmer",
+          "type": "Dimmer",
+          "uuidAction": "1079e234-03b7-f270-ffffc926a26a8d21/AI1",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "position": "1079e234-03b7-f259-ffff29683df8454f",
+            "min": "1079e234-03b7-f24a-ffff29683df8454f",
+            "max": "1079e234-03b7-f24b-ffff29683df8454f",
+            "step": "1079e234-03b7-f248-ffff29683df8454f"
+          }
+        }
+      }
+    },
+    "1079ff45-0179-6bf6-ffff69378b861e6f": {
+      "uuidAction": "1079ff45-0179-6bf6-ffff69378b861e6f",
+      "name": "Inteligentní regulace pokojové teploty",
+      "type": "IRoomControllerV2",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01ec-0923-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07bc-ffffc926a26a8d21",
+      "details": {
+        "timerModes": [
+          {
+            "name": "Režim přítomnost",
+            "description": "Komfort",
+            "id": 1
+          },
+          {
+            "name": "Režim nepřítomnost",
+            "description": "Úsporný provoz",
+            "id": 0
+          },
+          {
+            "name": "Režim Vyp.",
+            "description": "Režim ochrana budovy",
+            "id": 2
+          }
+        ],
+        "format": "%.1f°",
+        "connectedInputs": 0
+      },
+      "states": {
+        "tempActual": "13d2fe3f-03bc-81bb-ffff4a36769da0a5",
+        "tempTarget": "13d2fe3f-03bc-81e0-ffff4a36769da0a5",
+        "comfortTemperature": "13d2fe3f-03bc-81c3-ffff4a36769da0a5",
+        "comfortTolerance": "13d2fe3f-03bc-81c4-ffff4a36769da0a5",
+        "absentMinOffset": "13d2fe3f-03bc-81c5-ffff4a36769da0a5",
+        "absentMaxOffset": "13d2fe3f-03bc-81c6-ffff4a36769da0a5",
+        "frostProtectTemperature": "13d2fe3f-03bc-81c7-ffff4a36769da0a5",
+        "heatProtectTemperature": "13d2fe3f-03bc-81c8-ffff4a36769da0a5",
+        "activeMode": "13d2fe3f-03bc-81b5-ffff4a36769da0a5",
+        "comfortTemperatureOffset": "13d2fe3f-03bc-81b0-ffff4a36769da0a5",
+        "overrideEntries": "13d2fe3f-03bc-81b1-ffff4a36769da0a5",
+        "prepareState": "13d2fe3f-03bc-81b2-ffff4a36769da0a5",
+        "useOutdoor": "13d2fe3f-03bc-81b3-ffff4a36769da0a5",
+        "operatingMode": "13d2fe3f-03bc-81b6-ffff4a36769da0a5",
+        "overrideReason": "13d2fe3f-03bc-81b8-ffff4a36769da0a5",
+        "openWindow": "13d2fe3f-03bc-81bc-ffff4a36769da0a5",
+        "modeList": "13d2fe3f-03bc-81b7-ffff4a36769da0a5"
+      },
+      "statistic": {
+        "frequency": 6,
+        "outputs": [
+          {
+            "id": 0,
+            "name": "Inteligentní regulace pokojové teploty",
+            "format": "",
+            "uuid": "13d2fe3f-03bc-81bb-ffff4a36769da0a5",
+            "visuType": 0
+          }
+        ]
+      },
+      "subControls": {
+        "13d2fe3f-03bc-81af-ffff4a36769da0a5": {
+          "name": "Heating and Cooling",
+          "type": "IRCV2Daytimer",
+          "uuidAction": "13d2fe3f-03bc-81af-ffff4a36769da0a5",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "details": {
+            "analog": true,
+            "format": "%.1f°"
+          },
+          "states": {
+            "entriesAndDefaultValue": "13d2fe3f-03bc-81af-ffff4a36769da0a5",
+            "mode": "13d2fe3f-03bc-81e1-ffff4a36769da0a5",
+            "modeList": "13d2fe3f-03bc-81b7-ffff4a36769da0a5",
+            "value": "13d2fe3f-03bc-81b5-ffff4a36769da0a5"
+          }
+        }
+      }
+    },
+    "107a06f8-02ad-9d26-ffffc926a26a8d21": {
+      "uuidAction": "107a06f8-02ad-9d26-ffffc926a26a8d21",
+      "name": "Ovládání sauny",
+      "type": "Sauna",
+      "isFavorite": true,
+      "isSecured": false,
+      "defaultRating": "6",
+      "room": "10412616-01ec-0913-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07dc-ffffc926a26a8d21",
+      "details": {
+        "hasVaporizer": true,
+        "hasDoorSensor": false
+      },
+      "states": {
+        "power": "107a06f8-02ad-9d16-fffff1f936b11ee8",
+        "tempActual": "107a06f8-02ad-9d02-fffff1f936b11ee8",
+        "tempBench": "107a06f8-02ad-9d08-fffff1f936b11ee8",
+        "tempTarget": "107a06f8-02ad-9d22-fffff1f936b11ee8",
+        "fan": "107a06f8-02ad-9d1d-fffff1f936b11ee8",
+        "drying": "107a06f8-02ad-9d1f-fffff1f936b11ee8",
+        "doorClosed": "107a06f8-02ad-9d07-fffff1f936b11ee8",
+        "presence": "107a06f8-02ad-9d09-fffff1f936b11ee8",
+        "error": "107a06f8-02ad-9d21-fffff1f936b11ee8",
+        "vaporPower": "107a06f8-02ad-9d1a-fffff1f936b11ee8",
+        "saunaError": "107a06f8-02ad-9cf7-fffff1f936b11ee8",
+        "tempAndHumidity": "107a06f8-02ad-9cf8-fffff1f936b11ee8",
+        "timer": "107a06f8-02ad-9d1e-fffff1f936b11ee8",
+        "active": "107a06f8-02ad-9d1c-fffff1f936b11ee8",
+        "lessWater": "107a06f8-02ad-9d0a-fffff1f936b11ee8",
+        "humidityActual": "107a06f8-02ad-9d04-fffff1f936b11ee8",
+        "humidityTarget": "107a06f8-02ad-9d23-fffff1f936b11ee8",
+        "mode": "107a06f8-02ad-9d20-fffff1f936b11ee8",
+        "timerTotal": "107a06f8-02ad-9d10-fffff1f936b11ee8"
+      }
+    },
+    "1079e234-00f7-f0cf-ffffc926a26a8d21": {
+      "uuidAction": "1079e234-00f7-f0cf-ffffc926a26a8d21",
+      "name": "Osvětlení",
+      "type": "LightControllerV2",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01ec-092f-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a0-ffffc926a26a8d21",
+      "presence": true,
+      "details": {},
+      "states": {
+        "activeMoods": "112e8a93-03d8-274f-ffffc926a26a8d21",
+        "moodList": "112e8a93-03d8-2750-ffffc926a26a8d21",
+        "favoriteMoods": "112e8a93-03d8-2751-ffffc926a26a8d21",
+        "additionalMoods": "112e8a93-03d8-2752-ffffc926a26a8d21",
+        "presenceFrom": "112e8a93-03d8-274d-ffffc926a26a8d21",
+        "presenceTo": "112e8a93-03d8-274e-ffffc926a26a8d21"
+      },
+      "subControls": {
+        "1079e234-00f7-f0cf-ffffc926a26a8d21/AI1": {
+          "name": "Barevný",
+          "type": "ColorPickerV2",
+          "uuidAction": "1079e234-00f7-f0cf-ffffc926a26a8d21/AI1",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "details": {
+            "pickerType": "Rgb"
+          },
+          "states": {
+            "color": "1079e234-00f7-f0b8-ffff47e0c634fa21",
+            "sequence": "13adeaf1-001d-2e7c-ffff8ecffc9987d9",
+            "sequenceColorIdx": "13adeaf1-001d-2e90-ffff8ecffc9987d9"
+          }
+        }
+      }
+    },
+    "1079e231-0145-ebe1-ffffc926a26a8d21": {
+      "uuidAction": "1079e231-0145-ebe1-ffffc926a26a8d21",
+      "name": "Ovládání dveří",
+      "type": "Intercom",
+      "isFavorite": true,
+      "isSecured": false,
+      "defaultRating": "10",
+      "room": "1041488d-0204-5501-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07cc-ffffc926a26a8d21",
+      "securedDetails": true,
+      "details": {
+        "deviceType": 1,
+        "lastBellEventImages": true,
+        "videoInfo": {},
+        "audioInfo": {}
+      },
+      "states": {
+        "bell": "1079e231-0145-ebdd-ffffbc159faf27b8",
+        "lastBellEvents": "1079e231-0145-ebd8-ffffbc159faf27b8",
+        "version": "1079e231-0145-ebd9-ffffbc159faf27b8"
+      },
+      "subControls": {
+        "1079e231-0145-ebe1-ffffc926a26a8d21/1": {
+          "name": "Otevřít dveře",
+          "type": "Pushbutton",
+          "uuidAction": "1079e231-0145-ebe1-ffffc926a26a8d21/1",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "states": {
+            "active": "1079e231-0145-ebde-ffffbc159faf27b8"
+          }
+        }
+      }
+    },
+    "10412808-00ec-176d-ffffc926a26a8d21": {
+      "uuidAction": "10412808-00ec-176d-ffffc926a26a8d21",
+      "name": "Zóna Music Serveru",
+      "type": "AudioZone",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412b61-0084-5364-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07b0-ffffc926a26a8d21",
+      "presence": true,
+      "details": {
+        "server": "10412808-00ec-1590-ffffc926a26a8d21",
+        "playerid": 6,
+        "clientType": 0,
+        "parameterConnections": 0
+      },
+      "states": {
+        "power": "10412808-00ec-1721-ffffaaeb29220ef0",
+        "serverState": "10412808-00ec-1731-ffffaaeb29220ef0",
+        "playState": "10412808-00ec-1725-ffffaaeb29220ef0",
+        "clientState": "10412808-00ec-1732-ffffaaeb29220ef0",
+        "volume": "10412808-00ec-1722-ffffaaeb29220ef0",
+        "maxVolume": "10412808-00ec-1723-ffffaaeb29220ef0",
+        "mute": "10412808-00ec-1726-ffffaaeb29220ef0",
+        "shuffle": "10412808-00ec-1729-ffffaaeb29220ef0",
+        "repeat": "10412808-00ec-172a-ffffaaeb29220ef0",
+        "source": "10412808-00ec-1724-ffffaaeb29220ef0",
+        "sourceList": "10412808-00ec-1728-ffffaaeb29220ef0",
+        "songName": "10412808-00ec-1727-ffffaaeb29220ef0",
+        "duration": "10412808-00ec-172c-ffffaaeb29220ef0",
+        "progress": "10412808-00ec-172b-ffffaaeb29220ef0",
+        "album": "10412808-00ec-172d-ffffaaeb29220ef0",
+        "artist": "10412808-00ec-172e-ffffaaeb29220ef0",
+        "station": "10412808-00ec-1734-ffffaaeb29220ef0",
+        "genre": "10412808-00ec-172f-ffffaaeb29220ef0",
+        "cover": "10412808-00ec-1730-ffffaaeb29220ef0",
+        "volumeStep": "10412808-00ec-1733-ffffaaeb29220ef0",
+        "queueIndex": "14bba21b-0288-4dc9-ffffeee000a8004a",
+        "enableAirPlay": "14bba21b-0288-4dca-ffffeee000a8004a",
+        "enableSpotifyConnect": "14bba21b-0288-4dcb-ffffeee000a8004a",
+        "alarmVolume": "10412808-00ec-175d-ffffaaeb29220ef0",
+        "bellVolume": "10412808-00ec-175e-ffffaaeb29220ef0",
+        "buzzerVolume": "10412808-00ec-175f-ffffaaeb29220ef0",
+        "ttsVolume": "10412808-00ec-1760-ffffaaeb29220ef0",
+        "ttsVolume": "10412808-00ec-1760-ffffaaeb29220ef0",
+        "defaultVolume": "10412808-00ec-175c-ffffaaeb29220ef0",
+        "equalizerSettings": "14bba21b-0288-4dcc-ffffeee000a8004a",
+        "presenceFrom": "10412808-00ec-1735-ffffaaeb29220ef0",
+        "presenceTo": "10412808-00ec-1736-ffffaaeb29220ef0"
+      }
+    },
+    "1079e231-02ec-eca3-ffffc926a26a8d21": {
+      "uuidAction": "1079e231-02ec-eca3-ffffc926a26a8d21",
+      "name": "Osvětlení",
+      "type": "LightControllerV2",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412b61-0084-5364-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a0-ffffc926a26a8d21",
+      "presence": true,
+      "details": {},
+      "states": {
+        "activeMoods": "112e8a93-0003-28b7-ffffc926a26a8d21",
+        "moodList": "112e8a93-0003-28b8-ffffc926a26a8d21",
+        "favoriteMoods": "112e8a93-0003-28b9-ffffc926a26a8d21",
+        "additionalMoods": "112e8a93-0003-28ba-ffffc926a26a8d21",
+        "presenceFrom": "112e8a93-0003-28b5-ffffc926a26a8d21",
+        "presenceTo": "112e8a93-0003-28b6-ffffc926a26a8d21"
+      },
+      "subControls": {
+        "1079e231-02ec-eca3-ffffc926a26a8d21/AI1": {
+          "name": "Stmívaný",
+          "type": "Dimmer",
+          "uuidAction": "1079e231-02ec-eca3-ffffc926a26a8d21/AI1",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "position": "1079e231-02ec-ec8c-ffff72ff29e7ed4e",
+            "min": "1079e231-02ec-ec7d-ffff72ff29e7ed4e",
+            "max": "1079e231-02ec-ec7e-ffff72ff29e7ed4e",
+            "step": "1079e231-02ec-ec7b-ffff72ff29e7ed4e"
+          }
+        }
+      }
+    },
+    "107a001c-0160-f239-ffffa189673ed27d": {
+      "uuidAction": "107a001c-0160-f239-ffffa189673ed27d",
+      "name": "Inteligentní regulace pokojové teploty",
+      "type": "IRoomControllerV2",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412b61-0084-5364-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07bc-ffffc926a26a8d21",
+      "details": {
+        "timerModes": [
+          {
+            "name": "Režim přítomnost",
+            "description": "Komfort",
+            "id": 1
+          },
+          {
+            "name": "Režim nepřítomnost",
+            "description": "Úsporný provoz",
+            "id": 0
+          },
+          {
+            "name": "Režim Vyp.",
+            "description": "Režim ochrana budovy",
+            "id": 2
+          }
+        ],
+        "format": "%.1f°",
+        "connectedInputs": 0
+      },
+      "states": {
+        "tempActual": "13d2fe3f-03bc-8266-ffff4a36769da0a5",
+        "tempTarget": "13d2fe3f-03bc-828b-ffff4a36769da0a5",
+        "comfortTemperature": "13d2fe3f-03bc-826e-ffff4a36769da0a5",
+        "comfortTolerance": "13d2fe3f-03bc-826f-ffff4a36769da0a5",
+        "absentMinOffset": "13d2fe3f-03bc-8270-ffff4a36769da0a5",
+        "absentMaxOffset": "13d2fe3f-03bc-8271-ffff4a36769da0a5",
+        "frostProtectTemperature": "13d2fe3f-03bc-8272-ffff4a36769da0a5",
+        "heatProtectTemperature": "13d2fe3f-03bc-8273-ffff4a36769da0a5",
+        "activeMode": "13d2fe3f-03bc-8260-ffff4a36769da0a5",
+        "comfortTemperatureOffset": "13d2fe3f-03bc-825b-ffff4a36769da0a5",
+        "overrideEntries": "13d2fe3f-03bc-825c-ffff4a36769da0a5",
+        "prepareState": "13d2fe3f-03bc-825d-ffff4a36769da0a5",
+        "useOutdoor": "13d2fe3f-03bc-825e-ffff4a36769da0a5",
+        "operatingMode": "13d2fe3f-03bc-8261-ffff4a36769da0a5",
+        "overrideReason": "13d2fe3f-03bc-8263-ffff4a36769da0a5",
+        "openWindow": "13d2fe3f-03bc-8267-ffff4a36769da0a5",
+        "modeList": "13d2fe3f-03bc-8262-ffff4a36769da0a5"
+      },
+      "statistic": {
+        "frequency": 6,
+        "outputs": [
+          {
+            "id": 0,
+            "name": "Inteligentní regulace pokojové teploty",
+            "format": "",
+            "uuid": "13d2fe3f-03bc-8266-ffff4a36769da0a5",
+            "visuType": 0
+          }
+        ]
+      },
+      "subControls": {
+        "13d2fe3f-03bc-825a-ffff4a36769da0a5": {
+          "name": "Heating and Cooling",
+          "type": "IRCV2Daytimer",
+          "uuidAction": "13d2fe3f-03bc-825a-ffff4a36769da0a5",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "details": {
+            "analog": true,
+            "format": "%.1f°"
+          },
+          "states": {
+            "entriesAndDefaultValue": "13d2fe3f-03bc-825a-ffff4a36769da0a5",
+            "mode": "13d2fe3f-03bc-828c-ffff4a36769da0a5",
+            "modeList": "13d2fe3f-03bc-8262-ffff4a36769da0a5",
+            "value": "13d2fe3f-03bc-8260-ffff4a36769da0a5"
+          }
+        }
+      }
+    },
+    "10412808-00ec-171f-ffffc926a26a8d21": {
+      "uuidAction": "10412808-00ec-171f-ffffc926a26a8d21",
+      "name": "Music Server Zone",
+      "type": "AudioZone",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412b39-0077-5362-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07b0-ffffc926a26a8d21",
+      "presence": true,
+      "details": {
+        "server": "10412808-00ec-1590-ffffc926a26a8d21",
+        "playerid": 5,
+        "clientType": 0,
+        "parameterConnections": 0
+      },
+      "states": {
+        "power": "10412808-00ec-16d3-ffffaaeb29220ef0",
+        "serverState": "10412808-00ec-16e3-ffffaaeb29220ef0",
+        "playState": "10412808-00ec-16d7-ffffaaeb29220ef0",
+        "clientState": "10412808-00ec-16e4-ffffaaeb29220ef0",
+        "volume": "10412808-00ec-16d4-ffffaaeb29220ef0",
+        "maxVolume": "10412808-00ec-16d5-ffffaaeb29220ef0",
+        "mute": "10412808-00ec-16d8-ffffaaeb29220ef0",
+        "shuffle": "10412808-00ec-16db-ffffaaeb29220ef0",
+        "repeat": "10412808-00ec-16dc-ffffaaeb29220ef0",
+        "source": "10412808-00ec-16d6-ffffaaeb29220ef0",
+        "sourceList": "10412808-00ec-16da-ffffaaeb29220ef0",
+        "songName": "10412808-00ec-16d9-ffffaaeb29220ef0",
+        "duration": "10412808-00ec-16de-ffffaaeb29220ef0",
+        "progress": "10412808-00ec-16dd-ffffaaeb29220ef0",
+        "album": "10412808-00ec-16df-ffffaaeb29220ef0",
+        "artist": "10412808-00ec-16e0-ffffaaeb29220ef0",
+        "station": "10412808-00ec-16e6-ffffaaeb29220ef0",
+        "genre": "10412808-00ec-16e1-ffffaaeb29220ef0",
+        "cover": "10412808-00ec-16e2-ffffaaeb29220ef0",
+        "volumeStep": "10412808-00ec-16e5-ffffaaeb29220ef0",
+        "queueIndex": "14bba21a-00b6-410f-ffffeee000a8004a",
+        "enableAirPlay": "14bba21a-00b6-4110-ffffeee000a8004a",
+        "enableSpotifyConnect": "14bba21a-00b6-4111-ffffeee000a8004a",
+        "alarmVolume": "10412808-00ec-170f-ffffaaeb29220ef0",
+        "bellVolume": "10412808-00ec-1710-ffffaaeb29220ef0",
+        "buzzerVolume": "10412808-00ec-1711-ffffaaeb29220ef0",
+        "ttsVolume": "10412808-00ec-1712-ffffaaeb29220ef0",
+        "ttsVolume": "10412808-00ec-1712-ffffaaeb29220ef0",
+        "defaultVolume": "10412808-00ec-170e-ffffaaeb29220ef0",
+        "equalizerSettings": "14bba21a-00b6-4112-ffffeee000a8004a",
+        "presenceFrom": "10412808-00ec-16e7-ffffaaeb29220ef0",
+        "presenceTo": "10412808-00ec-16e8-ffffaaeb29220ef0"
+      }
+    },
+    "1079e232-001e-ed5f-ffffc926a26a8d21": {
+      "uuidAction": "1079e232-001e-ed5f-ffffc926a26a8d21",
+      "name": "Osvětlení",
+      "type": "LightControllerV2",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412b39-0077-5362-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a0-ffffc926a26a8d21",
+      "presence": true,
+      "details": {},
+      "states": {
+        "activeMoods": "112e8a93-0003-27ed-ffffc926a26a8d21",
+        "moodList": "112e8a93-0003-27ee-ffffc926a26a8d21",
+        "favoriteMoods": "112e8a93-0003-27ef-ffffc926a26a8d21",
+        "additionalMoods": "112e8a93-0003-27f0-ffffc926a26a8d21",
+        "presenceFrom": "112e8a93-0003-27eb-ffffc926a26a8d21",
+        "presenceTo": "112e8a93-0003-27ec-ffffc926a26a8d21"
+      },
+      "subControls": {
+        "1079e232-001e-ed5f-ffffc926a26a8d21/AI1": {
+          "name": "Stmívaný",
+          "type": "Dimmer",
+          "uuidAction": "1079e232-001e-ed5f-ffffc926a26a8d21/AI1",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "position": "1079e232-001e-ed48-fffff23f6b6005b5",
+            "min": "1079e232-001e-ed39-fffff23f6b6005b5",
+            "max": "1079e232-001e-ed3a-fffff23f6b6005b5",
+            "step": "1079e232-001e-ed37-fffff23f6b6005b5"
+          }
+        }
+      }
+    },
+    "1079ffbe-0241-6d8f-ffff65ef50a2fcea": {
+      "uuidAction": "1079ffbe-0241-6d8f-ffff65ef50a2fcea",
+      "name": "Inteligentí regulace pokojové teploty",
+      "type": "IRoomControllerV2",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412b39-0077-5362-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07bc-ffffc926a26a8d21",
+      "details": {
+        "timerModes": [
+          {
+            "name": "Režim přítomnost",
+            "description": "Komfort",
+            "id": 1
+          },
+          {
+            "name": "Režim nepřítomnost",
+            "description": "Úsporný provoz",
+            "id": 0
+          },
+          {
+            "name": "Režim Vyp.",
+            "description": "Režim ochrana budovy",
+            "id": 2
+          }
+        ],
+        "format": "%.1f°",
+        "connectedInputs": 0
+      },
+      "states": {
+        "tempActual": "13d2fe3f-03bc-822e-ffff4a36769da0a5",
+        "tempTarget": "13d2fe3f-03bc-8253-ffff4a36769da0a5",
+        "comfortTemperature": "13d2fe3f-03bc-8236-ffff4a36769da0a5",
+        "comfortTolerance": "13d2fe3f-03bc-8237-ffff4a36769da0a5",
+        "absentMinOffset": "13d2fe3f-03bc-8238-ffff4a36769da0a5",
+        "absentMaxOffset": "13d2fe3f-03bc-8239-ffff4a36769da0a5",
+        "frostProtectTemperature": "13d2fe3f-03bc-823a-ffff4a36769da0a5",
+        "heatProtectTemperature": "13d2fe3f-03bc-823b-ffff4a36769da0a5",
+        "activeMode": "13d2fe3f-03bc-8228-ffff4a36769da0a5",
+        "comfortTemperatureOffset": "13d2fe3f-03bc-8223-ffff4a36769da0a5",
+        "overrideEntries": "13d2fe3f-03bc-8224-ffff4a36769da0a5",
+        "prepareState": "13d2fe3f-03bc-8225-ffff4a36769da0a5",
+        "useOutdoor": "13d2fe3f-03bc-8226-ffff4a36769da0a5",
+        "operatingMode": "13d2fe3f-03bc-8229-ffff4a36769da0a5",
+        "overrideReason": "13d2fe3f-03bc-822b-ffff4a36769da0a5",
+        "openWindow": "13d2fe3f-03bc-822f-ffff4a36769da0a5",
+        "modeList": "13d2fe3f-03bc-822a-ffff4a36769da0a5"
+      },
+      "statistic": {
+        "frequency": 6,
+        "outputs": [
+          {
+            "id": 0,
+            "name": "Inteligentí regulace pokojové teploty",
+            "format": "",
+            "uuid": "13d2fe3f-03bc-822e-ffff4a36769da0a5",
+            "visuType": 0
+          }
+        ]
+      },
+      "subControls": {
+        "13d2fe3f-03bc-8222-ffff4a36769da0a5": {
+          "name": "Heating and Cooling",
+          "type": "IRCV2Daytimer",
+          "uuidAction": "13d2fe3f-03bc-8222-ffff4a36769da0a5",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "details": {
+            "analog": true,
+            "format": "%.1f°"
+          },
+          "states": {
+            "entriesAndDefaultValue": "13d2fe3f-03bc-8222-ffff4a36769da0a5",
+            "mode": "13d2fe3f-03bc-8254-ffff4a36769da0a5",
+            "modeList": "13d2fe3f-03bc-822a-ffff4a36769da0a5",
+            "value": "13d2fe3f-03bc-8228-ffff4a36769da0a5"
+          }
+        }
+      }
+    },
+    "1079e231-0202-ec31-ffffc926a26a8d21": {
+      "uuidAction": "1079e231-0202-ec31-ffffc926a26a8d21",
+      "name": "Osvětlení",
+      "type": "LightControllerV2",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10414417-039a-ef54-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a0-ffffc926a26a8d21",
+      "presence": true,
+      "details": {
+        "masterValue": "1079e231-0202-ec31-ffffc926a26a8d21/masterValue",
+        "masterColor": "1079e231-0202-ec31-ffffc926a26a8d21/masterColor"
+      },
+      "states": {
+        "activeMoods": "112e8a93-0003-29c0-ffffc926a26a8d21",
+        "moodList": "112e8a93-0003-29c1-ffffc926a26a8d21",
+        "favoriteMoods": "112e8a93-0003-29c2-ffffc926a26a8d21",
+        "additionalMoods": "112e8a93-0003-29c3-ffffc926a26a8d21",
+        "presenceFrom": "112e8a93-0003-29be-ffffc926a26a8d21",
+        "presenceTo": "112e8a93-0003-29bf-ffffc926a26a8d21"
+      },
+      "subControls": {
+        "1079e231-0202-ec31-ffffc926a26a8d21/masterValue": {
+          "name": "Hlavní jas",
+          "type": "Dimmer",
+          "uuidAction": "1079e231-0202-ec31-ffffc926a26a8d21/masterValue",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "position": "1079e231-0202-ec2d-ffff8b17a84d85d4",
+            "min": "112e8a93-0003-29c5-ffffc926a26a8d21",
+            "max": "112e8a93-0003-29c6-ffffc926a26a8d21",
+            "step": "1079e231-0202-ec09-ffff8b17a84d85d4"
+          }
+        },
+        "1079e231-0202-ec31-ffffc926a26a8d21/masterColor": {
+          "name": "Hlavní barva",
+          "type": "ColorPickerV2",
+          "uuidAction": "1079e231-0202-ec31-ffffc926a26a8d21/masterColor",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "details": {
+            "pickerType": "Rgb"
+          },
+          "states": {
+            "color": "1079e231-0202-ec2c-ffff8b17a84d85d4",
+            "sequence": "13adeaf1-001d-2f0b-ffff8ecffc9987d9",
+            "sequenceColorIdx": "13adeaf1-001d-2f1f-ffff8ecffc9987d9"
+          }
+        },
+        "1079e231-0202-ec31-ffffc926a26a8d21/AI1": {
+          "name": "Strop smart aktor",
+          "type": "ColorPickerV2",
+          "uuidAction": "1079e231-0202-ec31-ffffc926a26a8d21/AI1",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "details": {
+            "pickerType": "Rgb"
+          },
+          "states": {
+            "color": "1079e231-0202-ec1a-ffff8b17a84d85d4",
+            "sequence": "13adeaf1-001d-2ef9-ffff8ecffc9987d9",
+            "sequenceColorIdx": "13adeaf1-001d-2f0d-ffff8ecffc9987d9"
+          }
+        },
+        "1079e231-0202-ec31-ffffc926a26a8d21/AI2": {
+          "name": "Bar Smartaktor",
+          "type": "ColorPickerV2",
+          "uuidAction": "1079e231-0202-ec31-ffffc926a26a8d21/AI2",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "details": {
+            "pickerType": "Rgb"
+          },
+          "states": {
+            "color": "1079e231-0202-ec1b-ffff8b17a84d85d4",
+            "sequence": "13adeaf1-001d-2efa-ffff8ecffc9987d9",
+            "sequenceColorIdx": "13adeaf1-001d-2f0e-ffff8ecffc9987d9"
+          }
+        }
+      }
+    },
+    "10412808-00ec-17bb-ffffc926a26a8d21": {
+      "uuidAction": "10412808-00ec-17bb-ffffc926a26a8d21",
+      "name": "Music Server Zone",
+      "type": "AudioZone",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01ec-0927-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07b0-ffffc926a26a8d21",
+      "presence": true,
+      "details": {
+        "server": "10412808-00ec-1590-ffffc926a26a8d21",
+        "playerid": 7,
+        "clientType": 0,
+        "parameterConnections": 0
+      },
+      "states": {
+        "power": "10412808-00ec-176f-ffffaaeb29220ef0",
+        "serverState": "10412808-00ec-177f-ffffaaeb29220ef0",
+        "playState": "10412808-00ec-1773-ffffaaeb29220ef0",
+        "clientState": "10412808-00ec-1780-ffffaaeb29220ef0",
+        "volume": "10412808-00ec-1770-ffffaaeb29220ef0",
+        "maxVolume": "10412808-00ec-1771-ffffaaeb29220ef0",
+        "mute": "10412808-00ec-1774-ffffaaeb29220ef0",
+        "shuffle": "10412808-00ec-1777-ffffaaeb29220ef0",
+        "repeat": "10412808-00ec-1778-ffffaaeb29220ef0",
+        "source": "10412808-00ec-1772-ffffaaeb29220ef0",
+        "sourceList": "10412808-00ec-1776-ffffaaeb29220ef0",
+        "songName": "10412808-00ec-1775-ffffaaeb29220ef0",
+        "duration": "10412808-00ec-177a-ffffaaeb29220ef0",
+        "progress": "10412808-00ec-1779-ffffaaeb29220ef0",
+        "album": "10412808-00ec-177b-ffffaaeb29220ef0",
+        "artist": "10412808-00ec-177c-ffffaaeb29220ef0",
+        "station": "10412808-00ec-1782-ffffaaeb29220ef0",
+        "genre": "10412808-00ec-177d-ffffaaeb29220ef0",
+        "cover": "10412808-00ec-177e-ffffaaeb29220ef0",
+        "volumeStep": "10412808-00ec-1781-ffffaaeb29220ef0",
+        "queueIndex": "14bba21a-016c-425e-ffffeee000a8004a",
+        "enableAirPlay": "14bba21a-016c-425f-ffffeee000a8004a",
+        "enableSpotifyConnect": "14bba21a-016c-4260-ffffeee000a8004a",
+        "alarmVolume": "10412808-00ec-17ab-ffffaaeb29220ef0",
+        "bellVolume": "10412808-00ec-17ac-ffffaaeb29220ef0",
+        "buzzerVolume": "10412808-00ec-17ad-ffffaaeb29220ef0",
+        "ttsVolume": "10412808-00ec-17ae-ffffaaeb29220ef0",
+        "ttsVolume": "10412808-00ec-17ae-ffffaaeb29220ef0",
+        "defaultVolume": "10412808-00ec-17aa-ffffaaeb29220ef0",
+        "equalizerSettings": "14bba21a-016c-4261-ffffeee000a8004a",
+        "presenceFrom": "10412808-00ec-1783-ffffaaeb29220ef0",
+        "presenceTo": "10412808-00ec-1784-ffffaaeb29220ef0"
+      }
+    },
+    "1079e234-0211-f135-ffffc926a26a8d21": {
+      "uuidAction": "1079e234-0211-f135-ffffc926a26a8d21",
+      "name": "Osvětlení",
+      "type": "LightControllerV2",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01ec-0927-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a0-ffffc926a26a8d21",
+      "presence": true,
+      "details": {},
+      "states": {
+        "activeMoods": "112e8a91-03d8-256a-ffffc926a26a8d21",
+        "moodList": "112e8a91-03d8-256b-ffffc926a26a8d21",
+        "favoriteMoods": "112e8a91-03d8-256c-ffffc926a26a8d21",
+        "additionalMoods": "112e8a91-03d8-256d-ffffc926a26a8d21",
+        "presenceFrom": "112e8a91-03d8-2568-ffffc926a26a8d21",
+        "presenceTo": "112e8a91-03d8-2569-ffffc926a26a8d21"
+      },
+      "subControls": {
+        "1079e234-0211-f135-ffffc926a26a8d21/AI1": {
+          "name": "Dimmer",
+          "type": "Dimmer",
+          "uuidAction": "1079e234-0211-f135-ffffc926a26a8d21/AI1",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "presence": true,
+          "states": {
+            "position": "1079e234-0211-f11e-ffff836b9cbcf56a",
+            "min": "1079e234-0211-f10f-ffff836b9cbcf56a",
+            "max": "1079e234-0211-f110-ffff836b9cbcf56a",
+            "step": "1079e234-0211-f10d-ffff836b9cbcf56a"
+          }
+        }
+      }
+    },
+    "1079fcee-0204-3b59-ffff8cb84d77a9b0": {
+      "uuidAction": "1079fcee-0204-3b59-ffff8cb84d77a9b0",
+      "name": "Inteligentní regulace pokojové teploty",
+      "type": "IRoomControllerV2",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "1",
+      "room": "10412616-01ec-0927-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07bc-ffffc926a26a8d21",
+      "details": {
+        "timerModes": [
+          {
+            "name": "Režim přítomnost",
+            "description": "Komfort",
+            "id": 1
+          },
+          {
+            "name": "Režim nepřítomnost",
+            "description": "Úsporný provoz",
+            "id": 0
+          },
+          {
+            "name": "Režim Vyp.",
+            "description": "Režim ochrana budovy",
+            "id": 2
+          }
+        ],
+        "format": "%.1f°",
+        "connectedInputs": 0
+      },
+      "states": {
+        "tempActual": "13d2fe3f-03bc-81f3-ffff4a36769da0a5",
+        "tempTarget": "13d2fe3f-03bc-8218-ffff4a36769da0a5",
+        "comfortTemperature": "13d2fe3f-03bc-81fb-ffff4a36769da0a5",
+        "comfortTolerance": "13d2fe3f-03bc-81fc-ffff4a36769da0a5",
+        "absentMinOffset": "13d2fe3f-03bc-81fd-ffff4a36769da0a5",
+        "absentMaxOffset": "13d2fe3f-03bc-81fe-ffff4a36769da0a5",
+        "frostProtectTemperature": "13d2fe3f-03bc-81ff-ffff4a36769da0a5",
+        "heatProtectTemperature": "13d2fe3f-03bc-8200-ffff4a36769da0a5",
+        "activeMode": "13d2fe3f-03bc-81ed-ffff4a36769da0a5",
+        "comfortTemperatureOffset": "13d2fe3f-03bc-81e8-ffff4a36769da0a5",
+        "overrideEntries": "13d2fe3f-03bc-81e9-ffff4a36769da0a5",
+        "prepareState": "13d2fe3f-03bc-81ea-ffff4a36769da0a5",
+        "useOutdoor": "13d2fe3f-03bc-81eb-ffff4a36769da0a5",
+        "operatingMode": "13d2fe3f-03bc-81ee-ffff4a36769da0a5",
+        "overrideReason": "13d2fe3f-03bc-81f0-ffff4a36769da0a5",
+        "openWindow": "13d2fe3f-03bc-81f4-ffff4a36769da0a5",
+        "modeList": "13d2fe3f-03bc-81ef-ffff4a36769da0a5"
+      },
+      "statistic": {
+        "frequency": 6,
+        "outputs": [
+          {
+            "id": 0,
+            "name": "Inteligentní regulace pokojové teploty",
+            "format": "",
+            "uuid": "13d2fe3f-03bc-81f3-ffff4a36769da0a5",
+            "visuType": 0
+          }
+        ]
+      },
+      "subControls": {
+        "13d2fe3f-03bc-81e7-ffff4a36769da0a5": {
+          "name": "Heating and Cooling",
+          "type": "IRCV2Daytimer",
+          "uuidAction": "13d2fe3f-03bc-81e7-ffff4a36769da0a5",
+          "defaultRating": 0,
+          "isFavorite": false,
+          "isSecured": false,
+          "details": {
+            "analog": true,
+            "format": "%.1f°"
+          },
+          "states": {
+            "entriesAndDefaultValue": "13d2fe3f-03bc-81e7-ffff4a36769da0a5",
+            "mode": "13d2fe3f-03bc-8219-ffff4a36769da0a5",
+            "modeList": "13d2fe3f-03bc-81ef-ffff4a36769da0a5",
+            "value": "13d2fe3f-03bc-81ed-ffff4a36769da0a5"
+          }
+        }
+      }
+    },
+    "1079e87f-0393-6423-ffffc926a26a8d21": {
+      "uuidAction": "1079e87f-0393-6423-ffffc926a26a8d21",
+      "name": "Okno západ",
+      "type": "Jalousie",
+      "isFavorite": false,
+      "isSecured": false,
+      "defaultRating": "0",
+      "room": "10412616-01ec-0927-ffffc926a26a8d21",
+      "cat": "10412616-01a4-07a4-ffffc926a26a8d21",
+      "details": {
+        "isAutomatic": true,
+        "animation": 0
+      },
+      "states": {
+        "infoText": "12578778-02b1-4f6c-ffffc926a26a8d21",
+        "up": "1079e87f-0393-641b-ffff6e7d981ff65c",
+        "down": "1079e87f-0393-641c-ffff6e7d981ff65c",
+        "position": "1079e87f-0393-641d-ffff6e7d981ff65c",
+        "shadePosition": "1079e87f-0393-641e-ffff6e7d981ff65c",
+        "safetyActive": "1079e87f-0393-6420-ffff6e7d981ff65c",
+        "autoAllowed": "1079e87f-0393-63fc-ffff6e7d981ff65c",
+        "autoActive": "1079e87f-0393-641f-ffff6e7d981ff65c",
+        "locked": "1079e87f-0393-6421-ffff6e7d981ff65c",
+        "autoInfoText": "12578778-02b1-4f6d-ffffc926a26a8d21",
+        "autoState": "12578778-02b1-4f6e-ffffc926a26a8d21"
+      }
+    }
+  },
+  "globalStates": {
+    "operatingMode": "10412616-0192-0742-ffffc926a26a8d21",
+    "sunrise": "10412616-0192-0754-ffffc926a26a8d21",
+    "sunset": "10412616-0192-0757-ffffc926a26a8d21",
+    "pastTasks": "10412616-0210-099e-ffffb423ee388785",
+    "plannedTasks": "10412616-0210-099d-ffffb423ee388785",
+    "notifications": "10412616-0192-0712-ffffc926a26a8d21",
+    "modifications": "10412616-0192-0714-ffffc926a26a8d21",
+    "favColorSequences": "1041373d-0136-0714-ffffd27087a1a551",
+    "favColors": "1041373d-0136-0715-ffffd27087a1a551",
+    "miniserverTime": "10412616-0192-0713-ffffc926a26a8d21",
+    "liveSearch": "14bba217-034b-38d5-ffffeee000a8004a",
+    "userSettings": "14bba217-034b-38d6-ffffeee000a8004a",
+    "hasInternet": "12b39e42-0026-3283-ffffaae55cefff64"
+  },
+  "operatingModes": {
+    "0": "Svátek",
+    "1": "Dovolená",
+    "2": "Volno/školní prázdniny",
+    "3": "Pondělí",
+    "4": "Úterý",
+    "5": "Středa",
+    "6": "Čtvrtek",
+    "7": "Pátek",
+    "8": "Sobota",
+    "9": "Neděle",
+    "-1": "Alarm",
+    "-2": "Simulace přítomnosti",
+    "-3": "Ochrana Budovy",
+    "-4": "Zvýšená potřeba tepla",
+    "-5": "Párty",
+    "-6": "Nepřítomnost",
+    "-1000": "Noční režim",
+    "-1003": "Technický Alarm",
+    "-1004": "Přítomnost",
+    "-1002": "Ochrana proti zámraze",
+    "-1001": "Ochrana při bouři"
+  },
+  "weatherServer": {
+    "states": {
+      "actual": "10412616-0222-09fb-ffffc926a26a8d21",
+      "forecast": "10412616-0222-09fa-ffffb423ee388785"
+    },
+    "format": {
+      "relativeHumidity": "%.0f%%",
+      "temperature": "%.1f°",
+      "windSpeed": "%.0fkm/h",
+      "precipitation": "%.1fl/m²/h",
+      "barometricPressure": "%.0fhPa"
+    },
+    "weatherTypeTexts": {
+      "1": "Jasno",
+      "2": "Skoro jasno",
+      "3": "Polojasno",
+      "4": "Skoro zataženo",
+      "5": "Zataženo",
+      "6": "Mlha",
+      "7": "Oblačno",
+      "8": "nepoužito",
+      "9": "nepoužito",
+      "10": "Dešťové přeháňky",
+      "11": "Déšť",
+      "12": "Silný déšť",
+      "13": "mrholení",
+      "14": "Mírný mrznoucí déšť",
+      "15": "Silný mrznoucí déšť",
+      "16": "Déšť",
+      "17": "Liják",
+      "18": "bouřka",
+      "19": "silná bouře",
+      "20": "mírné sněžení",
+      "21": "sněžení",
+      "22": "silné snežení",
+      "23": "lehké sněžení",
+      "24": "silné sněžení",
+      "25": "Mírný déšť se sněhem",
+      "26": "plískanice",
+      "27": "Vidatný déšť se sněhem",
+      "28": "mírné sněžení",
+      "29": "silné sněžení"
+    },
+    "weatherFieldTypes": {
+      "1": {
+        "id": 1,
+        "name": "Teplota",
+        "analog": true,
+        "unit": "°C",
+        "format": "%.1f"
+      },
+      "2": {
+        "id": 2,
+        "name": "Rosný bod",
+        "analog": true,
+        "unit": "°C",
+        "format": "%.1f"
+      },
+      "3": {
+        "id": 3,
+        "name": "Rel. vlhkost vzduchu",
+        "analog": true,
+        "format": "%.0f%%"
+      },
+      "4": {
+        "id": 4,
+        "name": "Rychlost větru",
+        "analog": true,
+        "unit": "km/h",
+        "format": "%.0f"
+      },
+      "5": {
+        "id": 5,
+        "name": "Směr větru",
+        "analog": true
+      },
+      "6": {
+        "id": 6,
+        "name": "Nárazy větru",
+        "analog": true
+      },
+      "7": {
+        "id": 7,
+        "name": "Absolutní záření",
+        "analog": true
+      },
+      "8": {
+        "id": 8,
+        "name": "Relativní záření",
+        "analog": true
+      },
+      "9": {
+        "id": 9,
+        "name": "Srážky",
+        "analog": true,
+        "unit": "l/m²/h",
+        "format": "%.1f"
+      },
+      "10": {
+        "id": 10,
+        "name": "Typ počasí",
+        "analog": true
+      },
+      "11": {
+        "id": 11,
+        "name": "Tlak vzduchu",
+        "analog": true,
+        "unit": "hPa",
+        "format": "%.0f"
+      },
+      "26": {
+        "id": 26,
+        "name": "Vnímaná teplota",
+        "analog": true,
+        "unit": "°C",
+        "format": "%.1f"
+      },
+      "27": {
+        "id": 27,
+        "name": "Záření",
+        "analog": true
+      },
+      "28": {
+        "id": 28,
+        "name": "Pravděpodobnost srážek",
+        "analog": true
+      },
+      "29": {
+        "id": 29,
+        "name": "Podíl sněhu",
+        "analog": true
+      },
+      "30": {
+        "id": 30,
+        "name": "CAPE",
+        "analog": true
+      },
+      "31": {
+        "id": 31,
+        "name": "Nízká oblačnost",
+        "analog": true
+      },
+      "32": {
+        "id": 32,
+        "name": "Střední oblačnost",
+        "analog": true
+      },
+      "33": {
+        "id": 33,
+        "name": "Vysoká oblačnost",
+        "analog": true
+      },
+      "34": {
+        "id": 34,
+        "name": "Sluneční svit",
+        "analog": false
+      }
+    }
+  },
+  "times": {
+    "266": {
+      "id": 266,
+      "name": "Dny od roku 2009",
+      "analog": true
+    },
+    "267": {
+      "id": 267,
+      "name": "Rok",
+      "analog": true
+    },
+    "268": {
+      "id": 268,
+      "name": "Měsíc",
+      "analog": true
+    },
+    "269": {
+      "id": 269,
+      "name": "Den",
+      "analog": true
+    },
+    "270": {
+      "id": 270,
+      "name": "Den v týdnu",
+      "analog": true
+    },
+    "271": {
+      "id": 271,
+      "name": "Aktivní kalendář",
+      "analog": true
+    },
+    "272": {
+      "id": 272,
+      "name": "Minuty od půlnoci",
+      "analog": true
+    },
+    "273": {
+      "id": 273,
+      "name": "Hodina",
+      "analog": true
+    },
+    "274": {
+      "id": 274,
+      "name": "Minuty",
+      "analog": true
+    },
+    "275": {
+      "id": 275,
+      "name": "Sekundy",
+      "analog": true
+    },
+    "276": {
+      "id": 276,
+      "name": "Sekundy od startu",
+      "analog": true
+    },
+    "277": {
+      "id": 277,
+      "name": "Minuty do východu slunce",
+      "analog": true
+    },
+    "278": {
+      "id": 278,
+      "name": "Minuty do západu slunce",
+      "analog": true
+    },
+    "281": {
+      "id": 281,
+      "name": "Denní světlo",
+      "analog": true
+    },
+    "282": {
+      "id": 282,
+      "name": "Denní světlo 30 minut",
+      "analog": true
+    },
+    "283": {
+      "id": 283,
+      "name": "Minuty do úsvitu",
+      "analog": true
+    },
+    "284": {
+      "id": 284,
+      "name": "Minuty do setmění",
+      "analog": true
+    },
+    "285": {
+      "id": 285,
+      "name": "Výška slunce",
+      "analog": true
+    },
+    "286": {
+      "id": 286,
+      "name": "Směr slunce",
+      "analog": true
+    },
+    "287": {
+      "id": 287,
+      "name": "Počáteční impulz",
+      "analog": false
+    },
+    "288": {
+      "id": 288,
+      "name": "Roční impulz",
+      "analog": false
+    },
+    "289": {
+      "id": 289,
+      "name": "Měsíční impulz",
+      "analog": false
+    },
+    "290": {
+      "id": 290,
+      "name": "Denní impulz",
+      "analog": false
+    },
+    "291": {
+      "id": 291,
+      "name": "Hodinový impulz",
+      "analog": false
+    },
+    "292": {
+      "id": 292,
+      "name": "Minutový impulz",
+      "analog": false
+    },
+    "293": {
+      "id": 293,
+      "name": "Sekundový impulz",
+      "analog": false
+    },
+    "294": {
+      "id": 294,
+      "name": "Impulz východu slunce",
+      "analog": false
+    },
+    "295": {
+      "id": 295,
+      "name": "Impulz západu slunce",
+      "analog": false
+    },
+    "298": {
+      "id": 298,
+      "name": "Impulz rozednění",
+      "analog": false
+    },
+    "299": {
+      "id": 299,
+      "name": "Impulz setmění",
+      "analog": false
+    }
+  },
+  "caller": {
+    "1079e237-028e-fd76-ffffc926a26a8d21": {
+      "id": "1079e237-028e-fd76-ffffc926a26a8d21",
+      "name": "Caller",
+      "phoneNumber": ""
+    },
+    "14bba222-00da-4e67-ffffeee000a8004a": {
+      "id": "14bba222-00da-4e67-ffffeee000a8004a",
+      "name": "Hasiči",
+      "phoneNumber": ""
+    },
+    "14bba223-0302-4e87-ffffeee000a8004a": {
+      "id": "14bba223-0302-4e87-ffffeee000a8004a",
+      "name": "Policie",
+      "phoneNumber": ""
+    },
+    "14bba226-0021-4ea7-ffffeee000a8004a": {
+      "id": "14bba226-0021-4ea7-ffffeee000a8004a",
+      "name": "Záchranná služba",
+      "phoneNumber": ""
+    }
+  },
+  "mediaServer": {
+    "10412808-00ec-1590-ffffc926a26a8d21": {
+      "name": "Loxone Music Server 1",
+      "type": 1,
+      "host": "10.7.7.111:7091",
+      "uuidAction": "10412808-00ec-1590-ffffc926a26a8d21",
+      "useTriggerCard": false,
+      "states": {
+        "audioEvents": "10412808-00ec-1590-ffffc926a26a8d21",
+        "apiVersion": "10412808-00ec-158c-ffffaaeb29220ef0",
+        "serverState": "10412808-00ec-158d-ffffaaeb29220ef0",
+        "grouping": "10412808-00ec-158e-ffffaaeb29220ef0",
+        "connState": "10412808-00ec-158f-ffffaaeb29220ef0"
+      }
+    }
+  },
+  "autopilot": {},
+  "messageCenter": {
+    "12578778-0302-59a4-ffffc926a26a8d21": {
+      "name": "Stav systému",
+      "uuidAction": "12578778-0302-59a4-ffffc926a26a8d21",
+      "states": {
+        "changed": "12578778-0302-59a3-ffff19fbe43021fb"
+      }
+    }
+  }
+}

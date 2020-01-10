@@ -1,4 +1,4 @@
-﻿// ----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 // <copyright file="CategoryCollection.cs">
 //     Copyright (c) The Loxone.NET Authors.  All rights reserved.
 // </copyright>
@@ -17,11 +17,13 @@ namespace Loxone.Client
     public sealed class CategoryCollection : IReadOnlyCollection<Category>
     {
         private readonly IDictionary<string, Transport.Category> _innerCategories;
+        private readonly Dictionary<Uuid, Category> _categories;
 
-        internal CategoryCollection(IDictionary<string, Transport.Category> innerCategories)
+        internal CategoryCollection(IDictionary<string, Transport.Category> innerCategorys)
         {
-            Contract.Requires(innerCategories != null);
-            this._innerCategories = innerCategories;
+            Contract.Requires(innerCategorys != null);
+            this._innerCategories = innerCategorys;
+            _categories = new Dictionary<Uuid, Category>(_innerCategories.Count);
         }
 
         public int Count => _innerCategories.Count;
@@ -30,13 +32,24 @@ namespace Loxone.Client
         {
             foreach (var pair in _innerCategories)
             {
-                yield return new Category(pair.Value);
+                yield return this[Uuid.Parse(pair.Key)];
             }
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
+        IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
+
+        internal Category this[Uuid uuid]
         {
-            return this.GetEnumerator();
+            get
+            {
+                if (!_categories.TryGetValue(uuid, out var category))
+                {
+                    var innerCategory = _innerCategories[uuid.ToString()];
+                    category = new Category(innerCategory);
+                    _categories[uuid] = category;
+                }
+                return category;
+            }
         }
     }
 }
